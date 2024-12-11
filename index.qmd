@@ -1,3 +1,15 @@
+---
+title: "Preface"
+format:
+  html:
+    toc: true
+    toc-location: left
+    toc-depth: 2
+    number-sections: true
+    number-depth: 3
+editor: visual
+---
+
 # Preface {.unnumbered}
 
 This Quarto book contains all tutorials created by the Section of Epidemiology.
