@@ -570,6 +570,8 @@ tar_script({
 ```
 
 ```{r}
+library(visNetwork)
+library(targets)
 tar_make()
 
 tar_visnetwork()

@@ -763,6 +763,34 @@
         "Built": "R 4.4.1; x86_64-pc-linux-gnu; 2024-12-01 15:59:00 UTC; unix"
       }
     },
+    "htmlwidgets": {
+      "Source": "CRAN",
+      "Repository": "https://package-manager.posit.vetinst.no/cran/latest",
+      "description": {
+        "Type": "Package",
+        "Package": "htmlwidgets",
+        "Title": "HTML Widgets for R",
+        "Version": "1.6.4",
+        "Authors@R": "c(\n    person(\"Ramnath\", \"Vaidyanathan\", role = c(\"aut\", \"cph\")),\n    person(\"Yihui\", \"Xie\", role = \"aut\"),\n    person(\"JJ\", \"Allaire\", role = \"aut\"),\n    person(\"Joe\", \"Cheng\", , \"joe@posit.co\", role = \"aut\"),\n    person(\"Carson\", \"Sievert\", , \"carson@posit.co\", role = c(\"aut\", \"cre\"),\n           comment = c(ORCID = \"0000-0002-4958-2844\")),\n    person(\"Kenton\", \"Russell\", role = c(\"aut\", \"cph\")),\n    person(\"Ellis\", \"Hughes\", role = \"ctb\"),\n    person(\"Posit Software, PBC\", role = c(\"cph\", \"fnd\"))\n  )",
+        "Description": "A framework for creating HTML widgets that render in various\n    contexts including the R console, 'R Markdown' documents, and 'Shiny'\n    web applications.",
+        "License": "MIT + file LICENSE",
+        "URL": "https://github.com/ramnathv/htmlwidgets",
+        "BugReports": "https://github.com/ramnathv/htmlwidgets/issues",
+        "Imports": "grDevices, htmltools (>= 0.5.7), jsonlite (>= 0.9.16), knitr\n(>= 1.8), rmarkdown, yaml",
+        "Suggests": "testthat",
+        "Enhances": "shiny (>= 1.1)",
+        "VignetteBuilder": "knitr",
+        "Encoding": "UTF-8",
+        "RoxygenNote": "7.2.3",
+        "NeedsCompilation": "no",
+        "Packaged": "2023-12-06 00:11:16 UTC; cpsievert",
+        "Author": "Ramnath Vaidyanathan [aut, cph],\n  Yihui Xie [aut],\n  JJ Allaire [aut],\n  Joe Cheng [aut],\n  Carson Sievert [aut, cre] (<https://orcid.org/0000-0002-4958-2844>),\n  Kenton Russell [aut, cph],\n  Ellis Hughes [ctb],\n  Posit Software, PBC [cph, fnd]",
+        "Maintainer": "Carson Sievert <carson@posit.co>",
+        "Repository": "RSPM",
+        "Date/Publication": "2023-12-06 06:00:06 UTC",
+        "Built": "R 4.4.1; ; 2024-12-01 19:06:30 UTC; unix"
+      }
+    },
     "igraph": {
       "Source": "CRAN",
       "Repository": "https://package-manager.posit.vetinst.no/cran/latest",
@@ -1551,6 +1579,33 @@
         "Repository": "CRAN",
         "Date/Publication": "2023-12-01 23:50:02 UTC",
         "Built": "R 4.4.1; x86_64-pc-linux-gnu; 2024-10-29 09:05:14 UTC; unix"
+      }
+    },
+    "visNetwork": {
+      "Source": "CRAN",
+      "Repository": "https://package-manager.posit.vetinst.no/cran/latest",
+      "description": {
+        "Package": "visNetwork",
+        "Title": "Network Visualization using 'vis.js' Library",
+        "Version": "2.1.2",
+        "Authors@R": "c(\n    person(family = \"Almende B.V. and Contributors\", role = c(\"aut\", \"cph\"),\n       comment = \"vis.js library in htmlwidgets/lib, https://visjs.org/, https://github.com/visjs/vis-network\"),\n    person(\"Benoit\", \"Thieurmel\", role = c(\"aut\", \"cre\"),\n       comment = \"R interface\", email = \"bthieurmel@gmail.com\")\n    )",
+        "Maintainer": "Benoit Thieurmel <bthieurmel@gmail.com>",
+        "Description": "Provides an R interface to the 'vis.js' JavaScript charting\n    library. It allows an interactive visualization of networks.",
+        "BugReports": "https://github.com/datastorm-open/visNetwork/issues",
+        "URL": "https://datastorm-open.github.io/visNetwork/",
+        "Depends": "R (>= 3.0)",
+        "Imports": "htmlwidgets, htmltools, jsonlite, magrittr, utils, methods,\ngrDevices, stats",
+        "License": "MIT + file LICENSE",
+        "Suggests": "knitr, rmarkdown, webshot, igraph, rpart, shiny,\nshinyWidgets, colourpicker, sparkline, ggraph, tidygraph,\nflashClust",
+        "VignetteBuilder": "knitr, rmarkdown",
+        "RoxygenNote": "7.1.2",
+        "NeedsCompilation": "no",
+        "Packaged": "2022-09-29 06:10:20 UTC; BenoitThieurmel",
+        "Author": "Almende B.V. and Contributors [aut, cph] (vis.js library in\n    htmlwidgets/lib, https://visjs.org/,\n    https://github.com/visjs/vis-network),\n  Benoit Thieurmel [aut, cre] (R interface)",
+        "Repository": "RSPM",
+        "Date/Publication": "2022-09-29 16:20:02 UTC",
+        "Encoding": "UTF-8",
+        "Built": "R 4.4.1; ; 2024-12-01 19:06:32 UTC; unix"
       }
     },
     "withr": {
@@ -2511,7 +2566,7 @@
       "checksum": "d398c726a7e973d90e3597ae4d6be12c"
     },
     "parallelization on workbench.qmd": {
-      "checksum": "9193a92addafe9449e61627b1b78bff4"
+      "checksum": "9235b4a1a6a486fa82823b07535327c1"
     },
     "parallelization-on-workbench-images/download (1).png": {
       "checksum": "083bf3b8bf111fe506f2f0c5e7794b66"
