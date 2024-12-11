@@ -1,5 +1,5 @@
 ---
-title: "Git Backed Deployment to Posit COnnect"
+title: "Git Backed Deployment to Posit Connect"
 author: "Novica Nakov"
 format:
   html:

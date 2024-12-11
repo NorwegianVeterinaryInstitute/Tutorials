@@ -1,16 +1,19 @@
----
-title: "Preface"
-format:
-  html:
-    toc: true
-    toc-location: left
-    toc-depth: 2
-    number-sections: true
-    number-depth: 3
-editor: visual
-always_allow_html: yes
----
-
 # Preface {.unnumbered}
 
-This Quarto book contains all tutorials created by the Section of Epidemiology.
+This Quarto book contains all tutorials created by the Section of Epidemiology. It is deployed from the repository [R-tutorials](https://github.com/NorwegianVeterinaryInstitute/R-tutorials) through git backed deployment. You can add more tutorials to this book by cloning this repository and following these steps:
+
+::: callout-note
+The main branch of the repository has "soft protection" enabled. It is recommended to create a new branch to make any changes and then merging the changes with the main branch after testing to make sure everything renders correctly.
+:::
+
+1.  Create your tutorial as a QUARTO document in *html* format.
+
+2.  Add your `tutorial_name.qmd` file to this project folder.
+
+3.  Add your tutorial to the `_quarto.yml` file.
+
+4.  Run `rsconnect::writeManifest()` to update the manifest file.
+
+5.  Commit the changes and push to the repository.
+
+6.  Wait for the deployment to trigger automatically or manually trigger deployment by clicking on the **Update Now** button under **Info** on the [content page](https://connect.posit.vetinst.no/R-and-posit-tutorials/).
