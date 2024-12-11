@@ -6,11 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Trishang Udhwani">
 <meta name="author" content="Novica Nakov">
-<meta name="author" content="Håkon Kaspersen">
 
-<title>R and Posit tutorials</title>
+<title>6&nbsp; Getting Help with R – **R and Posit tutorials**</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -33,7 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./posit_infrastructure_at_VI.html" rel="next">
+<link href="./RStudio_tips_and_tricks.html" rel="next">
+<link href="./parallelization_on_workbench.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -83,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./connecting_RStudio_to_GitHub.html">R/RStudio tutorials</a></li><li class="breadcrumb-item"><a href="./getting_help_with_R.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Getting Help with R</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -113,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
@@ -158,7 +191,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./getting_help_with_R.html" class="sidebar-item-text sidebar-link">
+  <a href="./getting_help_with_R.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Getting Help with R</span></span></a>
   </div>
 </li>
@@ -195,24 +228,18 @@ ul.task-list li input[type="checkbox"] {
   </li>
     </ul>
     </div>
+    
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./connecting_RStudio_to_GitHub.html">R/RStudio tutorials</a></li><li class="breadcrumb-item"><a href="./getting_help_with_R.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Getting Help with R</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><strong>R and Posit tutorials</strong></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Getting Help with R</span></h1>
 </div>
 
 
@@ -220,11 +247,9 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     <div>
-    <div class="quarto-title-meta-heading">Authors</div>
+    <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Trishang Udhwani </p>
              <p>Novica Nakov </p>
-             <p>Håkon Kaspersen </p>
           </div>
   </div>
     
@@ -237,59 +262,22 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p>This Quarto book contains all tutorials created by the Section of Epidemiology. It is deployed from the repository <a href="https://github.com/NorwegianVeterinaryInstitute/R-tutorials">R-tutorials</a> through git backed deployment. You can add more tutorials to this book by cloning this repository and following these steps:</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The main branch of the repository has “soft protection” enabled. It is recommended to create a new branch to make any changes and then merging the changes with the main branch after testing to make sure everything renders correctly.</p>
-</div>
-</div>
-<ol type="1">
-<li><p>Create your tutorial as a QUARTO document in <em>html</em> format.</p></li>
-<li><p>Add your <code>tutorial_name.qmd</code> file to this project folder.</p></li>
-<li><p>Add your tutorial to the <code>_quarto.yml</code> file.</p></li>
-<li><p>Run <code>rsconnect::writeManifest()</code> to update the manifest file.</p></li>
-<li><p>Commit the changes and push to the repository.</p></li>
-<li><p>Wait for the deployment to trigger automatically or manually trigger deployment by clicking on the <strong>Update Now</strong> button under <strong>Info</strong> on the <a href="https://connect.posit.vetinst.no/R-and-posit-tutorials/">content page</a>.</p></li>
-</ol>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This QUARTO book only contains tutorials. There is a lot more documentation (such as Official Posit User Guides, Guides ad How-Tos) in <a href="https://github.com/NorwegianVeterinaryInstitute/posit-team/wiki/Documentation">documentation</a> under the posit-team repository.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>When you create a new session in Workbench, you are creating a RStudio Pro Session. Hence, all the tutorials under the section <strong>R/RStudio tutorials</strong> will be applicable both on Workbench as well as RStudio on your personal computers (unless stated otherwise in the individual chapters).</p>
-</div>
-</div>
+<p>There are many good resources online that describe a good way to aska question that relates to coding problems. For example, Stack Overflow has a page dedicated to that: <a href="https://stackoverflow.com/help/how-to-ask">How do I ask a good question?</a>. The Rstudio subreddit also has one: <a href="https://www.reddit.com/r/RStudio/comments/1aq2te5/how_to_ask_good_questions/">How to ask good questions</a>. Additionally, there is the <a href="https://r4ds.hadley.nz/workflow-help">Getting Help</a> section of the R for Data Science book.</p>
+<p>We encourage you to read those, and the related links on hose pages.</p>
+<p>In general, a question has to give the people who could answer it enough context so that they can reproduce your eviroment, your code, and your mental model. That would enable them to reproduce the issue as well. Often writing a question like this will help you solve the problem yourself. But in the event that you still need help, consider making a reproducible example.</p>
+<p>A reproducible example (reprex) is a minimal code example that captures the enviroment (i.e.&nbsp;libraries), the data, and the problematic code. Writing this type of a reprex will help you think about the problem more clearly and even may present a solution for you.</p>
+<p>To share this reprex with other people, you can use the dedicated package that is called <code>reprex</code> and you can install it using <code>install.packages('reprex')</code>. Caling <code>reprex::reprex()</code> in your envrioment then will produce the reproducible example in a sharable format that other people can run in their R console.</p>
+<p>For example if the code you are running is:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(y)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The sharable snippet would be ater running <code>reprex::reprex()</code>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(y)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 2.5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><sup>CreateCreated&nbsp;on&nbsp;2024-10-07&nbsp;with&nbsp;<a href="https://reprex.tidyverse.org">reprex&nbsp;v2.1.1</a></sup></p>
+<p>This can then be copy/pasted to a console to test it.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -714,10 +702,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./parallelization_on_workbench.html" class="pagination-link" aria-label="Parallelization on Workbench">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Parallelization on Workbench</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./posit_infrastructure_at_VI.html" class="pagination-link" aria-label="Posit Infrastructure at VI">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Posit Infrastructure at VI</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./RStudio_tips_and_tricks.html" class="pagination-link" aria-label="RStudio Tips and Tricks">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">RStudio Tips and Tricks</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -6,11 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Trishang Udhwani">
-<meta name="author" content="Novica Nakov">
 <meta name="author" content="Håkon Kaspersen">
 
-<title>R and Posit tutorials</title>
+<title>4&nbsp; Projects in RStudio – **R and Posit tutorials**</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -33,7 +65,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./posit_infrastructure_at_VI.html" rel="next">
+<link href="./parallelization_on_workbench.html" rel="next">
+<link href="./anatomy_of_a_R_package.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -83,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./connecting_RStudio_to_GitHub.html">R/RStudio tutorials</a></li><li class="breadcrumb-item"><a href="./projects_in_RStudio.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Projects in RStudio</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -113,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
@@ -146,7 +179,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./projects_in_RStudio.html" class="sidebar-item-text sidebar-link">
+  <a href="./projects_in_RStudio.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Projects in RStudio</span></span></a>
   </div>
 </li>
@@ -195,24 +228,34 @@ ul.task-list li input[type="checkbox"] {
   </li>
     </ul>
     </div>
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#agenda" id="toc-agenda" class="nav-link active" data-scroll-target="#agenda"><span class="header-section-number">4.1</span> Agenda</a></li>
+  <li><a href="#versions" id="toc-versions" class="nav-link" data-scroll-target="#versions"><span class="header-section-number">4.2</span> Versions</a></li>
+  <li><a href="#what-is-an-r-project" id="toc-what-is-an-r-project" class="nav-link" data-scroll-target="#what-is-an-r-project"><span class="header-section-number">4.3</span> What is an R project?</a></li>
+  <li><a href="#before-you-start" id="toc-before-you-start" class="nav-link" data-scroll-target="#before-you-start"><span class="header-section-number">4.4</span> Before you start</a></li>
+  <li><a href="#how-to-start-an-rstudio-project" id="toc-how-to-start-an-rstudio-project" class="nav-link" data-scroll-target="#how-to-start-an-rstudio-project"><span class="header-section-number">4.5</span> How to start an RStudio Project</a></li>
+  <li><a href="#how-to-structure-an-rstudio-project" id="toc-how-to-structure-an-rstudio-project" class="nav-link" data-scroll-target="#how-to-structure-an-rstudio-project"><span class="header-section-number">4.6</span> How to structure an RStudio project</a></li>
+  <li><a href="#recommended-packages" id="toc-recommended-packages" class="nav-link" data-scroll-target="#recommended-packages"><span class="header-section-number">4.7</span> Recommended packages</a></li>
+  <li><a href="#packages-to-avoid" id="toc-packages-to-avoid" class="nav-link" data-scroll-target="#packages-to-avoid"><span class="header-section-number">4.8</span> Packages to avoid</a></li>
+  <li><a href="#version-control" id="toc-version-control" class="nav-link" data-scroll-target="#version-control"><span class="header-section-number">4.9</span> Version control</a></li>
+  <li><a href="#take-home-messages" id="toc-take-home-messages" class="nav-link" data-scroll-target="#take-home-messages"><span class="header-section-number">4.10</span> Take-Home messages</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"><span class="header-section-number">4.11</span> Resources</a></li>
+  </ul>
+</nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./connecting_RStudio_to_GitHub.html">R/RStudio tutorials</a></li><li class="breadcrumb-item"><a href="./projects_in_RStudio.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Projects in RStudio</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><strong>R and Posit tutorials</strong></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Projects in RStudio</span></h1>
 </div>
 
 
@@ -220,10 +263,8 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     <div>
-    <div class="quarto-title-meta-heading">Authors</div>
+    <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Trishang Udhwani </p>
-             <p>Novica Nakov </p>
              <p>Håkon Kaspersen </p>
           </div>
   </div>
@@ -237,56 +278,114 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p>This Quarto book contains all tutorials created by the Section of Epidemiology. It is deployed from the repository <a href="https://github.com/NorwegianVeterinaryInstitute/R-tutorials">R-tutorials</a> through git backed deployment. You can add more tutorials to this book by cloning this repository and following these steps:</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The main branch of the repository has “soft protection” enabled. It is recommended to create a new branch to make any changes and then merging the changes with the main branch after testing to make sure everything renders correctly.</p>
-</div>
-</div>
+<section id="agenda" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="agenda"><span class="header-section-number">4.1</span> Agenda</h2>
+<ul>
+<li>Go through what an R Project is, and how to start an use one</li>
+<li>What is the folder structure?</li>
+<li>How to handle data inside an R project</li>
+<li>Briefly go through which packages that are recommended and how they are used</li>
+</ul>
+</section>
+<section id="versions" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="versions"><span class="header-section-number">4.2</span> Versions</h2>
+<p>This description of Projects in RStudio is based on the following versions: - R version 4.0.5 - RStudio version 1.4.1717</p>
+</section>
+<section id="what-is-an-r-project" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="what-is-an-r-project"><span class="header-section-number">4.3</span> What is an R project?</h2>
+<p>Have you ever wondered where your analysis “lives”, and how to handle overlapping analyses and data? If so, an R project is the thing for you! I want you to consider the following: - When you use R with RStudio, how do you open it? - Do you use only one instance of RStudio for everything? - Do you save your scripts, do they “live” somewhere? - Where do you store your data files and analysis files? - Do you use <code>setwd()</code> when starting RStudio?</p>
+<p>R Projects is a great way to handle the issues that may arise when using a workflow described above. Especially the use of <code>setwd()</code> makes it virtually impossible for anyone else than the original author of the script to make the file paths work. As Jenny Bryan<sup>1</sup> put it:</p>
+<blockquote class="blockquote">
+<p>If the first line of your R script is</p>
+<p><code>setwd("C:\Users\jenny\path\that\only\I\have")</code></p>
+<p>I will come into your office and SET YOUR COMPUTER ON FIRE 🔥. If the first line of your R script is</p>
+<p><code>rm(list = ls())</code></p>
+<p>I will come into your office and SET YOUR COMPUTER ON FIRE 🔥.</p>
+</blockquote>
+<p>An R project is simply a folder on your computer that holds all the files relevant to that particular piece of work. Any scripts run inside an R Project assumes that the working directory is the project folder location, using relative paths. This makes it possible to move the whole project folder anywhere, and it can still be run. Another advantage is that you have full control of package versions and data, assuming you use the relevant packages to handle this. Let’s assume you are analyzing data for a manuscript, where reproducibility is very important. By using an RStudio project, you can gather all necessary data in a <code>data</code> subfolder, and all necessary scripts in a <code>scripts</code> folder, using relative paths. When the paper is published, you can pack the whole project down and share it with anyone who wants to reproduce your analysis! In short, RStudio projects should be <em>reproducible</em>, <em>portable</em>, and <em>self-contained</em><sup>4</sup>.</p>
+</section>
+<section id="before-you-start" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="before-you-start"><span class="header-section-number">4.4</span> Before you start</h2>
+<p>Some considerations are necessary for optimal and safe use of RStudio projects. In general, <em>you should not be scared of cleaning out the RStudio global environment when working with Projects!</em> I cannot stress this enough. Your analysis should be reproducible to the point where you <em>always</em> start with nothing saved into memory. To be able to force yourself into this way of thinking, I highly recommend to change the following in the Global options in RStudio (“Tools” -&gt; “Global Options”): - Un-tick the “Restore .RData intro workspace at startup” - Set “Save workspace to .RData on exit” to “Never”</p>
+<p>By doing this, you force yourself to start with a clean slate every time you open the project again. Onward to a more reproducible way of thinking! - <strong>Note</strong>: This does not affect the saved files and scripts that live inside your project folder, only the data that RStudio has read into memory, i.e.&nbsp;what you see listed under the “Environment” pane in RStudio. - <strong>Double-Note</strong>: This changes the global setting, which will affect RStudio across all instances on your computer. If you wish to retain this function elsewhere, you may change these settings in “Project Options” instead after creating the project as described below.</p>
+</section>
+<section id="how-to-start-an-rstudio-project" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="how-to-start-an-rstudio-project"><span class="header-section-number">4.5</span> How to start an RStudio Project</h2>
+<p>To start a new RStudio project, open RStudio and click on “File” -&gt; “New Project”. A pop-up box will appear asking you if you want to generate a new directory for the project, if you want to use a pre-existing directory, or to checkout a project from version control history. Generally I would recommend to always start a new project on a clean slate, so pick the “New Directory” option. Next, the menu will ask what kind of project you would like to create. Here, the topmost option “New Project” will suffice for most instances, unless you are creating a package or a Shiny application. Next, you have to give the project a name, and give RStudio the path to where the Project will be stored. You may also choose to tick off “Create git repository” and “Use renv with this project”, but more on that later. - <strong>Note</strong>: Saving your projects in a dedicated R-Projects folder in a safe location on your computer is recommended! However, some issues may arise if you store it at a location with special symbols or spaces in the path, such as <code>OneDrive - Veterinærinstituttet/R/R_Projects</code>. Try to avoid saving the projects at such a location!</p>
+<p>After clicking “Create Project”, the project will be generated and you will be met by an empty project. When a new project is created, the following happens <sup>3</sup>:</p>
 <ol type="1">
-<li><p>Create your tutorial as a QUARTO document in <em>html</em> format.</p></li>
-<li><p>Add your <code>tutorial_name.qmd</code> file to this project folder.</p></li>
-<li><p>Add your tutorial to the <code>_quarto.yml</code> file.</p></li>
-<li><p>Run <code>rsconnect::writeManifest()</code> to update the manifest file.</p></li>
-<li><p>Commit the changes and push to the repository.</p></li>
-<li><p>Wait for the deployment to trigger automatically or manually trigger deployment by clicking on the <strong>Update Now</strong> button under <strong>Info</strong> on the <a href="https://connect.posit.vetinst.no/R-and-posit-tutorials/">content page</a>.</p></li>
+<li>Creates a project file (with an .Rproj extension) within the project directory. This file contains various project options and can also be used as a shortcut for opening the project directly from the filesystem.</li>
+<li>Creates a hidden directory (named .Rproj.user) where project-specific temporary files (e.g.&nbsp;auto-saved source documents, window-state, etc.) are stored. This directory is also automatically added to .Rbuildignore, .gitignore, etc. if required.</li>
+<li>Loads the project into RStudio and display its name in the Projects toolbar (which is located on the far right side of the main toolbar)</li>
 </ol>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This QUARTO book only contains tutorials. There is a lot more documentation (such as Official Posit User Guides, Guides ad How-Tos) in <a href="https://github.com/NorwegianVeterinaryInstitute/posit-team/wiki/Documentation">documentation</a> under the posit-team repository.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>When you create a new session in Workbench, you are creating a RStudio Pro Session. Hence, all the tutorials under the section <strong>R/RStudio tutorials</strong> will be applicable both on Workbench as well as RStudio on your personal computers (unless stated otherwise in the individual chapters).</p>
-</div>
-</div>
+<p>After creating a new project, you can create scripts and run analyses!</p>
+</section>
+<section id="how-to-structure-an-rstudio-project" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="how-to-structure-an-rstudio-project"><span class="header-section-number">4.6</span> How to structure an RStudio project</h2>
+<p>How you structure your project is an important for reproducibility and portability. Below is an example of a structure that is regularly used <sup>5</sup>. - <strong>Data</strong>: This is the directory where the necessary data files are stored. How you structure this directory is up to you. Data is usually <code>.csv</code>, <code>.xlsx</code>, or other formats. - <strong>VERY IMPORTANT ABOUT THE DATA DIRECTORY</strong>: The data stored here should be regarded as source data, which means that <em>under no circumstance should you be overwriting or editing these files!</em> This is to ensure reproducibility and safety of the project as a whole. - <strong>Scripts</strong>: This is the directory where the generated scripts are stored, usually with the extension <code>.R</code> or <code>.Rmd</code>. How you structure this is up to you. In most cases I have single scripts that are meant to do one thing (i.e.&nbsp;<code>generate_figures.R</code>,<code>calculate_occurrence.R</code>). Sensible file names are recommended, so that other people may understand what the script does! Also, remember to always use relative paths (i.e.&nbsp;do not reference to paths outside the project folder location), this ensures portability. For more information see the description of the “here” package below. - <strong>Functions</strong>: This is the directory where self-made functions are stored and called from. This directory may not be necessary for all projects, especially if you only use functions that are defined in packages only. - <strong>Output</strong>: The output folder for generated data. This is where the results from the scripts is stored, be it figures, tables, or other file types.</p>
+</section>
+<section id="recommended-packages" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="recommended-packages"><span class="header-section-number">4.7</span> Recommended packages</h2>
+<p>By far, the most important packages for a reproducible and portable project is <a href="https://rstudio.github.io/renv/articles/renv.html">renv</a> and <a href="https://here.r-lib.org/">here</a>. For detailed information about these packages, click the above links.</p>
+<ul>
+<li><strong>renv</strong> The renv package brings dependency management to RStudio projects. This package ensures that all package versions are bundled inside the project itself - making sure that the same versions are used even when updating a package in your main R library. It generates a project library of packages inside the project, and new packages that are installed are only installed there. The workflow with this package is as follows:</li>
+</ul>
+<ol type="1">
+<li>Call <a href="https://rstudio.github.io/renv/reference/init.html">renv::init()</a> to initialize a new project-local environment with a private R library,</li>
+<li>Work in the project as normal, installing and removing new R packages as they are needed in the project,</li>
+<li>Call <a href="https://rstudio.github.io/renv/reference/snapshot.html">renv::snapshot()</a> to save the state of the project library to the lockfile (called <code>renv.lock</code>)</li>
+<li>Continue working on your project, installing and updating R packages as needed.</li>
+<li>Call <a href="https://rstudio.github.io/renv/reference/snapshot.html">renv::snapshot()</a> again to save the state of your project library if your attempts to update R packages were successful, or call <a href="https://rstudio.github.io/renv/reference/restore.html">renv::restore()</a> to revert to the previous state as encoded in the lockfile if your attempts to update packages introduced some new problems.</li>
+</ol>
+<p>To install:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"renv"</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># to initialize</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>renv<span class="sc">::</span><span class="fu">init</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><strong>here</strong> The here package enables easy file referencing in project-oriented workflows. It is a package that contains functions that automatically build the path to the file you want to interact with. Here makes it easy to generate relative paths, which makes the project portable. When you want to read a data file, the following is usually written:</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_delim</span>(<span class="st">"path/to/datafile.txt"</span>, <span class="at">delim =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>with the here package you would write:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">read_delim</span>(<span class="fu">here</span>(<span class="st">"path"</span>,<span class="st">"to"</span>,<span class="st">"datafile.txt"</span>), <span class="at">delim =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The <code>here()</code> function finds your projects files relative to the project’s root location. Also, since there is no need to supply slashes in the path, no issues will arise with the windows standard of backslashes (<code>\</code>), while R prefers forward slashes (<code>/</code>).</p>
+<p>To install:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"here"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># To initialize at currect location</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="packages-to-avoid" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="packages-to-avoid"><span class="header-section-number">4.8</span> Packages to avoid</h2>
+<p>So far, there is only one package that should be avoided when working with Projects in RStudio, the <code>pacman</code> package. Especially, the use of <code>pacman::p_load</code> is to be avoided. This is mainly because the function actually installs with <code>install.packages()</code> and loads the library with <code>library()</code> in one go. If you use it, it will cause issues with the <code>renv</code> management of package versions, because each time you run <code>p_load</code> it will install the newest version of the package in question, breaking the control of package versions.</p>
+</section>
+<section id="version-control" class="level2" data-number="4.9">
+<h2 data-number="4.9" class="anchored" data-anchor-id="version-control"><span class="header-section-number">4.9</span> Version control</h2>
+<p>Version control (e.g.&nbsp;<em>git</em>) is a way to ensure that your files are safe, and to track changes throughout the project’s development. RStudio has built-in git functionality, but this may not be optimal for all users. I like to use git outside of RStudio (e.g.&nbsp;git bash), or use the built-in terminal that was implemented in the newer versions of RStudio. However you choose to proceed, using git is good practice, and it makes sure that your files are safe from deletion or accidental changes. More information about git version control and RStudio can be found <a href="https://jennybc.github.io/2014-05-12-ubc/ubc-r/session03_git.html">here</a>. The use of git also allows for upload to f.ex. <a href="https://github.com/">GitHub</a>, where the code can be published.</p>
+</section>
+<section id="take-home-messages" class="level2" data-number="4.10">
+<h2 data-number="4.10" class="anchored" data-anchor-id="take-home-messages"><span class="header-section-number">4.10</span> Take-Home messages</h2>
+<ul>
+<li>Create an RStudio project for each data analysis project</li>
+<li>Keep all data files and scripts used in the analysis inside the project, under version control</li>
+<li>Never overwrite or change the source data files. Save your output in a separate subfolder!</li>
+<li>Only ever use relative paths, not absolute paths</li>
+<li>Use the <code>here</code> and <code>renv</code> packages to help you out!</li>
+<li>Avoid using <code>pacman</code></li>
+</ul>
+</section>
+<section id="resources" class="level2" data-number="4.11">
+<h2 data-number="4.11" class="anchored" data-anchor-id="resources"><span class="header-section-number">4.11</span> Resources</h2>
+<ol type="1">
+<li><a href="https://www.tidyverse.org/blog/2017/12/workflow-vs-script/">Jenny Bryan: “Project-oriented workflow”</a></li>
+<li><a href="https://r4ds.had.co.nz/workflow-projects.html">R for data science: “Workflow: projects”</a></li>
+<li><a href="https://support.rstudio.com/hc/en-us/articles/200526207-Using-Projects">RStudio support: “Using RStudio Projects”</a></li>
+<li><a href="https://www.r-bloggers.com/2019/01/%F0%9F%93%81-project-oriented-workflow/">R-bloggers: “Project-oriented workflow”</a></li>
+<li><a href="https://www.r-bloggers.com/2020/01/rstudio-projects-and-working-directories-a-beginners-guide/">R-bloggers: “RStudio Projects and Working Directories: A Beginner’s Guide”</a></li>
+<li><a href="https://jennybc.github.io/2014-05-12-ubc/ubc-r/session03_git.html">Jenny Bryan: “Using git with RStudio”</a></li>
+<li><a href="https://here.r-lib.org/">The “here” package</a></li>
+<li><a href="https://rstudio.github.io/renv/articles/renv.html">The “renv” package</a></li>
+</ol>
 
 
 </section>
@@ -714,10 +813,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./anatomy_of_a_R_package.html" class="pagination-link" aria-label="Anatomy of a R package">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Anatomy of a R package</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./posit_infrastructure_at_VI.html" class="pagination-link" aria-label="Posit Infrastructure at VI">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Posit Infrastructure at VI</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./parallelization_on_workbench.html" class="pagination-link" aria-label="Parallelization on Workbench">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Parallelization on Workbench</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

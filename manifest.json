@@ -1692,14 +1692,29 @@
     }
   },
   "files": {
+    "_book/anatomy_of_a_R_package.html": {
+      "checksum": "36aa04bcb2a887669afa4b76bd613c45"
+    },
+    "_book/connecting_RStudio_to_GitHub.html": {
+      "checksum": "23c33f826a9cc4b97061f124e4c100af"
+    },
     "_book/Creating pins on Connect.html": {
       "checksum": "eabf52187bd7f2c9be6258ba2729909b"
+    },
+    "_book/Creating_pins_on_Connect.html": {
+      "checksum": "ad6356a21421cb74d7a3b6b82d561250"
+    },
+    "_book/getting_help_with_R.html": {
+      "checksum": "2c7b596d7cab3d5624f1628b0fe667fd"
     },
     "_book/Git backed deployment to posit connect.html": {
       "checksum": "31efe7514103ae06d0d5f7f050730021"
     },
+    "_book/Git_backed_deployment_to_posit_connect.html": {
+      "checksum": "46a8f9b210972632c594ec5a13137469"
+    },
     "_book/index.html": {
-      "checksum": "4fa9e5970ff3e663c7f6d73396bbb1ee"
+      "checksum": "0e1a4a668d4692bebf3cf9453a370c91"
     },
     "_book/intro.html": {
       "checksum": "391dcf4408e433a35b67336d2258e24f"
@@ -1709,6 +1724,9 @@
     },
     "_book/parallelization on workbench.html": {
       "checksum": "8feb5c179940af943f0fd34bd881cd05"
+    },
+    "_book/parallelization_on_workbench.html": {
+      "checksum": "7650f78c811b75baf6b819f29137944a"
     },
     "_book/parallelization-on-workbench-images/download (1).png": {
       "checksum": "083bf3b8bf111fe506f2f0c5e7794b66"
@@ -1740,8 +1758,17 @@
     "_book/posit infrastructure at VI.html": {
       "checksum": "82a0c45d49e6ac1ea3d4618c792fa1b1"
     },
+    "_book/posit_infrastructure_at_VI.html": {
+      "checksum": "f72e6579325551bff38d8cb7c5064831"
+    },
+    "_book/projects_in_RStudio.html": {
+      "checksum": "615e00182a1750de4e5dabce3673166b"
+    },
+    "_book/RStudio_tips_and_tricks.html": {
+      "checksum": "eb9ae16b34dafd935a6b2a4ed1c75f8c"
+    },
     "_book/search.json": {
-      "checksum": "55258faba254bd936b7ac75e571d3831"
+      "checksum": "a629f18f9b4986ea51d1f2b171e37991"
     },
     "_book/site_libs/bootstrap/bootstrap-icons.css": {
       "checksum": "2318f137d201fbf51601fa0faba6bef7"
@@ -1854,8 +1881,11 @@
     "_book/site_libs/visNetwork-binding-2.1.2/visNetwork.js": {
       "checksum": "b5cc9f7fb82af1597495c6d49d8b761c"
     },
+    "_book/Tips_and_tricks/rstudio_tips_pane_layout.webp": {
+      "checksum": "41ec81061c2ff696608253a2a6b9f7c5"
+    },
     "_quarto.yml": {
-      "checksum": "9877c7a105cb09798335521b6d1740ca"
+      "checksum": "1dc60275e6e6d8dbcff132f7511f9997"
     },
     "_targets.R": {
       "checksum": "91ecabb2ed0bf0f0ebce76f1aaadce72"
@@ -1864,7 +1894,7 @@
       "checksum": "c7bdb4d0695efed2b6196cde83efc67b"
     },
     "_targets/meta/process": {
-      "checksum": "ee66aa7c159a6871b51a7b0bf057c553"
+      "checksum": "777285de797027c2a207d0aec210d031"
     },
     "_targets/meta/progress": {
       "checksum": "66445856d17e143dd9e01729ca7b2114"
@@ -1877,6 +1907,9 @@
     },
     "_targets/objects/results": {
       "checksum": "b90374592bc41a3e0a9359a08b691223"
+    },
+    "anatomy_of_a_R_package.qmd": {
+      "checksum": "2d12e2635f735a309f73a8999951ea6b"
     },
     "checkpoints_parallel/result_1.rds": {
       "checksum": "662c59fd793eb243a8e8fd08e30ef479"
@@ -1937,6 +1970,9 @@
     },
     "checkpoints_targets/result_9.rds": {
       "checksum": "701f305d5e832eec8015eda047c4efaa"
+    },
+    "connecting_RStudio_to_GitHub.qmd": {
+      "checksum": "3dfd4f292902fb6578ebdd9bddb45dc0"
     },
     "cover.png": {
       "checksum": "308012df3fa962ae61c7114806331a72"
@@ -2550,11 +2586,14 @@
     "future_apply/partial_result_99.rds": {
       "checksum": "627a6219c05005615b43adc679e7ef38"
     },
+    "getting_help_with_R.qmd": {
+      "checksum": "613a6a8b9325e75b0e28698accc4bb0c"
+    },
     "Git_backed_deployment_to_posit_connect.qmd": {
-      "checksum": "394c6e5968979ac8018a3234d7e5ac6c"
+      "checksum": "b674e22e69ab7209c54ae178ce4de896"
     },
     "index.qmd": {
-      "checksum": "9d02d3462507918b4f61eae195d725d2"
+      "checksum": "611a1350d01055fe4b4a3929d830e97b"
     },
     "intro.qmd": {
       "checksum": "e514ad799b2b10ced9d02b36ca26bbd2"
@@ -2566,7 +2605,7 @@
       "checksum": "d398c726a7e973d90e3597ae4d6be12c"
     },
     "parallelization_on_workbench.qmd": {
-      "checksum": "9235b4a1a6a486fa82823b07535327c1"
+      "checksum": "e9435ebabb5b2cea27ffca7232daba9d"
     },
     "parallelization-on-workbench-images/download (1).png": {
       "checksum": "083bf3b8bf111fe506f2f0c5e7794b66"
@@ -2598,14 +2637,23 @@
     "posit_infrastructure_at_VI.qmd": {
       "checksum": "f6d4b72bdb2825da7bb0ee2773fe432e"
     },
+    "projects_in_RStudio.qmd": {
+      "checksum": "031c2c24254c8df58950f4e7772d36a5"
+    },
     "references.bib": {
       "checksum": "82c1cc91cf544d383b6a5ad1b65a6feb"
     },
     "references.qmd": {
       "checksum": "20d3273ad995f344fa1d144ca5d3ecf1"
     },
+    "RStudio_tips_and_tricks.qmd": {
+      "checksum": "645602e555bf541380e9bffea453667d"
+    },
     "summary.qmd": {
       "checksum": "6b21a250588dde6f79d83bc9a62d55df"
+    },
+    "Tips_and_tricks/rstudio_tips_pane_layout.webp": {
+      "checksum": "41ec81061c2ff696608253a2a6b9f7c5"
     }
   },
   "users": null

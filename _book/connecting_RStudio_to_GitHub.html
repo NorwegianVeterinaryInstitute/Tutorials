@@ -6,11 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Trishang Udhwani">
 <meta name="author" content="Novica Nakov">
-<meta name="author" content="Håkon Kaspersen">
 
-<title>R and Posit tutorials</title>
+<title>2&nbsp; Connecting RStudio to GitHub – **R and Posit tutorials**</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./posit_infrastructure_at_VI.html" rel="next">
+<link href="./anatomy_of_a_R_package.html" rel="next">
+<link href="./posit_infrastructure_at_VI.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -83,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./connecting_RStudio_to_GitHub.html">R/RStudio tutorials</a></li><li class="breadcrumb-item"><a href="./connecting_RStudio_to_GitHub.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Connecting RStudio to GitHub</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -113,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
@@ -134,7 +133,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./connecting_RStudio_to_GitHub.html" class="sidebar-item-text sidebar-link">
+  <a href="./connecting_RStudio_to_GitHub.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Connecting RStudio to GitHub</span></span></a>
   </div>
 </li>
@@ -195,24 +194,25 @@ ul.task-list li input[type="checkbox"] {
   </li>
     </ul>
     </div>
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">2.1</span> Overview</a></li>
+  <li><a href="#step-4---set-up-github-personal-access-token" id="toc-step-4---set-up-github-personal-access-token" class="nav-link" data-scroll-target="#step-4---set-up-github-personal-access-token"><span class="header-section-number">2.2</span> Step 4 - Set up GitHub Personal Access Token</a></li>
+  </ul>
+</nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./connecting_RStudio_to_GitHub.html">R/RStudio tutorials</a></li><li class="breadcrumb-item"><a href="./connecting_RStudio_to_GitHub.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Connecting RStudio to GitHub</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><strong>R and Posit tutorials</strong></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Connecting RStudio to GitHub</span></h1>
 </div>
 
 
@@ -220,11 +220,9 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     <div>
-    <div class="quarto-title-meta-heading">Authors</div>
+    <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Trishang Udhwani </p>
              <p>Novica Nakov </p>
-             <p>Håkon Kaspersen </p>
           </div>
   </div>
     
@@ -237,56 +235,36 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p>This Quarto book contains all tutorials created by the Section of Epidemiology. It is deployed from the repository <a href="https://github.com/NorwegianVeterinaryInstitute/R-tutorials">R-tutorials</a> through git backed deployment. You can add more tutorials to this book by cloning this repository and following these steps:</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The main branch of the repository has “soft protection” enabled. It is recommended to create a new branch to make any changes and then merging the changes with the main branch after testing to make sure everything renders correctly.</p>
-</div>
-</div>
-<ol type="1">
-<li><p>Create your tutorial as a QUARTO document in <em>html</em> format.</p></li>
-<li><p>Add your <code>tutorial_name.qmd</code> file to this project folder.</p></li>
-<li><p>Add your tutorial to the <code>_quarto.yml</code> file.</p></li>
-<li><p>Run <code>rsconnect::writeManifest()</code> to update the manifest file.</p></li>
-<li><p>Commit the changes and push to the repository.</p></li>
-<li><p>Wait for the deployment to trigger automatically or manually trigger deployment by clicking on the <strong>Update Now</strong> button under <strong>Info</strong> on the <a href="https://connect.posit.vetinst.no/R-and-posit-tutorials/">content page</a>.</p></li>
-</ol>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This QUARTO book only contains tutorials. There is a lot more documentation (such as Official Posit User Guides, Guides ad How-Tos) in <a href="https://github.com/NorwegianVeterinaryInstitute/posit-team/wiki/Documentation">documentation</a> under the posit-team repository.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>When you create a new session in Workbench, you are creating a RStudio Pro Session. Hence, all the tutorials under the section <strong>R/RStudio tutorials</strong> will be applicable both on Workbench as well as RStudio on your personal computers (unless stated otherwise in the individual chapters).</p>
-</div>
-</div>
+<section id="overview" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">2.1</span> Overview</h2>
+<p>If you are an R user working with some of the code that has been uploaded to the NVI GitHub organization, you will need to set up a way to interact with the service. Below is a recommended way to do so.</p>
+<p>The assumptions are that you already have installed R and RStudio from the internal NVI software repository. You will additionally need <a href="https://cran.r-project.org/bin/windows/Rtools/rtools43/rtools.html">Rtools</a> that you can install on your own. Additionally, this tutorial presumes you already have a GitHub account and you are a member of the NVI organization on GitHub.</p>
+<section id="step-1---download-and-install-git" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="step-1---download-and-install-git"><span class="header-section-number">2.1.1</span> Step 1 - Download and install git</h3>
+<p>Download git from the <a href="https://git-scm.com/download/win">official website</a>. Install it the usual way. There may be things you would want to configure in the installation, like for example the editor used by git. This is up to your preference.</p>
+</section>
+<section id="step-2---generate-ssh-key-and-add-it-to-github" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="step-2---generate-ssh-key-and-add-it-to-github"><span class="header-section-number">2.1.2</span> Step 2 - Generate SSH key and add it to GitHub</h3>
+<p>Run <code>Git Bash</code> from the Windows start menu. On workbench you can switch to <strong>Terminal</strong>. Once the terminal opens type <code>ssh-keygen.exe</code> and <code>enter</code>. This will run the program that is used for generating <code>ssh</code> keys. Follow the instructions on the screen and select a good passphrase for your key.</p>
+<p>When this is completed, type <code>cat .ssh/id_rsa.pub</code> in the terminal. This is assuming you didn’t give the key a different name during the key generation. This command will print out the public key on the terminal. Copy it and move to the browser.</p>
+<p>Open <a href="https://github.com/settings/keys" class="uri">https://github.com/settings/keys</a> and then click on <code>New SSH key</code>. Add a title for your key you want to use to recognize the key, and paste the copied public key in the <code>Key</code> field. Click <code>Add SSH key</code> to complete this step.</p>
+</section>
+<section id="step-3---setup-ssh-and-git-in-rstudio" class="level3" data-number="2.1.3">
+<h3 data-number="2.1.3" class="anchored" data-anchor-id="step-3---setup-ssh-and-git-in-rstudio"><span class="header-section-number">2.1.3</span> Step 3 - Setup SSH and git in RStudio</h3>
+<p>Open a fresh session of RStudio. See <a href="rstudio_tips">here</a> for some tips on configuring RStudio.</p>
+<p>For windows machines, in the menu under “Tools” &gt; “Global Options” &gt; “Terminal” set the <code>Shell</code> to <code>Git Bash</code>.</p>
+<p>In the menu under “Tools” &gt; “Global Options” &gt; “Git/SVN” verify that the path to the private key is showing up.</p>
+</section>
+</section>
+<section id="step-4---set-up-github-personal-access-token" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="step-4---set-up-github-personal-access-token"><span class="header-section-number">2.2</span> Step 4 - Set up GitHub Personal Access Token</h2>
+<p>A Personal Access Token is not something you necessarily need. It is required for installing private R packages such as the <code>NVIConfig</code> package. You may or may not need this.</p>
+<p>First go to <a href="https://github.com/settings/tokens" class="uri">https://github.com/settings/tokens</a> and generate a new classic token by clicking on the “Generate new token” dropdown and selecting the classic token. The next page will ask for a lot of options for the token permissions, you will need probably just the <code>repo</code> options on the top of the page, but feel free to select whatever you think is needed for your work. In the <code>Note</code> field add something that will describe the token and click Generate token.</p>
+<p>The token will be shown in the browser. Keep that open for the time being.</p>
+<p>In RStudio install <code>devtools</code> and <code>usethis</code> packages: <code>install.packages(“devtools”)</code>; <code>usethis: install.packages(“usethis”)</code>.</p>
+<p>In the R terminal in RStudio type and run <code>usethis::edit_r_environ()</code> – this will open a blank <code>.Renviron</code> file (see <a href="https://support.posit.co/hc/en-us/articles/360047157094-Managing-R-with-Rprofile-Renviron-Rprofile-site-Renviron-site-rsession-conf-and-repos-conf">here</a> if you want to learn more about it).</p>
+<p>In the empty file write GITHUB_PAT=“” and paste the token from the browser between the quotation marks. Save the <code>.Renviron</code> file. Close RStudio or restart the R session. Close the browser tab that has the token.</p>
+<p>All done!</p>
 
 
 </section>
@@ -714,10 +692,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./posit_infrastructure_at_VI.html" class="pagination-link" aria-label="Posit Infrastructure at VI">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Posit Infrastructure at VI</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./posit_infrastructure_at_VI.html" class="pagination-link" aria-label="Posit Infrastructure at VI">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Posit Infrastructure at VI</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./anatomy_of_a_R_package.html" class="pagination-link" aria-label="Anatomy of a R package">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Anatomy of a R package</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

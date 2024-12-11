@@ -16,5 +16,32 @@
   },
   "Creating pins on Connect.qmd": {
     "Creating pins on Connect.html": "16d5808f"
+  },
+  "getting_help_with_R.qmd": {
+    "getting_help_with_R.html": "541de467"
+  },
+  "posit_infrastructure_at_VI.qmd": {
+    "posit_infrastructure_at_VI.html": "b17c0b68"
+  },
+  "connecting_RStudio_to_GitHub.qmd": {
+    "connecting_RStudio_to_GitHub.html": "877e86b4"
+  },
+  "anatomy_of_a_R_package.qmd": {
+    "anatomy_of_a_R_package.html": "f6db5231"
+  },
+  "projects_in_RStudio.qmd": {
+    "projects_in_RStudio.html": "2953131a"
+  },
+  "parallelization_on_workbench.qmd": {
+    "parallelization_on_workbench.html": "fb4988ac"
+  },
+  "RStudio_tips_and_tricks.qmd": {
+    "RStudio_tips_and_tricks.html": "4a53d64d"
+  },
+  "Creating_pins_on_Connect.qmd": {
+    "Creating_pins_on_Connect.html": "585e326f"
+  },
+  "Git_backed_deployment_to_posit_connect.qmd": {
+    "Git_backed_deployment_to_posit_connect.html": "17d47989"
   }
 }
