@@ -1,0 +1,224 @@
+[
+  {
+    "objectID": "parallelization on workbench.html",
+    "href": "parallelization on workbench.html",
+    "title": "2  Parallelization on Workbench",
+    "section": "",
+    "text": "2.1 What is Parallelization?\nA modern CPU (Central Processing Unit) is at the heart of every computer. While traditional computers had a single CPU, modern computers can have multiple processors, which in turn can each contain multiple cores. These processors and cores are available to perform computations.\nA computer with one processor may still have 4 cores (quad-core), allowing 4 computations to be executed at the same time.\nA typical modern computer has multiple cores, ranging from one or two in laptops to thousands in high performance compute clusters. Here is an example of four quad-core processors for a total of 16 cores in this machine.\nYou can think of this as allowing 16 computations to happen at the same time. Theoretically, your computation would take 1/16 of the time. Historically, R has only utilized one processor, which makes it single-threaded.",
+    "crumbs": [
+      "R tutorials",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Parallelization on Workbench</span>"
+    ]
+  },
+  {
+    "objectID": "parallelization on workbench.html#the-lapply-function",
+    "href": "parallelization on workbench.html#the-lapply-function",
+    "title": "2  Parallelization on Workbench",
+    "section": "2.2 The lapply() function",
+    "text": "2.2 The lapply() function\nThe lapply() function has two arguments:\n\nA list, or an object that can be coerced to a list.\nA function to be applied to each element of the list\n\nThe lapply() function works much like a loop. It cycles through each element of the list and applies the supplied function to that element. While lapply() is applying your function to a list element, the other elements of the list are just…sitting around in memory. In the description of lapply(), there’s no mention of the different elements of the list communicating with each other, and the function being applied to a given list element does not need to know about other list elements.\nJust about any operation that is handled by the lapply() function can be parallelized. The idea is that a list object can be split across multiple cores of a processor and then the function can be applied to each subset of the list object on each of the cores. Conceptually, the steps in the parallel procedure are\n\nSplit list X across multiple cores\nCopy the supplied function (and associated environment) to each of the cores\nApply the supplied function to each subset of the list X on each of the cores in parallel\nAssemble the results of all the function evaluations into a single list and return\n\nThe differences between the many packages/functions in R essentially come down to how each of these steps are implemented.",
+    "crumbs": [
+      "R tutorials",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Parallelization on Workbench</span>"
+    ]
+  },
+  {
+    "objectID": "parallelization on workbench.html#the-parallel-package",
+    "href": "parallelization on workbench.html#the-parallel-package",
+    "title": "2  Parallelization on Workbench",
+    "section": "2.3 The Parallel Package",
+    "text": "2.3 The Parallel Package\nThe parallel package which comes with your R installation.\nThe mclapply() function essentially parallelizes calls to lapply(). The first two arguments to mclapply() are exactly the same as they are for lapply(). However, mclapply() has further arguments (that must be named), the most important of which is the mc.cores argument which you can use to specify the number of processors/cores you want to split the computation across. For example, if your machine has 4 cores on it, you might specify mc.cores = 4 to break your parallelize your operation across 4 cores (although this may not be the best idea if you are running other operations in the background besides R).\nBriefly, your R session is the main process and when you call a function like mclapply(), you fork a series of sub-processes that operate independently from the main process (although they share a few low-level features). These sub-processes then execute your function on their subsets of the data, presumably on separate cores of your CPU. Once the computation is complete, each sub-process returns its results and then the sub-process is killed. The parallel package manages the logistics of forking the sub-processes and handling them once they’ve finished.\n\n\n\n\n\n\nCaution\n\n\n\nBecause of the use of the fork mechanism, the mc* functions are generally not available to users of the Windows operating system.\n\n\nThe first thing you might want to check with the parallel package is if your computer in fact has multiple cores that you can take advantage of.\n\nlibrary(parallel)\nparallel::detectCores()\n\n[1] 64\n\n\n\n\n\n\n\n\nWarning\n\n\n\nIn general, the information from detectCores() should be used cautiously as obtaining this kind of information from Unix-like operating systems is not always reliable. If you are going down this road, it’s best if you get to know your hardware better in order to have an understanding of how many CPUs/cores are available to you.\n\n\n\n2.3.1 mclapply()\n\nset.seed(1)\n# Create a dataframe\ndf &lt;- data.frame(replicate(1000, rnorm(10000)))\n\n# Using lapply() to find mean of each row\ns &lt;- system.time({\n  list_means_1 &lt;- lapply(1:nrow(df), function(i) mean(as.numeric(df[i, ])))\n})\nprint(s)\n\n   user  system elapsed \n 45.877   0.000  45.880 \n\n\nNote that in the system.time() output in first case, the user time and the elapsed time are roughly the same, which is what we would expect because there was no parallelization.\n\nlibrary(parallel)\n\n# Using mclapply() to find mean of each row\nnumberOfCores &lt;- 4\ns &lt;- system.time({\n  list_means_2 &lt;- parallel::mclapply(1:nrow(df), function(i) mean(as.numeric(df[i, ])), mc.cores = numberOfCores)\n})\nprint(s)\n\n   user  system elapsed \n 34.587   0.190  11.949 \n\n\nYou’ll notice that the the elapsed time is now less than the user time. However, in general, the elapsed time will not be 1/4th of the user time, which is what we might expect with 4 cores if there were a perfect performance gain from parallelization.\nR keeps track of how much time is spent in the main process and how much is spent in any child processes.\n\ns[\"user.self\"]  # Main process\n\nuser.self \n    0.005 \n\ns[\"user.child\"] # Child processes\n\nuser.child \n    34.582 \n\n\n\n\n\n\n\n\nImportant\n\n\n\nOne advantage of serial computations is that it allows you to better keep a handle on how much memory your R job is using. When executing parallel jobs via mclapply() it’s important to pre-calculate how much memory all of the processes will require and make sure this is less than the total amount of memory on your computer.\n\n\nThe mclapply() function is useful for iterating over a single list or list-like object. If you have to iterate over multiple objects together, you can use mcmapply(), which is the the multi-core equivalent of the mapply() function.\n\n\n2.3.2 Error Handling\nThis error handling behavior is a significant difference from the usual call to lapply(). With lapply(), if the supplied function fails on one component of the list, the entire function call to lapply() fails and you only get an error as a result.\nWith mclapply(), when a sub-process fails, the return value for that sub-process will be an R object that inherits from the class \"try-error\", which is something you can test with the inherits() function. Conceptually, each child process is executed with the try() function wrapped around it. The code below deliberately causes an error in the 3 element of the list.\n\nr &lt;- parallel::mclapply(1:5, function(i) {\n        if(i == 3L)\n                stop(\"error in this process!\")\n        else\n                return(\"success!\")\n}, mc.cores = 5)\n\nWarning in parallel::mclapply(1:5, function(i) {: scheduled core 3 encountered\nerror in user code, all values of the job will be affected\n\n\nHere we see there was a warning but no error in the running of the above code. We can check the return value.\n\nstr(r)\n\nList of 5\n $ : chr \"success!\"\n $ : chr \"success!\"\n $ : 'try-error' chr \"Error in FUN(X[[i]], ...) : error in this process!\\n\"\n  ..- attr(*, \"condition\")=List of 2\n  .. ..$ message: chr \"error in this process!\"\n  .. ..$ call   : language FUN(X[[i]], ...)\n  .. ..- attr(*, \"class\")= chr [1:3] \"simpleError\" \"error\" \"condition\"\n $ : chr \"success!\"\n $ : chr \"success!\"\n\n\nNote that the 3rd list element in r is different.\n\nclass(r[[3]])\n\n[1] \"try-error\"\n\ninherits(r[[3]], \"try-error\")\n\n[1] TRUE\n\n\nWhen running code where there may be errors in some of the sub-processes, it’s useful to check afterwards to see if there are any errors in the output received.\n\nbad &lt;- sapply(r, inherits, what = \"try-error\")\nbad\n\n[1] FALSE FALSE  TRUE FALSE FALSE\n\n\n\n\n2.3.3 Generating Random Numbers\n\nset.seed(1)\nr &lt;- parallel::mclapply(1:5, function(i) {\n        rnorm(3)\n}, mc.cores = 4)\n\nstr(r)\n\nList of 5\n $ : num [1:3] -0.0189 1.608 1.6253\n $ : num [1:3] -0.758 -0.545 -1.258\n $ : num [1:3] -0.897 -0.585 1.059\n $ : num [1:3] 2.53 -1.02 -1.45\n $ : num [1:3] -0.262 0.747 0.825\n\n\nHowever, the above expression is not reproducible because the next time you run it, you will get a different set of random numbers. You cannot simply call set.seed() before running the expression as you might in a non-parallel version of the code.\nThe parallel package provides a way to reproducibly generate random numbers in a parallel environment via the “L’Ecuyer-CMRG” random number generator. Note that this is not the default random number generator so you will have to set it explicitly.\n\nRNGkind(\"L'Ecuyer-CMRG\")\nset.seed(1)\nr &lt;- parallel::mclapply(1:5, function(i) {\n        rnorm(3)\n}, mc.cores = 4)\n\nstr(r)\n\nList of 5\n $ : num [1:3] -0.485 -0.626 -0.873\n $ : num [1:3] -1.86 -1.825 -0.995\n $ : num [1:3] 1.177 1.472 -0.988\n $ : num [1:3] 0.984 1.291 0.459\n $ : num [1:3] 1.43 -1.137 0.844\n\n\nmclapply() documentation can be found here: mcapply()\n\n\n2.3.4 The ParLapply() function\nUsing the forking mechanism on your computer is one way to execute parallel computation but it’s not the only way that the parallel package offers. Another way to build a “cluster” using the multiple cores on your computer is via sockets. A is simply a mechanism with which multiple processes or applications running on your computer (or different computers, for that matter) can communicate with each other. With parallel computation, data and results need to be passed back and forth between the parent and child processes and sockets can be used for that purpose.\n\nclu &lt;- parallel::makeCluster(4)\n\nThe clu object is an abstraction of the entire cluster and is what we’ll use to indicate to the various cluster functions that we want to do parallel computation.\nTo do an lapply() operation over a socket cluster we can use the parLapply() function.\n\nlist_means_3 &lt;- parallel::parLapply(clu, 1:nrow(df), function(i) mean(as.numeric(df[i, ]))) \n\nError in checkForRemoteErrors(val): 4 nodes produced errors; first error: object of type 'closure' is not subsettable\n\n\nUnfortunately, that there’s an error in running this code. The reason is that while we have loaded the df data into our R session, the data is not available to the independent child processes that have been spawned by the makeCluster() function. The socket approach launches a new version of R on each core whereas the forking approach copies the entire current version of R and moves it to a new core.\nThe data, and any other information that the child process will need to execute your code, needs to be exported to the child process from the parent process via the clusterExport() function. The need to export data is a key difference in behavior between the “multicore” approach and the “socket” approach.\n\nparallel::clusterExport(clu, \"df\")\n\nThe second argument to clusterExport() is a character vector, and so you can export an arbitrary number of R objects to the child processes. You should be judicious in choosing what you export simply because each R object will be replicated in each of the child processes, and hence take up memory on your computer.\n\nlist_means_3 &lt;- parallel::parLapply(clu, 1:nrow(df), function(i) mean(as.numeric(df[i, ]))) \n\nOnce you’ve finished working with your cluster, it’s good to clean up and stop the cluster child processes (quitting R will also stop all of the child processes).\n\nparallel::stopCluster(clu)\n\n\n\n\n\n\n\nNote\n\n\n\nSometimes we will also need to load the packages in individual child processes. This can be done by using clusterEvalQ . For example:\nparallel::clusterEvalQ(clu, {\n  library(ggplot2)\n  library(stringr)\n})\n\n\nParLapply() is a part of clusterApply() family of functions. The documentation can be found here: clusterApply()",
+    "crumbs": [
+      "R tutorials",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Parallelization on Workbench</span>"
+    ]
+  },
+  {
+    "objectID": "parallelization on workbench.html#foreach-and-doparallel-package",
+    "href": "parallelization on workbench.html#foreach-and-doparallel-package",
+    "title": "2  Parallelization on Workbench",
+    "section": "2.4 foreach and doParallel Package",
+    "text": "2.4 foreach and doParallel Package\nThe normal for loop in R looks like:\n\nfor (i in 1:3) {\n  print(sqrt(i))\n}\n\n[1] 1\n[1] 1.414214\n[1] 1.732051\n\n\nThe foreach method is similar, but uses the sequential %do% operator to indicate an expression to run. Note the difference in the returned data structure.\n\nlibrary(foreach)\nforeach (i=1:3) %do% {\n  sqrt(i)\n}\n\n[[1]]\n[1] 1\n\n[[2]]\n[1] 1.414214\n\n[[3]]\n[1] 1.732051\n\n\n\n2.4.1 %dopar% operator\nIn addition, foreach supports a parallelizable operator %dopar% from the doParallel package. This allows each iteration through the loop to use different cores or different machines in a cluster.\n\nlibrary(foreach)\nlibrary(doParallel)\n\nLoading required package: iterators\n\ndoParallel::registerDoParallel(4) \nforeach (i=1:5) %dopar% {\n  sqrt(i)\n}\n\n[[1]]\n[1] 1\n\n[[2]]\n[1] 1.414214\n\n[[3]]\n[1] 1.732051\n\n[[4]]\n[1] 2\n\n[[5]]\n[1] 2.236068\n\n\nTo simplify output, foreach has the .combine parameter that can simplify return values\n\nforeach (i=1:3, .combine=c) %dopar% {\n  sqrt(i)\n}\n\n[1] 1.000000 1.414214 1.732051\n\n\nforeach also has the .rbind parameter that can return a dataframe\n\nforeach (i=1:3, .combine=rbind) %dopar% {\n  sqrt(i)\n}\n\n             [,1]\nresult.1 1.000000\nresult.2 1.414214\nresult.3 1.732051\n\n\nThe doParallel vignette on CRAN shows a much more realistic example, where one can use %dopar% to parallelize a bootstrap analysis where a data set is resampled 10,000 times and the analysis is rerun on each sample, and then the results combined. Here use the iris data set to do a parallel bootstrap:\n\nx &lt;- iris[which(iris[,5] != \"setosa\"), c(1,5)]\ntrials &lt;- 10000\nsystem.time({\n  r &lt;- foreach(icount(trials), .combine=rbind) %dopar% {\n    ind &lt;- sample(100, 100, replace=TRUE)\n    result1 &lt;- glm(x[ind,2]~x[ind,1], family=binomial(logit))\n    coefficients(result1)\n  }\n})\n\n   user  system elapsed \n 11.774   0.272   3.506 \n\n\nAnd compare that to what it takes to do the same analysis in serial:\n\nsystem.time({\n  r &lt;- foreach(icount(trials), .combine=rbind) %do% {\n    ind &lt;- sample(100, 100, replace=TRUE)\n    result1 &lt;- glm(x[ind,2]~x[ind,1], family=binomial(logit))\n    coefficients(result1)\n  }\n})\n\n   user  system elapsed \n 12.483   0.002  12.485 \n\n\nWhen we’re done, we will clean up the cluster:\n\ndoParallel::stopImplicitCluster()\n\n\n\n2.4.2 %dorng% operator\nstandard %dopar% loops are not reproducible:\nFirst, let’s set the RNGkind back to default\n\nRNGkind(\"default\")\n\nNow register a new cluster\n\ndoParallel::registerDoParallel(4)\n\n\nset.seed(123)\nres &lt;- foreach(i=1:5) %dopar% { runif(3) }\nset.seed(123)\nres2 &lt;- foreach(i=1:5) %dopar% { runif(3) }\nidentical(res, res2)\n\n[1] FALSE\n\n\nThe doRNG package provides convenient ways to implement reproducible parallel foreach loops, independently of the parallel backend used to perform the computation.\n\nlibrary(doRNG)\n\nLoading required package: rngtools\n\nset.seed(123)\nres &lt;- foreach(i=1:5) %dorng% { runif(3) }\nset.seed(123)\nres2 &lt;- foreach(i=1:5) %dorng% { runif(3) }\nidentical(res, res2)\n\n[1] TRUE\n\n\nWhen we’re done, we will clean up the cluster:\n\ndoParallel::stopImplicitCluster()\n\nThe doParallel documentation can be found here: doParallel",
+    "crumbs": [
+      "R tutorials",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Parallelization on Workbench</span>"
+    ]
+  },
+  {
+    "objectID": "parallelization on workbench.html#the-future-package",
+    "href": "parallelization on workbench.html#the-future-package",
+    "title": "2  Parallelization on Workbench",
+    "section": "2.5 The future Package",
+    "text": "2.5 The future Package\nThe future package defines plans to specify how computations are executed. A plan can use multiple cores, separate R sessions, or even remote systems.\n\nlibrary(future)\nplan(multisession, workers = 4)\n\n# Define a future\nf &lt;- future::future({ sum(1:1e6) })\n# Retrieve the result\nresult &lt;- future::value(f)\nprint(result)\n\n[1] 500000500000\n\n\n\n\n\n\n\n\nNote\n\n\n\nWe could have used plan(multicore) instead of plan(multisession) if we were working directly in R and not RStudio. However, plan(multicore) will only work in a Linux/macOS environment\n\n\nThe future package is a lot more comprehensive but beyond the scope of discussion for this basic tutorial. If you are interested, the documentation can be found here: future package\nThis is how we can use it instead of lapply\n\nlibrary(future.apply)\nplan(multisession, workers = 4)\nresult &lt;- future.apply::future_lapply(1:5, function(x) x^2)\nresult\n\n[[1]]\n[1] 1\n\n[[2]]\n[1] 4\n\n[[3]]\n[1] 9\n\n[[4]]\n[1] 16\n\n[[5]]\n[1] 25\n\n\nMultisession runs background R sessions on the current machine. For large parallelizations, we should run future_lapply by defining a cluster manually. That way we can run it on external R sessions on current, local, and/or remote machines.\n\nlibrary(parallel)\nclu &lt;- parallel::makeCluster(4)\nplan(cluster, workers = clu)\nresult &lt;- future_lapply(1:10, function(x) x^2)\nstopCluster(clu)\n\nDocumentation for future.apply family of functions can be found here: future.apply documentation\n\n2.5.1 Integration with SLURM\nFuture works very well with SLURM integration. The future.batchtools package extends the future ecosystem for SLURM. Here is an example code:\nlibrary(future.batchtools)\nplan(batchtools_slurm, template = \"sumbit_job.slurm\")\n\nf &lt;- future::future({ Sys.sleep(10); sum(1:1e6) })\nresult &lt;- future::value(f)\nYou need a SLURM template file (submit_job.slurm) that specifies job parameters (e.g., cores, memory).",
+    "crumbs": [
+      "R tutorials",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Parallelization on Workbench</span>"
+    ]
+  },
+  {
+    "objectID": "parallelization on workbench.html#other-ways-to-parallelize-r-code",
+    "href": "parallelization on workbench.html#other-ways-to-parallelize-r-code",
+    "title": "2  Parallelization on Workbench",
+    "section": "2.6 Other ways to parallelize R code",
+    "text": "2.6 Other ways to parallelize R code\nThere are several other ways to parallelize your code. If you are looking for more packages, some of those are mentioned here along with their documentation. Some of these are extensions of packages already mentioned while others introduce different ways to parallelize.\n\nfurrr package\ndoFuture package\nRcppParallel package\nparallelMap package\nbatchtools package",
+    "crumbs": [
+      "R tutorials",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Parallelization on Workbench</span>"
+    ]
+  },
+  {
+    "objectID": "parallelization on workbench.html#saving-results-while-parallelizing",
+    "href": "parallelization on workbench.html#saving-results-while-parallelizing",
+    "title": "2  Parallelization on Workbench",
+    "section": "2.7 Saving results while parallelizing",
+    "text": "2.7 Saving results while parallelizing\nWhen running large computations, it may be helpful to save results iteratively or as checkpoints to avoid data loss in case of interruptions. Here is an example of saving results iteratively using the foreach and doParallel libraries\n\nlibrary(foreach)\nlibrary(doParallel)\n\n# Register parallel backend\ndoParallel::registerDoParallel(4)\n\n# Parallel computation and saving results\nresults &lt;- foreach(i = 1:100, .combine = c) %dopar% {\n  # Your computation\n  Sys.sleep(0.1) # Simulates time-consuming computation\n  result &lt;- i^2\n  \n  # Save intermediate results\n  saveRDS(result, file = paste0(\"for_each/result_\", i, \".rds\"))\n  result\n}\n\ndoParallel::stopImplicitCluster()\n\nHere is another example using future.apply library\n\nlibrary(future.apply)\n\nplan(multisession, workers = 4)\n\n# Function with intermediate saving\nsafe_compute &lt;- function(i) {\n  result &lt;- i^2\n  saveRDS(result, file = paste0(\"future_apply/partial_result_\", i, \".rds\"))\n  return(result)\n}\n\n# Run computation\nresults &lt;- future.apply::future_lapply(1:100, safe_compute)\n\n# Aggregate saved results\nfinal_results &lt;- unlist(results)\nsaveRDS(final_results, file = \"future_apply/final_results.rds\")\n\n\n2.7.1 Designing a function to restore progress:\nHere is the “structure” of a function that can be used to restore your progress.\n\nlibrary(future.apply)\n\n# Define checkpoint directory\ncheckpoint_dir &lt;- \"checkpoints_parallel\"\ndir.create(checkpoint_dir, showWarnings = FALSE)\n\n# Set up parallel plan\nplan(multisession, workers = 4)\n\n# Function to perform computations with checkpoints\ncompute_task &lt;- function(i) {\n  checkpoint_file &lt;- file.path(checkpoint_dir, paste0(\"result_\", i, \".rds\"))\n  \n  if (file.exists(checkpoint_file)) {\n    # Restore from checkpoint\n    result &lt;- readRDS(checkpoint_file)\n  } else {\n    # Perform the computation\n    Sys.sleep(1)  # Simulates a time-consuming task\n    result &lt;- i*2\n    \n    # Save checkpoint\n    saveRDS(result, checkpoint_file)\n  }\n  return(result)\n}\n\n# Parallel computation with checkpoints\nresults &lt;- future.apply::future_lapply(1:10, compute_task)\n\n# Aggregate results\nfinal_results &lt;- unlist(results)\nprint(final_results)\n\n [1]  2  4  6  8 10 12 14 16 18 20\n\n\n\n\n2.7.2 Targets package for efficient checkpoint management\nThis package is a pipeline tool for statistics and data science in R. The package skips costly runtime for tasks that are already up to date, orchestrates the necessary computation with implicit parallel computing, and abstracts files as R objects. If all the current output matches the current upstream code and data, then the whole pipeline is up to date, and the results are more trustworthy than otherwise.\n\nlibrary(targets)\ntar_script({\n  library(future.apply)\n\n  # Parallelization plan\n  plan(multisession)\n\n  # Define the computation function with checkpointing\n  compute_with_checkpoint &lt;- function(x, checkpoint_dir) {\n    checkpoint_file &lt;- file.path(checkpoint_dir, paste0(\"result_\", x, \".rds\"))\n    if (file.exists(checkpoint_file)) {\n      result &lt;- readRDS(checkpoint_file)\n    } else {\n      Sys.sleep(2)  # Simulate a long computation\n      result &lt;- x^2\n      saveRDS(result, checkpoint_file)\n    }\n    return(result)\n  }\n\n  # Define the pipeline\n  tar_option_set(\n    packages = c(\"future.apply\"),\n    format = \"rds\"\n  )\n\n  list(\n    tar_target(\n      checkpoint_dir,\n      {\n        dir &lt;- \"checkpoints_targets\"\n        dir.create(dir, showWarnings = FALSE)\n        dir\n      },\n      format = \"file\"\n    ),\n    tar_target(\n      data,\n      seq(1, 10),\n      format = \"rds\"\n    ),\n    tar_target(\n      results,\n      future_lapply(data, compute_with_checkpoint, checkpoint_dir = checkpoint_dir),\n      format = \"rds\"\n    ),\n    tar_target(\n      final_save,\n      {\n        saveRDS(results, \"final_results.rds\")\n        results\n      },\n      format = \"rds\"\n    )\n  )\n})\n\n\ntar_make()\n\nLoading required package: future\n✔ skipped target checkpoint_dir\n✔ skipped target data\n✔ skipped target results\n✔ skipped target final_save\n✔ skipped pipeline [0.067 seconds]\n\ntar_visnetwork()\n\nLoading required package: future\n\n\n\n\n\n\nThe documentation for targets package can be found here: targets package documentation",
+    "crumbs": [
+      "R tutorials",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Parallelization on Workbench</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction",
+    "section": "",
+    "text": "This is a book created from markdown and executable code.\nSee @knuth84 for additional discussion of literate programming.\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "R and Posit tutorials",
+    "section": "",
+    "text": "Preface\nThis Quarto book contains all tutorials created by the Section of Epidemiology.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "posit infrastructure at VI.html",
+    "href": "posit infrastructure at VI.html",
+    "title": "1  Posit Infrastructure at VI",
+    "section": "",
+    "text": "1.1 Posit Infrastructure",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Posit Infrastructure at VI</span>"
+    ]
+  },
+  {
+    "objectID": "posit infrastructure at VI.html#posit-workbench",
+    "href": "posit infrastructure at VI.html#posit-workbench",
+    "title": "1  Posit Infrastructure at VI",
+    "section": "1.2 Posit Workbench",
+    "text": "1.2 Posit Workbench\n\nCurrently we have 2 nodes on Workbench.\nA (compute) node is a computer part of a larger set of nodes (a cluster). Besides compute nodes, a cluster comprises one or more login nodes, file server nodes, management nodes, etc. A compute node offers resources such as processors, volatile memory (RAM), permanent disk space (e.g. SSD), accelerators (e.g. GPU) etc.\nTo run a “long” job on Workbench in parallel, you need three things:\n\n\nMultiple cores\nLarge memory (RAM)\nR scripts that have been parallelized.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Posit Infrastructure at VI</span>"
+    ]
+  },
+  {
+    "objectID": "posit infrastructure at VI.html#workbench-infrastructure",
+    "href": "posit infrastructure at VI.html#workbench-infrastructure",
+    "title": "1  Posit Infrastructure at VI",
+    "section": "1.3 Workbench Infrastructure",
+    "text": "1.3 Workbench Infrastructure",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Posit Infrastructure at VI</span>"
+    ]
+  },
+  {
+    "objectID": "posit infrastructure at VI.html#background-jobs",
+    "href": "posit infrastructure at VI.html#background-jobs",
+    "title": "1  Posit Infrastructure at VI",
+    "section": "1.4 Background Jobs",
+    "text": "1.4 Background Jobs\nNext to your console window you will see background jobs and workbench jobs.\n\n\n\n\n\n\nYou can start a background job by clicking on Start Background Job\n\nThese jobs run in the background of your current session. As soon as you close the session, you abort the job.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Posit Infrastructure at VI</span>"
+    ]
+  },
+  {
+    "objectID": "posit infrastructure at VI.html#workbench-jobs",
+    "href": "posit infrastructure at VI.html#workbench-jobs",
+    "title": "1  Posit Infrastructure at VI",
+    "section": "1.5 Workbench Jobs",
+    "text": "1.5 Workbench Jobs\n\n\n\n\n\n\nYou can start a background job by clicking on Start Workbench Job\n\nThese jobs are submitted to the cluster and will not abort when you close the session.\nThe jobs are scheduled through SLURM. When you ask for “large” memory, your job will automatically be submitted on the cn00.posit.vetinst.no node.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Posit Infrastructure at VI</span>"
+    ]
+  },
+  {
+    "objectID": "posit infrastructure at VI.html#workbench-from-terminal",
+    "href": "posit infrastructure at VI.html#workbench-from-terminal",
+    "title": "1  Posit Infrastructure at VI",
+    "section": "1.6 Workbench from Terminal",
+    "text": "1.6 Workbench from Terminal\nYou can login to workbench from windows command line (CMD) using the folowing command and then your password\nssh YOUR_VI_NUMBER@workbench.posit.vetinst.no\nSimilarly, you can login directly to the compute directly from CMD too\nssh YOUR_VI_NUMBER@cn00.posit.vetinst.no\nWhen you login, you will end up in your HOME directory. Your home directory and everything within this directory will be the same on both nodes.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Posit Infrastructure at VI</span>"
+    ]
+  },
+  {
+    "objectID": "posit infrastructure at VI.html#slurm-jobs-from-terminal",
+    "href": "posit infrastructure at VI.html#slurm-jobs-from-terminal",
+    "title": "1  Posit Infrastructure at VI",
+    "section": "1.7 SLURM jobs from Terminal",
+    "text": "1.7 SLURM jobs from Terminal\nYou can schedule SLURM jobs from terminal. Here is a demo SLURM script\n#!/bin/bash  \n#SBATCH --job-name=give_any_jobname \n#SBATCH --output=output_file.out               # Standard output \n#SBATCH --error=error_file.err                 # Standard error \n#SBATCH --ntasks=1                             # Run a single task \n#SBATCH --cpus-per-task=16                     # Number of cores per task (modify based on your need)  \n\n# Execute the R script /home/vetinst.no/viXXXX/rest_of_the_path_of_your_script/script.R\n\n\n\n\n\n\nNote\n\n\n\nThe output_file.out and error_file.err are two text files that will be generated when a SLURM script is run. These files will be generated in the same directory where you have saved your SLURM script file.\n\n\nYou also have to give read, write, and execute permissions to your R script. This can be done by adding\n#!/usr/local/bin/Rscript\nAs the very first line of your R script. Then, in CMD navigate to the location of your R script and type (option 700 means you can do anything with the file or directory and other users have no access to it at all)\nchmod 700 your_script.R\nThen you can run your SLURM script by navigating to the location where you have saved your SLURM script and typing:\nsbatch -w node_you_want_to_run_your_script name_of_slurm_script.slurm\nAs all jobs on workbench now start through SLURM, you will get the output_file.out and error_file.err for every session in the slurm_job_output folder in your home folder.\n\n\n\n\n\n\nImportant\n\n\n\nYou may want to enter another option --mem-per-cpu along with your sbatch command. Here, you provide the amount of RAM you need per CPU to run the task. The default is in MB but you can specify the amount in GB or TB as well (use letters M/G/T for MB, GB and TB respectively).\nFor example the above command can be modified to allocate 100GB to each CPU as follows:\nsbatch -w node_you_want_to_run_your_script --mem-per-cpu 100G name_of_slurm_script.slurm",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Posit Infrastructure at VI</span>"
+    ]
+  },
+  {
+    "objectID": "Git backed deployment to posit connect.html",
+    "href": "Git backed deployment to posit connect.html",
+    "title": "4  Git Backed Deployment to Posit COnnect",
+    "section": "",
+    "text": "4.1 Overview\nFor public hosted repositories on GitHub it is possible to do a git-backed deployment to Posit Connect\nThe process is described in the official documentation at: Git-Backed Content. Please refer to that link for details.",
+    "crumbs": [
+      "Posit Connect",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Git Backed Deployment to Posit COnnect</span>"
+    ]
+  },
+  {
+    "objectID": "Git backed deployment to posit connect.html#additional-things-to-consider",
+    "href": "Git backed deployment to posit connect.html#additional-things-to-consider",
+    "title": "4  Git Backed Deployment to Posit COnnect",
+    "section": "4.2 Additional things to consider",
+    "text": "4.2 Additional things to consider\nWhen running the R function rsconnect::writeManifest() captures everything that is needed to deploy a given resource. Therefore if the requirements have changed (for example, the code now depends on an additional package), you need to run the function again in order to generate an updated manifest.json file.\nIf you push code changes to GitHub, but not push an update manifest.json file the deployed resource will be the same as before i.e. will reflect what it present in the manifest.json file. Depending on the type of changes made that could cause to crash the resource.",
+    "crumbs": [
+      "Posit Connect",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Git Backed Deployment to Posit COnnect</span>"
+    ]
+  },
+  {
+    "objectID": "Creating pins on Connect.html",
+    "href": "Creating pins on Connect.html",
+    "title": "3  Creating Pins on Connect",
+    "section": "",
+    "text": "3.1 Overview\nPins lets you pin an R or Python object, or a file to a virtual board where you and others access it.\nThe process is described in the official documentation at: Pins. Please refer to that link for details.\nEvery pin lives on a board, so your first step is to create a board object which can be called. This can be done using the function board &lt;- pins::board_connect().\nNote that no arguments are passed to board_connect(). This function is designed to just work for most cases.",
+    "crumbs": [
+      "Posit Connect",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Creating Pins on Connect</span>"
+    ]
+  },
+  {
+    "objectID": "Creating pins on Connect.html#overview",
+    "href": "Creating pins on Connect.html#overview",
+    "title": "3  Creating Pins on Connect",
+    "section": "",
+    "text": "Note\n\n\n\nIf you are using an out-dated version of Rstudio (versions before 2024.04.1) then this function may not work.\nIn that case can specify the auth method to inform how you authenticate to Connect. This can be done by using auth = \"envvar\" as the argument.\nTo do this, set environment variables with usethis::edit_r_profile() to open your .Renviron for editing, and then insert Sys.setenv(CONNECT_API_KEY=\"paste key value\") and Sys.setenv(CONNECT_SERVER=\"https://connect.posit.vetinst.no/\"). Remember to insert a newline character (press ENTER) before saving this file.\nNow you can create the board object using board &lt;- pins::board_connect(auth = \"envvar\")",
+    "crumbs": [
+      "Posit Connect",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Creating Pins on Connect</span>"
+    ]
+  },
+  {
+    "objectID": "Creating pins on Connect.html#additional-things-to-consider",
+    "href": "Creating pins on Connect.html#additional-things-to-consider",
+    "title": "3  Creating Pins on Connect",
+    "section": "3.2 Additional things to consider",
+    "text": "3.2 Additional things to consider\nRemember, if you’re using git, it’s a good idea to add your .Renviron to your .gitignore to ensure you’re not publishing your API key to your version control system.",
+    "crumbs": [
+      "Posit Connect",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Creating Pins on Connect</span>"
+    ]
+  }
+]

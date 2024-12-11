@@ -1,0 +1,26 @@
+project:
+  type: book
+
+book:
+  title: "**R and Posit tutorials**"
+  author: "Section of Epidemiology"
+  sidebar: 
+    logo: "logo/vetinst-logo.jpg"
+    background: "#EEF8F8"
+  chapters:
+  - index.qmd
+  - posit infrastructure at VI.qmd
+  - part: "R tutorials"
+    chapters: 
+      - parallelization on workbench.qmd
+  - part: "Posit Connect"
+    chapters: 
+      - Creating pins on Connect.qmd
+      - Git backed deployment to posit connect.qmd
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+editor: visual

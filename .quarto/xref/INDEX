@@ -1,0 +1,20 @@
+{
+  "index.qmd": {
+    "index.html": "98336e05"
+  },
+  "intro.qmd": {
+    "intro.html": "361653ca"
+  },
+  "parallelization on workbench.qmd": {
+    "parallelization on workbench.html": "e4d8415e"
+  },
+  "posit infrastructure at VI.qmd": {
+    "posit infrastructure at VI.html": "eba6b636"
+  },
+  "Git backed deployment to posit connect.qmd": {
+    "Git backed deployment to posit connect.html": "ec5cee1a"
+  },
+  "Creating pins on Connect.qmd": {
+    "Creating pins on Connect.html": "16d5808f"
+  }
+}
