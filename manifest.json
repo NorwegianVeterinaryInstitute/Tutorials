@@ -1699,7 +1699,7 @@
       "checksum": "31efe7514103ae06d0d5f7f050730021"
     },
     "_book/index.html": {
-      "checksum": "5e6f25c1e45aa3c0932d8be175afb7cb"
+      "checksum": "4fa9e5970ff3e663c7f6d73396bbb1ee"
     },
     "_book/intro.html": {
       "checksum": "391dcf4408e433a35b67336d2258e24f"
@@ -1708,7 +1708,7 @@
       "checksum": "d398c726a7e973d90e3597ae4d6be12c"
     },
     "_book/parallelization on workbench.html": {
-      "checksum": "b1ae3f5c298b13c2975ff976b66d0d6e"
+      "checksum": "8feb5c179940af943f0fd34bd881cd05"
     },
     "_book/parallelization-on-workbench-images/download (1).png": {
       "checksum": "083bf3b8bf111fe506f2f0c5e7794b66"
@@ -1741,7 +1741,7 @@
       "checksum": "82a0c45d49e6ac1ea3d4618c792fa1b1"
     },
     "_book/search.json": {
-      "checksum": "4f43c6f968c3fafdb074834b3e5297b4"
+      "checksum": "55258faba254bd936b7ac75e571d3831"
     },
     "_book/site_libs/bootstrap/bootstrap-icons.css": {
       "checksum": "2318f137d201fbf51601fa0faba6bef7"
@@ -1855,7 +1855,7 @@
       "checksum": "b5cc9f7fb82af1597495c6d49d8b761c"
     },
     "_quarto.yml": {
-      "checksum": "4c8fce15d4f3ab2d0557da56f4ff7a4a"
+      "checksum": "9877c7a105cb09798335521b6d1740ca"
     },
     "_targets.R": {
       "checksum": "91ecabb2ed0bf0f0ebce76f1aaadce72"
@@ -1864,7 +1864,7 @@
       "checksum": "c7bdb4d0695efed2b6196cde83efc67b"
     },
     "_targets/meta/process": {
-      "checksum": "b33583a15c19f70d06312fd220b10813"
+      "checksum": "ee66aa7c159a6871b51a7b0bf057c553"
     },
     "_targets/meta/progress": {
       "checksum": "66445856d17e143dd9e01729ca7b2114"
@@ -1941,7 +1941,7 @@
     "cover.png": {
       "checksum": "308012df3fa962ae61c7114806331a72"
     },
-    "Creating pins on Connect.qmd": {
+    "Creating_pins_on_Connect.qmd": {
       "checksum": "ff45ed4609e50dee4f890fc5f2475260"
     },
     "final_results.rds": {
@@ -2550,11 +2550,11 @@
     "future_apply/partial_result_99.rds": {
       "checksum": "627a6219c05005615b43adc679e7ef38"
     },
-    "Git backed deployment to posit connect.qmd": {
+    "Git_backed_deployment_to_posit_connect.qmd": {
       "checksum": "394c6e5968979ac8018a3234d7e5ac6c"
     },
     "index.qmd": {
-      "checksum": "ce09cc25c63c2a663a9d51ad0e62bcc5"
+      "checksum": "9d02d3462507918b4f61eae195d725d2"
     },
     "intro.qmd": {
       "checksum": "e514ad799b2b10ced9d02b36ca26bbd2"
@@ -2565,7 +2565,7 @@
     "logo/vetinst-logo.jpg": {
       "checksum": "d398c726a7e973d90e3597ae4d6be12c"
     },
-    "parallelization on workbench.qmd": {
+    "parallelization_on_workbench.qmd": {
       "checksum": "9235b4a1a6a486fa82823b07535327c1"
     },
     "parallelization-on-workbench-images/download (1).png": {
@@ -2595,7 +2595,7 @@
     "posit infrastructure at VI images/workbench architecture.png": {
       "checksum": "10294f0fc97114e32052bcae82b71868"
     },
-    "posit infrastructure at VI.qmd": {
+    "posit_infrastructure_at_VI.qmd": {
       "checksum": "f6d4b72bdb2825da7bb0ee2773fe432e"
     },
     "references.bib": {
