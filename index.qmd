@@ -8,6 +8,7 @@ format:
     number-sections: true
     number-depth: 3
 editor: visual
+always_allow_html: yes
 ---
 
 # Preface {.unnumbered}

@@ -9,14 +9,14 @@ book:
     background: "#EEF8F8"
   chapters:
   - index.qmd
-  - posit infrastructure at VI.qmd
+  - posit_infrastructure_at_VI.qmd
   - part: "R tutorials"
     chapters: 
-      - parallelization on workbench.qmd
+      - parallelization_on_workbench.qmd
   - part: "Posit Connect"
     chapters: 
-      - Creating pins on Connect.qmd
-      - Git backed deployment to posit connect.qmd
+      - Creating_pins_on_Connect.qmd
+      - Git_backed_deployment_to_posit_connect.qmd
 format:
   html:
     theme: cosmo
