@@ -3,16 +3,24 @@ project:
 
 book:
   title: "**R and Posit tutorials**"
-  author: "Section of Epidemiology"
+  author:   
+  - "Trishang Udhwani" 
+  - "Novica Nakov"
+  - "Håkon Kaspersen"
   sidebar: 
     logo: "logo/vetinst-logo.jpg"
     background: "#EEF8F8"
   chapters:
   - index.qmd
   - posit_infrastructure_at_VI.qmd
-  - part: "R tutorials"
+  - part: "R/RStudio tutorials"
     chapters: 
+      - connecting_RStudio_to_GitHub.qmd
+      - anatomy_of_a_R_package.qmd
+      - projects_in_RStudio.qmd
       - parallelization_on_workbench.qmd
+      - getting_help_with_R.qmd
+      - RStudio_tips_and_tricks.qmd
   - part: "Posit Connect"
     chapters: 
       - Creating_pins_on_Connect.qmd

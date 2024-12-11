@@ -17,3 +17,11 @@ The main branch of the repository has "soft protection" enabled. It is recommend
 5.  Commit the changes and push to the repository.
 
 6.  Wait for the deployment to trigger automatically or manually trigger deployment by clicking on the **Update Now** button under **Info** on the [content page](https://connect.posit.vetinst.no/R-and-posit-tutorials/).
+
+::: callout-important
+This QUARTO book only contains tutorials. There is a lot more documentation (such as Official Posit User Guides, Guides ad How-Tos) in [documentation](https://github.com/NorwegianVeterinaryInstitute/posit-team/wiki/Documentation) under the posit-team repository.
+:::
+
+::: callout-note
+When you create a new session in Workbench, you are creating a RStudio Pro Session. Hence, all the tutorials under the section **R/RStudio tutorials** will be applicable both on Workbench as well as RStudio on your personal computers (unless stated otherwise in the individual chapters).
+:::

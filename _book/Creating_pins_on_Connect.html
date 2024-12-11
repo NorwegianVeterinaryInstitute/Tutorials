@@ -7,10 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Trishang Udhwani">
-<meta name="author" content="Novica Nakov">
-<meta name="author" content="Håkon Kaspersen">
 
-<title>R and Posit tutorials</title>
+<title>8&nbsp; Creating Pins on Connect – **R and Posit tutorials**</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +31,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./posit_infrastructure_at_VI.html" rel="next">
+<link href="./Git_backed_deployment_to_posit_connect.html" rel="next">
+<link href="./RStudio_tips_and_tricks.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -83,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Creating_pins_on_Connect.html">Posit Connect</a></li><li class="breadcrumb-item"><a href="./Creating_pins_on_Connect.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Creating Pins on Connect</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -113,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
@@ -181,7 +180,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Creating_pins_on_Connect.html" class="sidebar-item-text sidebar-link">
+  <a href="./Creating_pins_on_Connect.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Creating Pins on Connect</span></span></a>
   </div>
 </li>
@@ -195,24 +194,25 @@ ul.task-list li input[type="checkbox"] {
   </li>
     </ul>
     </div>
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">8.1</span> Overview</a></li>
+  <li><a href="#additional-things-to-consider" id="toc-additional-things-to-consider" class="nav-link" data-scroll-target="#additional-things-to-consider"><span class="header-section-number">8.2</span> Additional things to consider</a></li>
+  </ul>
+</nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./Creating_pins_on_Connect.html">Posit Connect</a></li><li class="breadcrumb-item"><a href="./Creating_pins_on_Connect.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Creating Pins on Connect</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><strong>R and Posit tutorials</strong></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Creating Pins on Connect</span></h1>
 </div>
 
 
@@ -220,11 +220,9 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     <div>
-    <div class="quarto-title-meta-heading">Authors</div>
+    <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
              <p>Trishang Udhwani </p>
-             <p>Novica Nakov </p>
-             <p>Håkon Kaspersen </p>
           </div>
   </div>
     
@@ -237,9 +235,12 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p>This Quarto book contains all tutorials created by the Section of Epidemiology. It is deployed from the repository <a href="https://github.com/NorwegianVeterinaryInstitute/R-tutorials">R-tutorials</a> through git backed deployment. You can add more tutorials to this book by cloning this repository and following these steps:</p>
+<section id="overview" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">8.1</span> Overview</h2>
+<p>Pins lets you pin an R or Python object, or a file to a virtual board where you and others access it.</p>
+<p>The process is described in the official documentation at: <a href="https://docs.posit.co/connect/how-to/pins/">Pins</a>. Please refer to that link for details.</p>
+<p>Every pin lives on a board, so your first step is to create a board object which can be called. This can be done using the function <code>board &lt;- pins::board_connect()</code>.<br>
+Note that no arguments are passed to <code>board_connect()</code>. This function is designed to just work for most cases.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -250,43 +251,16 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The main branch of the repository has “soft protection” enabled. It is recommended to create a new branch to make any changes and then merging the changes with the main branch after testing to make sure everything renders correctly.</p>
+<p>If you are using an out-dated version of Rstudio (versions before 2024.04.1) then this function may not work.<br>
+In that case can specify the <code>auth</code> method to inform how you authenticate to Connect. This can be done by using <code>auth = "envvar"</code> as the argument.</p>
+<p>To do this, set environment variables with <code>usethis::edit_r_profile()</code> to open your <code>.Renviron</code> for editing, and then insert <code>Sys.setenv(CONNECT_API_KEY="paste key value")</code> and <code>Sys.setenv(CONNECT_SERVER="https://connect.posit.vetinst.no/")</code>. Remember to insert a newline character (press ENTER) before saving this file.</p>
+<p>Now you can create the board object using <code>board &lt;- pins::board_connect(auth = "envvar")</code></p>
 </div>
 </div>
-<ol type="1">
-<li><p>Create your tutorial as a QUARTO document in <em>html</em> format.</p></li>
-<li><p>Add your <code>tutorial_name.qmd</code> file to this project folder.</p></li>
-<li><p>Add your tutorial to the <code>_quarto.yml</code> file.</p></li>
-<li><p>Run <code>rsconnect::writeManifest()</code> to update the manifest file.</p></li>
-<li><p>Commit the changes and push to the repository.</p></li>
-<li><p>Wait for the deployment to trigger automatically or manually trigger deployment by clicking on the <strong>Update Now</strong> button under <strong>Info</strong> on the <a href="https://connect.posit.vetinst.no/R-and-posit-tutorials/">content page</a>.</p></li>
-</ol>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This QUARTO book only contains tutorials. There is a lot more documentation (such as Official Posit User Guides, Guides ad How-Tos) in <a href="https://github.com/NorwegianVeterinaryInstitute/posit-team/wiki/Documentation">documentation</a> under the posit-team repository.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>When you create a new session in Workbench, you are creating a RStudio Pro Session. Hence, all the tutorials under the section <strong>R/RStudio tutorials</strong> will be applicable both on Workbench as well as RStudio on your personal computers (unless stated otherwise in the individual chapters).</p>
-</div>
-</div>
+</section>
+<section id="additional-things-to-consider" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="additional-things-to-consider"><span class="header-section-number">8.2</span> Additional things to consider</h2>
+<p>Remember, if you’re using git, it’s a good idea to add your <code>.Renviron</code> to your <code>.gitignore</code> to ensure you’re not publishing your API key to your version control system.</p>
 
 
 </section>
@@ -714,10 +688,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./RStudio_tips_and_tricks.html" class="pagination-link" aria-label="RStudio Tips and Tricks">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">RStudio Tips and Tricks</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./posit_infrastructure_at_VI.html" class="pagination-link" aria-label="Posit Infrastructure at VI">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Posit Infrastructure at VI</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./Git_backed_deployment_to_posit_connect.html" class="pagination-link" aria-label="Git Backed Deployment to Posit Connect">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Git Backed Deployment to Posit Connect</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
