@@ -25,6 +25,10 @@ A typical modern computer has multiple cores, ranging from one or two in laptops
 
 You can think of this as allowing 16 computations to happen at the same time. Theoretically, your computation would take 1/16 of the time. Historically, R has only utilized one processor, which makes it single-threaded.
 
+::: callout-important
+The tutorial shown here is running on the Connect server (and not Workbench) because publication happens on Connect through git backed deployment. Because of this, you will not see the results of parallelization in the outputs of this tutorial as parallelization is not a feature of the connect server. However, if you run the same code on Workbench, you will see the affects of parallelization.
+:::
+
 ## The lapply() function
 
 The `lapply()` function has two arguments:
