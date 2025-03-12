@@ -23,9 +23,21 @@ Download git from the [official website](https://git-scm.com/download/win). Inst
 
 ### Step 2 - Generate SSH key and add it to GitHub
 
-Run `Git Bash` from the Windows start menu. On workbench you can switch to **Terminal**. Once the terminal opens type `ssh-keygen.exe` and `enter`. This will run the program that is used for generating `ssh` keys. Follow the instructions on the screen and select a good passphrase for your key.
+#### On RStudio Desktop
 
-When this is completed, type `cat .ssh/id_rsa.pub` in the terminal. This is assuming you didn't give the key a different name during the key generation. This command will print out the public key on the terminal. Copy it and move to the browser.
+Run `Git Bash` from the Windows start menu. Once the terminal opens type `ssh-keygen.exe` and press `enter`. This will run the program that is used for generating `ssh` keys. Follow the instructions on the screen and select a good pass phrase for your key.
+
+When this is completed, type `cat .ssh/id_rsa.pub` in the terminal. This is assuming you didn't give the key a different name during the key generation. This command will print out the public key on the terminal. Copy it and move the step **In GitHub**.
+
+#### On Workbench
+
+Switch to **Terminal** and type `ssh-keygen` (instead of `ssh-keygen.exe` as in case of RStudio Desktop). The rest of the steps are the same as above
+
+#### Another method on both RStudio Desktop and Workbench
+
+Click on *Tools* -\> *Global Options* and then click on **Git/SVN**. Then Click on `Create SSH Key...` and set a good pass phrase for your key. And click on **Create**. Once the SSH key is created, click on `View public key` and copy it move the step **In GitHub**.
+
+#### In GitHub
 
 Open <https://github.com/settings/keys> and then click on `New SSH key`. Add a title for your key you want to use to recognize the key, and paste the copied public key in the `Key` field. Click `Add SSH key` to complete this step.
 
