@@ -21,6 +21,7 @@ book:
       - parallelization_on_workbench.qmd
       - getting_help_with_R.qmd
       - RStudio_tips_and_tricks.qmd
+      - setting_home_dir.qmd
   - part: "Posit Connect"
     chapters: 
       - Creating_pins_on_Connect.qmd
