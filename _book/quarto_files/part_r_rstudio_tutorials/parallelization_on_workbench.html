@@ -8,7 +8,7 @@
 
 <meta name="author" content="Trishang Udhwani">
 
-<title>6&nbsp; Parallelization on Workbench – **R and Posit tutorials**</title>
+<title>6&nbsp; Parallelization on Workbench – **Tutorials**</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -168,7 +168,7 @@ window.Quarto = {
       <img src="../../images/logos/vetinst-logo-eng.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="../../"><strong>R and Posit tutorials</strong></a> 
+      <a href="../../"><strong>Tutorials</strong></a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -436,7 +436,7 @@ Warning
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(s)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   user  system elapsed 
- 70.886   0.187  71.440 </code></pre>
+ 65.513   0.179  66.024 </code></pre>
 </div>
 </div>
 <p>Note that in the&nbsp;<code>system.time()</code>&nbsp;output in first case, the&nbsp;<code>user</code>&nbsp;time and the&nbsp;<code>elapsed</code>&nbsp;time are roughly the same, which is what we would expect because there was no parallelization.</p>
@@ -451,7 +451,7 @@ Warning
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(s)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   user  system elapsed 
- 65.259   0.633  26.767 </code></pre>
+ 66.024   0.670  27.796 </code></pre>
 </div>
 </div>
 <p>You’ll notice that the the&nbsp;<code>elapsed</code>&nbsp;time is now less than the&nbsp;<code>user</code>&nbsp;time. However, in general, the&nbsp;<code>elapsed</code>&nbsp;time will not be 1/4th of the&nbsp;<code>user</code>&nbsp;time, which is what we might expect with 4 cores if there were a perfect performance gain from parallelization.</p>
@@ -460,12 +460,12 @@ Warning
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>s[<span class="st">"user.self"</span>]  <span class="co"># Main process</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>user.self 
-    0.006 </code></pre>
+    0.005 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>s[<span class="st">"user.child"</span>] <span class="co"># Child processes</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>user.child 
-    65.253 </code></pre>
+    66.019 </code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -546,11 +546,11 @@ error in user code, all values of the job will be affected</code></pre>
 <span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(r)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>List of 5
- $ : num [1:3] -0.739 -0.307 1.378
- $ : num [1:3] -0.7 0.776 -2.099
- $ : num [1:3] -0.854 0.791 -0.374
- $ : num [1:3] 0.348 1.553 -0.237
- $ : num [1:3] -0.0089 -0.3207 1.0494</code></pre>
+ $ : num [1:3] -1.0964 0.0072 -0.2274
+ $ : num [1:3] -0.656 -0.315 -0.251
+ $ : num [1:3] -0.931 1.216 -0.29
+ $ : num [1:3] -0.679 1.312 0.167
+ $ : num [1:3] -2.15 1.692 -0.798</code></pre>
 </div>
 </div>
 <p>However, the above expression is not&nbsp;<strong>reproducible</strong>&nbsp;because the next time you run it, you will get a different set of random numbers. You cannot simply call&nbsp;<code>set.seed()</code>&nbsp;before running the expression as you might in a non-parallel version of the code.</p>
@@ -715,7 +715,7 @@ result.3 1.732051</code></pre>
 <span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   user  system elapsed 
- 18.126   0.719   6.195 </code></pre>
+ 20.458   0.900   6.509 </code></pre>
 </div>
 </div>
 <p>And compare that to what it takes to do the same analysis in serial:</p>
@@ -729,7 +729,7 @@ result.3 1.732051</code></pre>
 <span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   user  system elapsed 
- 17.442   0.037  17.578 </code></pre>
+ 16.354   0.036  16.484 </code></pre>
 </div>
 </div>
 <p>When we’re done, we will clean up the cluster:</p>
@@ -881,7 +881,7 @@ Note
 <span id="cb64-11"><a href="#cb64-11" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> i<span class="sc">^</span><span class="dv">2</span></span>
 <span id="cb64-12"><a href="#cb64-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb64-13"><a href="#cb64-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Save intermediate results</span></span>
-<span id="cb64-14"><a href="#cb64-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">saveRDS</span>(result, <span class="at">file =</span> <span class="fu">paste0</span>(<span class="st">"/home/vetinst.no/vi2313/R-tutorials/data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_"</span>, i, <span class="st">".rds"</span>))</span>
+<span id="cb64-14"><a href="#cb64-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">saveRDS</span>(result, <span class="at">file =</span> <span class="fu">paste0</span>(<span class="st">"../../data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_"</span>, i, <span class="st">".rds"</span>))</span>
 <span id="cb64-15"><a href="#cb64-15" aria-hidden="true" tabindex="-1"></a>  result</span>
 <span id="cb64-16"><a href="#cb64-16" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb64-17"><a href="#cb64-17" aria-hidden="true" tabindex="-1"></a></span>
@@ -896,7 +896,7 @@ Note
 <span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Function with intermediate saving</span></span>
 <span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a>safe_compute <span class="ot">&lt;-</span> <span class="cf">function</span>(i) {</span>
 <span id="cb65-7"><a href="#cb65-7" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> i<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb65-8"><a href="#cb65-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">saveRDS</span>(result, <span class="at">file =</span> <span class="fu">paste0</span>(<span class="st">"/home/vetinst.no/vi2313/R-tutorials/data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_"</span>, i, <span class="st">".rds"</span>))</span>
+<span id="cb65-8"><a href="#cb65-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">saveRDS</span>(result, <span class="at">file =</span> <span class="fu">paste0</span>(<span class="st">"../../data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_"</span>, i, <span class="st">".rds"</span>))</span>
 <span id="cb65-9"><a href="#cb65-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(result)</span>
 <span id="cb65-10"><a href="#cb65-10" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb65-11"><a href="#cb65-11" aria-hidden="true" tabindex="-1"></a></span>
@@ -905,7 +905,7 @@ Note
 <span id="cb65-14"><a href="#cb65-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb65-15"><a href="#cb65-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Aggregate saved results</span></span>
 <span id="cb65-16"><a href="#cb65-16" aria-hidden="true" tabindex="-1"></a>final_results <span class="ot">&lt;-</span> <span class="fu">unlist</span>(results)</span>
-<span id="cb65-17"><a href="#cb65-17" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(final_results, <span class="at">file =</span> <span class="st">"/home/vetinst.no/vi2313/R-tutorials/data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/final_results.rds"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb65-17"><a href="#cb65-17" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(final_results, <span class="at">file =</span> <span class="st">"../../data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/final_results.rds"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="designing-a-function-to-restore-progress" class="level3" data-number="6.7.1">
 <h3 data-number="6.7.1" class="anchored" data-anchor-id="designing-a-function-to-restore-progress"><span class="header-section-number">6.7.1</span> Designing a function to restore progress:</h3>
@@ -914,7 +914,7 @@ Note
 <div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(future.apply)</span>
 <span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define checkpoint directory</span></span>
-<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a>checkpoint_dir <span class="ot">&lt;-</span> <span class="st">"/home/vetinst.no/vi2313/R-tutorials/data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_parallel/"</span></span>
+<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a>checkpoint_dir <span class="ot">&lt;-</span> <span class="st">"../../data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_parallel/"</span></span>
 <span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(checkpoint_dir, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb66-6"><a href="#cb66-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb66-7"><a href="#cb66-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up parallel plan</span></span>
@@ -983,7 +983,7 @@ Note
 <span id="cb68-28"><a href="#cb68-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tar_target</span>(</span>
 <span id="cb68-29"><a href="#cb68-29" aria-hidden="true" tabindex="-1"></a>      checkpoint_dir,</span>
 <span id="cb68-30"><a href="#cb68-30" aria-hidden="true" tabindex="-1"></a>      {</span>
-<span id="cb68-31"><a href="#cb68-31" aria-hidden="true" tabindex="-1"></a>        dir <span class="ot">&lt;-</span> <span class="st">"/home/vetinst.no/vi2313/R-tutorials/data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_targets/"</span></span>
+<span id="cb68-31"><a href="#cb68-31" aria-hidden="true" tabindex="-1"></a>        dir <span class="ot">&lt;-</span> <span class="st">"../../data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_targets/"</span></span>
 <span id="cb68-32"><a href="#cb68-32" aria-hidden="true" tabindex="-1"></a>        <span class="fu">dir.create</span>(dir, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb68-33"><a href="#cb68-33" aria-hidden="true" tabindex="-1"></a>        dir</span>
 <span id="cb68-34"><a href="#cb68-34" aria-hidden="true" tabindex="-1"></a>      },</span>
@@ -1002,7 +1002,7 @@ Note
 <span id="cb68-47"><a href="#cb68-47" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tar_target</span>(</span>
 <span id="cb68-48"><a href="#cb68-48" aria-hidden="true" tabindex="-1"></a>      final_save,</span>
 <span id="cb68-49"><a href="#cb68-49" aria-hidden="true" tabindex="-1"></a>      {</span>
-<span id="cb68-50"><a href="#cb68-50" aria-hidden="true" tabindex="-1"></a>        <span class="fu">saveRDS</span>(results, <span class="st">"/home/vetinst.no/vi2313/R-tutorials/data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_targets/final_results.rds"</span>)</span>
+<span id="cb68-50"><a href="#cb68-50" aria-hidden="true" tabindex="-1"></a>        <span class="fu">saveRDS</span>(results, <span class="st">"../../data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_targets/final_results.rds"</span>)</span>
 <span id="cb68-51"><a href="#cb68-51" aria-hidden="true" tabindex="-1"></a>        results</span>
 <span id="cb68-52"><a href="#cb68-52" aria-hidden="true" tabindex="-1"></a>      },</span>
 <span id="cb68-53"><a href="#cb68-53" aria-hidden="true" tabindex="-1"></a>      <span class="at">format =</span> <span class="st">"rds"</span></span>
@@ -1019,10 +1019,10 @@ Note
 ▶ dispatched target checkpoint_dir
 ● completed target checkpoint_dir [0.002 seconds, 600 bytes]
 ✔ skipped target data
-▶ dispatched target results
-● completed target results [3.503 seconds, 86 bytes]
-✔ skipped target final_save
-▶ ended pipeline [4.039 seconds]</code></pre>
+✔ skipped target results
+▶ dispatched target final_save
+● completed target final_save [0.005 seconds, 86 bytes]
+▶ ended pipeline [0.371 seconds]</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_visnetwork</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1030,7 +1030,7 @@ Note
 </div>
 <div class="cell-output-display">
 <div class="visNetwork html-widget html-fill-item" id="htmlwidget-502a66744b8e1fe96c06" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-502a66744b8e1fe96c06">{"x":{"nodes":{"name":["checkpoint_dir","data","final_save","results","compute_with_checkpoint"],"type":["stem","stem","stem","stem","function"],"description":[null,null,null,null,null],"status":["uptodate","uptodate","uptodate","uptodate","uptodate"],"seconds":[0.002,0,0.006,3.503,null],"bytes":[600,99,86,86,null],"branches":[null,null,null,null,null],"label":["checkpoint_dir","data","final_save","results","compute_with_checkpoint"],"color":["#354823","#354823","#354823","#354823","#354823"],"id":["checkpoint_dir","data","final_save","results","compute_with_checkpoint"],"level":[1,1,3,2,1],"shape":["dot","dot","dot","dot","triangle"]},"edges":{"from":["results","checkpoint_dir","compute_with_checkpoint","data"],"to":["final_save","results","results","results"],"arrows":["to","to","to","to"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot","physics":false},"manipulation":{"enabled":false},"edges":{"smooth":{"type":"cubicBezier","forceDirection":"horizontal"}},"physics":{"stabilization":false},"interaction":{"zoomSpeed":1},"layout":{"hierarchical":{"enabled":true,"direction":"LR"}}},"groups":null,"width":null,"height":null,"idselection":{"enabled":false,"style":"width: 150px; height: 26px","useLabels":true,"main":"Select by id"},"byselection":{"enabled":false,"style":"width: 150px; height: 26px","multiple":false,"hideColor":"rgba(200,200,200,0.5)","highlight":false},"main":{"text":"","style":"font-family:Georgia, Times New Roman, Times, serif;font-weight:bold;font-size:20px;text-align:center;"},"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)","highlight":{"enabled":true,"hoverNearest":false,"degree":{"from":1,"to":1},"algorithm":"hierarchical","hideColor":"rgba(200,200,200,0.5)","labelOnly":true},"collapse":{"enabled":true,"fit":false,"resetHighlight":true,"clusterOptions":null,"keepCoord":true,"labelSuffix":"(cluster)"},"legend":{"width":0.2,"useGroups":false,"position":"right","ncol":1,"stepX":100,"stepY":100,"zoom":true,"nodes":{"label":["Up to date","Stem","Function"],"color":["#354823","#899DA4","#899DA4"],"shape":["dot","dot","triangle"]},"nodesToDataframe":true},"tooltipStay":300,"tooltipStyle":"position: fixed;visibility:hidden;padding: 5px;white-space: nowrap;font-family: verdana;font-size:14px;font-color:#000000;background-color: #f5f4ed;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;border: 1px solid #808074;box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);"},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-502a66744b8e1fe96c06">{"x":{"nodes":{"name":["checkpoint_dir","data","final_save","results","compute_with_checkpoint"],"type":["stem","stem","stem","stem","function"],"description":[null,null,null,null,null],"status":["uptodate","uptodate","uptodate","uptodate","uptodate"],"seconds":[0.002,0,0.005,3.503,null],"bytes":[600,99,86,86,null],"branches":[null,null,null,null,null],"label":["checkpoint_dir","data","final_save","results","compute_with_checkpoint"],"color":["#354823","#354823","#354823","#354823","#354823"],"id":["checkpoint_dir","data","final_save","results","compute_with_checkpoint"],"level":[1,1,3,2,1],"shape":["dot","dot","dot","dot","triangle"]},"edges":{"from":["results","checkpoint_dir","compute_with_checkpoint","data"],"to":["final_save","results","results","results"],"arrows":["to","to","to","to"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot","physics":false},"manipulation":{"enabled":false},"edges":{"smooth":{"type":"cubicBezier","forceDirection":"horizontal"}},"physics":{"stabilization":false},"interaction":{"zoomSpeed":1},"layout":{"hierarchical":{"enabled":true,"direction":"LR"}}},"groups":null,"width":null,"height":null,"idselection":{"enabled":false,"style":"width: 150px; height: 26px","useLabels":true,"main":"Select by id"},"byselection":{"enabled":false,"style":"width: 150px; height: 26px","multiple":false,"hideColor":"rgba(200,200,200,0.5)","highlight":false},"main":{"text":"","style":"font-family:Georgia, Times New Roman, Times, serif;font-weight:bold;font-size:20px;text-align:center;"},"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)","highlight":{"enabled":true,"hoverNearest":false,"degree":{"from":1,"to":1},"algorithm":"hierarchical","hideColor":"rgba(200,200,200,0.5)","labelOnly":true},"collapse":{"enabled":true,"fit":false,"resetHighlight":true,"clusterOptions":null,"keepCoord":true,"labelSuffix":"(cluster)"},"legend":{"width":0.2,"useGroups":false,"position":"right","ncol":1,"stepX":100,"stepY":100,"zoom":true,"nodes":{"label":["Up to date","Stem","Function"],"color":["#354823","#899DA4","#899DA4"],"shape":["dot","dot","triangle"]},"nodesToDataframe":true},"tooltipStay":300,"tooltipStyle":"position: fixed;visibility:hidden;padding: 5px;white-space: nowrap;font-family: verdana;font-size:14px;font-color:#000000;background-color: #f5f4ed;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;border: 1px solid #808074;box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>The documentation for <code>targets</code> package can be found here: <a href="https://books.ropensci.org/targets/">targets package documentation</a></p>

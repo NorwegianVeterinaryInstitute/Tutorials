@@ -440,7 +440,7 @@ results <- foreach(i = 1:100, .combine = c) %dopar% {
   result <- i^2
 
   # Save intermediate results
-  saveRDS(result, file = paste0("/home/vetinst.no/vi2313/R-tutorials/data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_", i, ".rds"))
+  saveRDS(result, file = paste0("../../data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_", i, ".rds"))
   result
 }
 
@@ -457,7 +457,7 @@ plan(multisession, workers = 4)
 # Function with intermediate saving
 safe_compute <- function(i) {
   result <- i^2
-  saveRDS(result, file = paste0("/home/vetinst.no/vi2313/R-tutorials/data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_", i, ".rds"))
+  saveRDS(result, file = paste0("../../data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_", i, ".rds"))
   return(result)
 }
 
@@ -466,7 +466,7 @@ results <- future.apply::future_lapply(1:100, safe_compute)
 
 # Aggregate saved results
 final_results <- unlist(results)
-saveRDS(final_results, file = "/home/vetinst.no/vi2313/R-tutorials/data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/final_results.rds")
+saveRDS(final_results, file = "../../data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/final_results.rds")
 
 ```
 
@@ -478,7 +478,7 @@ Here is the "structure" of a function that can be used to restore your progress.
 library(future.apply)
 
 # Define checkpoint directory
-checkpoint_dir <- "/home/vetinst.no/vi2313/R-tutorials/data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_parallel/"
+checkpoint_dir <- "../../data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_parallel/"
 dir.create(checkpoint_dir, showWarnings = FALSE)
 
 # Set up parallel plan
@@ -545,7 +545,7 @@ tar_script({
     tar_target(
       checkpoint_dir,
       {
-        dir <- "/home/vetinst.no/vi2313/R-tutorials/data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_targets/"
+        dir <- "../../data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_targets/"
         dir.create(dir, showWarnings = FALSE)
         dir
       },
@@ -564,7 +564,7 @@ tar_script({
     tar_target(
       final_save,
       {
-        saveRDS(results, "/home/vetinst.no/vi2313/R-tutorials/data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_targets/final_results.rds")
+        saveRDS(results, "../../data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_targets/final_results.rds")
         results
       },
       format = "rds"
