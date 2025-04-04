@@ -44,7 +44,7 @@
         "Maintainer": "Martin Maechler <mmaechler+Matrix@gmail.com>",
         "Repository": "CRAN",
         "Date/Publication": "2024-04-26 12:03:02 UTC",
-        "Built": "R 4.4.1; x86_64-pc-linux-gnu; 2024-08-22 01:55:49 UTC; unix"
+        "Built": "R 4.4.1; x86_64-pc-linux-gnu; 2024-11-07 07:07:15 UTC; unix"
       }
     },
     "R6": {
@@ -281,7 +281,7 @@
         "Packaged": "2024-03-31 18:18:09 UTC; luke",
         "Repository": "CRAN",
         "Date/Publication": "2024-03-31 20:10:06 UTC",
-        "Built": "R 4.4.1; ; 2024-08-22 01:59:17 UTC; unix"
+        "Built": "R 4.4.1; ; 2024-11-07 07:10:05 UTC; unix"
       }
     },
     "cpp11": {
@@ -956,7 +956,7 @@
         "Maintainer": "Deepayan Sarkar <deepayan.sarkar@r-project.org>",
         "Repository": "CRAN",
         "Date/Publication": "2024-03-20 06:10:02 UTC",
-        "Built": "R 4.4.1; x86_64-pc-linux-gnu; 2024-08-22 01:55:37 UTC; unix"
+        "Built": "R 4.4.1; x86_64-pc-linux-gnu; 2024-11-07 07:07:07 UTC; unix"
       }
     },
     "lifecycle": {
@@ -1702,7 +1702,7 @@
       "checksum": "eabf52187bd7f2c9be6258ba2729909b"
     },
     "_book/Creating_pins_on_Connect.html": {
-      "checksum": "ad6356a21421cb74d7a3b6b82d561250"
+      "checksum": "175af5de87c39feaf1972135d6b414c3"
     },
     "_book/getting_help_with_R.html": {
       "checksum": "2c7b596d7cab3d5624f1628b0fe667fd"
@@ -1713,8 +1713,59 @@
     "_book/Git_backed_deployment_to_posit_connect.html": {
       "checksum": "46a8f9b210972632c594ec5a13137469"
     },
+    "_book/images/logos/vetinst-logo-eng.png": {
+      "checksum": "9b26f213f0e64ea8e49223e5ca460706"
+    },
+    "_book/images/part_general/posit infrastructure at VI images/concept_map.jpeg": {
+      "checksum": "70582aa5658d25ebe760ef60e70d0ab5"
+    },
+    "_book/images/part_general/posit infrastructure at VI images/pane_1.png": {
+      "checksum": "b9f9bf1904fd4b9ab77eb00b0148efc4"
+    },
+    "_book/images/part_general/posit infrastructure at VI images/pane-2.png": {
+      "checksum": "3ac3f74f97d930285edae73344fd57eb"
+    },
+    "_book/images/part_general/posit infrastructure at VI images/wb jobs 2.png": {
+      "checksum": "be0cd90ac5d5f7764e6e4ccbe20581e4"
+    },
+    "_book/images/part_general/posit infrastructure at VI images/wb jobs.png": {
+      "checksum": "1088412fc760b51a82607672f2b63b19"
+    },
+    "_book/images/part_general/posit infrastructure at VI images/workbench architecture.png": {
+      "checksum": "10294f0fc97114e32052bcae82b71868"
+    },
+    "_book/images/part_r_rstudio_tutorials/parallelization-on-workbench-images/download (1).png": {
+      "checksum": "083bf3b8bf111fe506f2f0c5e7794b66"
+    },
+    "_book/images/part_r_rstudio_tutorials/parallelization-on-workbench-images/download.png": {
+      "checksum": "9880ed97d346c83f27977c3bf410166d"
+    },
+    "_book/images/part_r_rstudio_tutorials/posit infrastructure at VI images/background_job.png": {
+      "checksum": "5622c4e40a713fd0e2eb26e042b14a55"
+    },
+    "_book/images/part_r_rstudio_tutorials/posit infrastructure at VI images/concept_map.jpeg": {
+      "checksum": "70582aa5658d25ebe760ef60e70d0ab5"
+    },
+    "_book/images/part_r_rstudio_tutorials/posit infrastructure at VI images/pane_1.png": {
+      "checksum": "b9f9bf1904fd4b9ab77eb00b0148efc4"
+    },
+    "_book/images/part_r_rstudio_tutorials/posit infrastructure at VI images/pane-2.png": {
+      "checksum": "3ac3f74f97d930285edae73344fd57eb"
+    },
+    "_book/images/part_r_rstudio_tutorials/posit infrastructure at VI images/wb jobs 2.png": {
+      "checksum": "be0cd90ac5d5f7764e6e4ccbe20581e4"
+    },
+    "_book/images/part_r_rstudio_tutorials/posit infrastructure at VI images/wb jobs.png": {
+      "checksum": "1088412fc760b51a82607672f2b63b19"
+    },
+    "_book/images/part_r_rstudio_tutorials/posit infrastructure at VI images/workbench architecture.png": {
+      "checksum": "10294f0fc97114e32052bcae82b71868"
+    },
+    "_book/images/part_r_rstudio_tutorials/Tips_and_tricks/rstudio_tips_pane_layout.webp": {
+      "checksum": "41ec81061c2ff696608253a2a6b9f7c5"
+    },
     "_book/index.html": {
-      "checksum": "0e1a4a668d4692bebf3cf9453a370c91"
+      "checksum": "0e604a9ac4b393c1437c45a29941f160"
     },
     "_book/intro.html": {
       "checksum": "391dcf4408e433a35b67336d2258e24f"
@@ -1726,7 +1777,7 @@
       "checksum": "8feb5c179940af943f0fd34bd881cd05"
     },
     "_book/parallelization_on_workbench.html": {
-      "checksum": "7650f78c811b75baf6b819f29137944a"
+      "checksum": "375eb41dc2e8fada0c10a380cb9f44a9"
     },
     "_book/parallelization-on-workbench-images/download (1).png": {
       "checksum": "083bf3b8bf111fe506f2f0c5e7794b66"
@@ -1759,16 +1810,52 @@
       "checksum": "82a0c45d49e6ac1ea3d4618c792fa1b1"
     },
     "_book/posit_infrastructure_at_VI.html": {
-      "checksum": "f72e6579325551bff38d8cb7c5064831"
+      "checksum": "dbc35c7412e5b331b74e8c79e44cdeab"
     },
     "_book/projects_in_RStudio.html": {
       "checksum": "615e00182a1750de4e5dabce3673166b"
     },
+    "_book/quarto_files/contributing.html": {
+      "checksum": "031ae3ca3609f580cf21cce97fea6ad0"
+    },
+    "_book/quarto_files/part_configrations/connecting_r_studio_to_github.html": {
+      "checksum": "f9a78948a5958c33d4f6d50d1a38dc07"
+    },
+    "_book/quarto_files/part_configrations/setting_home_dir.html": {
+      "checksum": "9ede07ca35a85874c9947cc9ae429e66"
+    },
+    "_book/quarto_files/part_general/posit_infrastructure_at_VI.html": {
+      "checksum": "c78c9f505db0d119ab17d62882b3274c"
+    },
+    "_book/quarto_files/part_posit_connect/creating_pins_on_connect.html": {
+      "checksum": "220733a9f3b05141b9579ca046b67cd4"
+    },
+    "_book/quarto_files/part_posit_connect/git_backed_deployment_to_posit_connect.html": {
+      "checksum": "e8b64463d751aca9206bf01ec8f3fdd3"
+    },
+    "_book/quarto_files/part_r_rstudio_tutorials/anatomy_of_a_r_package.html": {
+      "checksum": "07602566d33d01732d76aae4822a6f41"
+    },
+    "_book/quarto_files/part_r_rstudio_tutorials/getting_help_with_r.html": {
+      "checksum": "f33b14ae4c51a0ecfb81d11315c42415"
+    },
+    "_book/quarto_files/part_r_rstudio_tutorials/parallelization_on_workbench.html": {
+      "checksum": "2402462c56c00538d078c7b8330b9732"
+    },
+    "_book/quarto_files/part_r_rstudio_tutorials/projects_in_r_studio.html": {
+      "checksum": "f79002b24c5d3a42cc14da86a928f861"
+    },
+    "_book/quarto_files/part_r_rstudio_tutorials/r_studio_tips_and_tricks.html": {
+      "checksum": "9b6be1d6913c35bc6933d3beb9d0ebde"
+    },
     "_book/RStudio_tips_and_tricks.html": {
-      "checksum": "eb9ae16b34dafd935a6b2a4ed1c75f8c"
+      "checksum": "e86c7b0f95123d7f6f00c17400ab2d4a"
     },
     "_book/search.json": {
-      "checksum": "a629f18f9b4986ea51d1f2b171e37991"
+      "checksum": "0a506245dd04a0b898f7e2a66f99698e"
+    },
+    "_book/setting_home_dir.html": {
+      "checksum": "1a07574387a1ec963cf90930900e0570"
     },
     "_book/site_libs/bootstrap/bootstrap-icons.css": {
       "checksum": "2318f137d201fbf51601fa0faba6bef7"
@@ -1777,7 +1864,7 @@
       "checksum": "1a51dfbe5467607389d603c02a77cd10"
     },
     "_book/site_libs/bootstrap/bootstrap.min.css": {
-      "checksum": "eb5f441a521b306e858fccd266fe6d1d"
+      "checksum": "b7d4de5890598246f5ea40753c7488a4"
     },
     "_book/site_libs/bootstrap/bootstrap.min.js": {
       "checksum": "e2b09c06f0e714b6144a6788a28e3950"
@@ -1885,775 +1972,790 @@
       "checksum": "41ec81061c2ff696608253a2a6b9f7c5"
     },
     "_quarto.yml": {
-      "checksum": "1dc60275e6e6d8dbcff132f7511f9997"
+      "checksum": "54dc02f35275c10dda16f507b66352ff"
     },
-    "_targets.R": {
-      "checksum": "91ecabb2ed0bf0f0ebce76f1aaadce72"
+    "data/part_configration/.gitkeep": {
+      "checksum": "d41d8cd98f00b204e9800998ecf8427e"
     },
-    "_targets/meta/meta": {
-      "checksum": "c7bdb4d0695efed2b6196cde83efc67b"
+    "data/part_general/.gitkeep": {
+      "checksum": "d41d8cd98f00b204e9800998ecf8427e"
     },
-    "_targets/meta/process": {
-      "checksum": "777285de797027c2a207d0aec210d031"
+    "data/part_posit_connect/.gitkeep": {
+      "checksum": "d41d8cd98f00b204e9800998ecf8427e"
     },
-    "_targets/meta/progress": {
-      "checksum": "66445856d17e143dd9e01729ca7b2114"
-    },
-    "_targets/objects/data": {
-      "checksum": "a40285644419de7fafabe5c9fadc5812"
-    },
-    "_targets/objects/final_save": {
-      "checksum": "b90374592bc41a3e0a9359a08b691223"
-    },
-    "_targets/objects/results": {
-      "checksum": "b90374592bc41a3e0a9359a08b691223"
-    },
-    "anatomy_of_a_R_package.qmd": {
-      "checksum": "2d12e2635f735a309f73a8999951ea6b"
-    },
-    "checkpoints_parallel/result_1.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_parallel/result_1.rds": {
       "checksum": "662c59fd793eb243a8e8fd08e30ef479"
     },
-    "checkpoints_parallel/result_10.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_parallel/result_10.rds": {
       "checksum": "3dc18e45b026b0010a43d546c0488f09"
     },
-    "checkpoints_parallel/result_2.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_parallel/result_2.rds": {
       "checksum": "7b437d5fdee551e2e3751cad19427a34"
     },
-    "checkpoints_parallel/result_3.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_parallel/result_3.rds": {
       "checksum": "e80e0ecbbd8f6c00e1769ad17533c869"
     },
-    "checkpoints_parallel/result_4.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_parallel/result_4.rds": {
       "checksum": "633ad26c8fe707a2073f443d15f5e495"
     },
-    "checkpoints_parallel/result_5.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_parallel/result_5.rds": {
       "checksum": "702643c1e1f57ba7ea4c5b01bb8bfac5"
     },
-    "checkpoints_parallel/result_6.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_parallel/result_6.rds": {
       "checksum": "7a893fa79d9d7b20660d8b0a4f7c084d"
     },
-    "checkpoints_parallel/result_7.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_parallel/result_7.rds": {
       "checksum": "715be1f23c53339b9044ab3d9b652af3"
     },
-    "checkpoints_parallel/result_8.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_parallel/result_8.rds": {
       "checksum": "a8ae8421644ddcd2ffed45ca559204b4"
     },
-    "checkpoints_parallel/result_9.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_parallel/result_9.rds": {
       "checksum": "c050fd7cc70d183eea17db08a87b42aa"
     },
-    "checkpoints_targets/result_1.rds": {
-      "checksum": "c77e039f9685d22637faa4d5bacb6589"
-    },
-    "checkpoints_targets/result_10.rds": {
-      "checksum": "1d99fe229faca1a0b6f5cc21f8b18452"
-    },
-    "checkpoints_targets/result_2.rds": {
-      "checksum": "7b437d5fdee551e2e3751cad19427a34"
-    },
-    "checkpoints_targets/result_3.rds": {
-      "checksum": "3eae806bd9dbdcd5799016f73bf01828"
-    },
-    "checkpoints_targets/result_4.rds": {
-      "checksum": "a8ae8421644ddcd2ffed45ca559204b4"
-    },
-    "checkpoints_targets/result_5.rds": {
-      "checksum": "ae066420bd5a035017a87b0badd15ad2"
-    },
-    "checkpoints_targets/result_6.rds": {
-      "checksum": "49497649a6f58d2d1719d811a2d1b97c"
-    },
-    "checkpoints_targets/result_7.rds": {
-      "checksum": "6695179934e0e732b7a9ef171a849079"
-    },
-    "checkpoints_targets/result_8.rds": {
-      "checksum": "e151ccab127d71441dc6124e28aad11f"
-    },
-    "checkpoints_targets/result_9.rds": {
-      "checksum": "701f305d5e832eec8015eda047c4efaa"
-    },
-    "connecting_RStudio_to_GitHub.qmd": {
-      "checksum": "3dfd4f292902fb6578ebdd9bddb45dc0"
-    },
-    "cover.png": {
-      "checksum": "308012df3fa962ae61c7114806331a72"
-    },
-    "Creating_pins_on_Connect.qmd": {
-      "checksum": "ff45ed4609e50dee4f890fc5f2475260"
-    },
-    "final_results.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_targets/final_results.rds": {
       "checksum": "b90374592bc41a3e0a9359a08b691223"
     },
-    "for_each/result_1.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_targets/result_1.rds": {
       "checksum": "c77e039f9685d22637faa4d5bacb6589"
     },
-    "for_each/result_10.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_targets/result_10.rds": {
       "checksum": "1d99fe229faca1a0b6f5cc21f8b18452"
     },
-    "for_each/result_100.rds": {
-      "checksum": "ecce603a5d047c8cbb4f29b46220172c"
-    },
-    "for_each/result_11.rds": {
-      "checksum": "79ed516dd8e56e4d998261962795cafb"
-    },
-    "for_each/result_12.rds": {
-      "checksum": "ccc42bb8a1e471ec930e47493f35fc4b"
-    },
-    "for_each/result_13.rds": {
-      "checksum": "ed2b389d558b53ebde0d0f5103050649"
-    },
-    "for_each/result_14.rds": {
-      "checksum": "13a702a9c34a87f6e7e4edb8a6b50a1f"
-    },
-    "for_each/result_15.rds": {
-      "checksum": "432b64c22003b0449fca6489fc1e8dab"
-    },
-    "for_each/result_16.rds": {
-      "checksum": "926e9b4f11a945dd45c75fd34849effe"
-    },
-    "for_each/result_17.rds": {
-      "checksum": "fab5e06f9591ab326298bcf10bd88e00"
-    },
-    "for_each/result_18.rds": {
-      "checksum": "2e1b04bc39d35b7a946f861afda78cdf"
-    },
-    "for_each/result_19.rds": {
-      "checksum": "efd52e0eb7552260569541dc35d958b9"
-    },
-    "for_each/result_2.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_targets/result_2.rds": {
       "checksum": "7b437d5fdee551e2e3751cad19427a34"
     },
-    "for_each/result_20.rds": {
-      "checksum": "d32c6a77dee3e787efef0d0a9fd2fc01"
-    },
-    "for_each/result_21.rds": {
-      "checksum": "698e2e00d2b4a7080659c3e1603853bf"
-    },
-    "for_each/result_22.rds": {
-      "checksum": "c615f49184ca61e3055098e3cded8621"
-    },
-    "for_each/result_23.rds": {
-      "checksum": "d4fee8e869ae972f3094d92980d2ef0c"
-    },
-    "for_each/result_24.rds": {
-      "checksum": "274c526331da2d38a26e000b93ab9543"
-    },
-    "for_each/result_25.rds": {
-      "checksum": "51c0ddafd3167d1702906651ec97dee4"
-    },
-    "for_each/result_26.rds": {
-      "checksum": "5e21050dee7cb4884ba0d45f60d65abf"
-    },
-    "for_each/result_27.rds": {
-      "checksum": "412bb39ebb8044df1c45fe9fe4a5b49a"
-    },
-    "for_each/result_28.rds": {
-      "checksum": "9ef3d7d06620f6f1072c01ad3bef2d2b"
-    },
-    "for_each/result_29.rds": {
-      "checksum": "81426b4b86eafd073caf525c7f93be9b"
-    },
-    "for_each/result_3.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_targets/result_3.rds": {
       "checksum": "3eae806bd9dbdcd5799016f73bf01828"
     },
-    "for_each/result_30.rds": {
-      "checksum": "288b80ad5138e4b813ef7115e9a95ad4"
-    },
-    "for_each/result_31.rds": {
-      "checksum": "cadeb2fb0c38cab353efeac9c27b5503"
-    },
-    "for_each/result_32.rds": {
-      "checksum": "74b5c851a7c5c2326ae10bba3bfbba60"
-    },
-    "for_each/result_33.rds": {
-      "checksum": "fc97779393d3124446b4156b51c47126"
-    },
-    "for_each/result_34.rds": {
-      "checksum": "a29b4795be0ff7a2ee21b909ced0b182"
-    },
-    "for_each/result_35.rds": {
-      "checksum": "9731073c7435eb080e2b3281eb9f03a6"
-    },
-    "for_each/result_36.rds": {
-      "checksum": "ba0352aada1c85cfe9ba392012aebff3"
-    },
-    "for_each/result_37.rds": {
-      "checksum": "54599e633a41bb8434e28f57b97e5b13"
-    },
-    "for_each/result_38.rds": {
-      "checksum": "099a49fbc896e6f8ec3cd2be005c27a5"
-    },
-    "for_each/result_39.rds": {
-      "checksum": "b882e36b2cf1974a92d7def31dc2cd99"
-    },
-    "for_each/result_4.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_targets/result_4.rds": {
       "checksum": "a8ae8421644ddcd2ffed45ca559204b4"
     },
-    "for_each/result_40.rds": {
-      "checksum": "9c798ea615fc8204a31cf67e6e08732d"
-    },
-    "for_each/result_41.rds": {
-      "checksum": "56e9b1baf6d39cca9b7c7d119fc54717"
-    },
-    "for_each/result_42.rds": {
-      "checksum": "54a20a4b042277d06f1e63d990f10372"
-    },
-    "for_each/result_43.rds": {
-      "checksum": "cda53d985dcb05ba8165ba574afbb476"
-    },
-    "for_each/result_44.rds": {
-      "checksum": "63de6b2aac46a3f2b358d414a19fdf14"
-    },
-    "for_each/result_45.rds": {
-      "checksum": "4cffae183eb94990c7e59626c59e3e46"
-    },
-    "for_each/result_46.rds": {
-      "checksum": "29b07576220d8fb3a42cca2ab0dedd77"
-    },
-    "for_each/result_47.rds": {
-      "checksum": "464072823f4b07725a64faeccc54fc05"
-    },
-    "for_each/result_48.rds": {
-      "checksum": "21ea207d0ad658ea7030379e0823c990"
-    },
-    "for_each/result_49.rds": {
-      "checksum": "3088f62f62b6cdac7982f8b0a1c91684"
-    },
-    "for_each/result_5.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_targets/result_5.rds": {
       "checksum": "ae066420bd5a035017a87b0badd15ad2"
     },
-    "for_each/result_50.rds": {
-      "checksum": "bfd4b02781f4746314633fa111d7d1db"
-    },
-    "for_each/result_51.rds": {
-      "checksum": "9acf8db479600b31e3f66946d23fa073"
-    },
-    "for_each/result_52.rds": {
-      "checksum": "1e9b6f28ed4af1eb7b4e0c157b971a8b"
-    },
-    "for_each/result_53.rds": {
-      "checksum": "3ef36d660ee62559424f73430a546712"
-    },
-    "for_each/result_54.rds": {
-      "checksum": "2574672529046e17a98c26c25ff82386"
-    },
-    "for_each/result_55.rds": {
-      "checksum": "8d8c0320b1e2670e10548de17257d8c2"
-    },
-    "for_each/result_56.rds": {
-      "checksum": "419b8bc33ce86dd41a331480f77d14fa"
-    },
-    "for_each/result_57.rds": {
-      "checksum": "7fae57aa18b35a35966b2e1eb94acf78"
-    },
-    "for_each/result_58.rds": {
-      "checksum": "c10365803d990c30f2415d86ddc1b192"
-    },
-    "for_each/result_59.rds": {
-      "checksum": "e6a961383cf00225338b6ae42c0b8feb"
-    },
-    "for_each/result_6.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_targets/result_6.rds": {
       "checksum": "49497649a6f58d2d1719d811a2d1b97c"
     },
-    "for_each/result_60.rds": {
-      "checksum": "cdba3e34e8bbb5bb67e78361ed30f759"
-    },
-    "for_each/result_61.rds": {
-      "checksum": "28da8b8fa4e22ca7d7eace34931b408b"
-    },
-    "for_each/result_62.rds": {
-      "checksum": "8cc0019574970b89f5eaf9c375ce177f"
-    },
-    "for_each/result_63.rds": {
-      "checksum": "a4ecb1d70e34ac7ee82df5f05a0377b6"
-    },
-    "for_each/result_64.rds": {
-      "checksum": "6785f13c50e3c4cb22f15239a1d5ee94"
-    },
-    "for_each/result_65.rds": {
-      "checksum": "5d1f23f16d8bb6fcd3611dc820682410"
-    },
-    "for_each/result_66.rds": {
-      "checksum": "1d3045268cc03fdbf944264c37c8c2d8"
-    },
-    "for_each/result_67.rds": {
-      "checksum": "b8a8a664ccfa48a7e6fefaa9970155ac"
-    },
-    "for_each/result_68.rds": {
-      "checksum": "c99a16175ec932006178a5d80e66aa72"
-    },
-    "for_each/result_69.rds": {
-      "checksum": "cdbcdd22f8aa5ef3597bc31d12f5eac0"
-    },
-    "for_each/result_7.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_targets/result_7.rds": {
       "checksum": "6695179934e0e732b7a9ef171a849079"
     },
-    "for_each/result_70.rds": {
-      "checksum": "d7d812bd766209b911d4782ac77278e3"
-    },
-    "for_each/result_71.rds": {
-      "checksum": "ded40076cafbb0baac1bd8915b0b3358"
-    },
-    "for_each/result_72.rds": {
-      "checksum": "28b9d621f301617f2ef9175d42020e6d"
-    },
-    "for_each/result_73.rds": {
-      "checksum": "372c10f19b4aaf9f1a08965e35c58cb9"
-    },
-    "for_each/result_74.rds": {
-      "checksum": "25a382bdaa8bdc71fa328117d5fdff9b"
-    },
-    "for_each/result_75.rds": {
-      "checksum": "423d8de9bd1614a8c97f75bcc14f32a7"
-    },
-    "for_each/result_76.rds": {
-      "checksum": "896d9a2339b758f3437bda41d80dbf87"
-    },
-    "for_each/result_77.rds": {
-      "checksum": "b07880c96b9a0744e27853abb54f71a3"
-    },
-    "for_each/result_78.rds": {
-      "checksum": "4e1e8392e712f0b40d240f4a76198e7e"
-    },
-    "for_each/result_79.rds": {
-      "checksum": "a3305e0bd94a8d868e5a18ea1555a4df"
-    },
-    "for_each/result_8.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_targets/result_8.rds": {
       "checksum": "e151ccab127d71441dc6124e28aad11f"
     },
-    "for_each/result_80.rds": {
-      "checksum": "54c1b658a1c36b0b9912991b3ffdb31e"
-    },
-    "for_each/result_81.rds": {
-      "checksum": "15748de338e647c4490d1582bfa53e4d"
-    },
-    "for_each/result_82.rds": {
-      "checksum": "e57bc4834364f9a3a550c962f3ed319b"
-    },
-    "for_each/result_83.rds": {
-      "checksum": "d506e74c2a98f3cd833b6d75e3c7cca8"
-    },
-    "for_each/result_84.rds": {
-      "checksum": "b27d66f891ca928fde1acea4cdb72ad3"
-    },
-    "for_each/result_85.rds": {
-      "checksum": "dca8f15026ab70ed81f79bc25b92bc3c"
-    },
-    "for_each/result_86.rds": {
-      "checksum": "7eaed2ae9d21ec788042f30b1bf4ca02"
-    },
-    "for_each/result_87.rds": {
-      "checksum": "2366f110541a2025de4f4bf8a19962f1"
-    },
-    "for_each/result_88.rds": {
-      "checksum": "61bbab56822e88ea13218586c8d33a48"
-    },
-    "for_each/result_89.rds": {
-      "checksum": "9a471f364bf3779bb1ab4ba0a3bbb9cb"
-    },
-    "for_each/result_9.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_targets/result_9.rds": {
       "checksum": "701f305d5e832eec8015eda047c4efaa"
     },
-    "for_each/result_90.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_1.rds": {
+      "checksum": "c77e039f9685d22637faa4d5bacb6589"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_10.rds": {
+      "checksum": "1d99fe229faca1a0b6f5cc21f8b18452"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_100.rds": {
+      "checksum": "ecce603a5d047c8cbb4f29b46220172c"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_11.rds": {
+      "checksum": "79ed516dd8e56e4d998261962795cafb"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_12.rds": {
+      "checksum": "ccc42bb8a1e471ec930e47493f35fc4b"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_13.rds": {
+      "checksum": "ed2b389d558b53ebde0d0f5103050649"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_14.rds": {
+      "checksum": "13a702a9c34a87f6e7e4edb8a6b50a1f"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_15.rds": {
+      "checksum": "432b64c22003b0449fca6489fc1e8dab"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_16.rds": {
+      "checksum": "926e9b4f11a945dd45c75fd34849effe"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_17.rds": {
+      "checksum": "fab5e06f9591ab326298bcf10bd88e00"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_18.rds": {
+      "checksum": "2e1b04bc39d35b7a946f861afda78cdf"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_19.rds": {
+      "checksum": "efd52e0eb7552260569541dc35d958b9"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_2.rds": {
+      "checksum": "7b437d5fdee551e2e3751cad19427a34"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_20.rds": {
+      "checksum": "d32c6a77dee3e787efef0d0a9fd2fc01"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_21.rds": {
+      "checksum": "698e2e00d2b4a7080659c3e1603853bf"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_22.rds": {
+      "checksum": "c615f49184ca61e3055098e3cded8621"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_23.rds": {
+      "checksum": "d4fee8e869ae972f3094d92980d2ef0c"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_24.rds": {
+      "checksum": "274c526331da2d38a26e000b93ab9543"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_25.rds": {
+      "checksum": "51c0ddafd3167d1702906651ec97dee4"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_26.rds": {
+      "checksum": "5e21050dee7cb4884ba0d45f60d65abf"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_27.rds": {
+      "checksum": "412bb39ebb8044df1c45fe9fe4a5b49a"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_28.rds": {
+      "checksum": "9ef3d7d06620f6f1072c01ad3bef2d2b"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_29.rds": {
+      "checksum": "81426b4b86eafd073caf525c7f93be9b"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_3.rds": {
+      "checksum": "3eae806bd9dbdcd5799016f73bf01828"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_30.rds": {
+      "checksum": "288b80ad5138e4b813ef7115e9a95ad4"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_31.rds": {
+      "checksum": "cadeb2fb0c38cab353efeac9c27b5503"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_32.rds": {
+      "checksum": "74b5c851a7c5c2326ae10bba3bfbba60"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_33.rds": {
+      "checksum": "fc97779393d3124446b4156b51c47126"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_34.rds": {
+      "checksum": "a29b4795be0ff7a2ee21b909ced0b182"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_35.rds": {
+      "checksum": "9731073c7435eb080e2b3281eb9f03a6"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_36.rds": {
+      "checksum": "ba0352aada1c85cfe9ba392012aebff3"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_37.rds": {
+      "checksum": "54599e633a41bb8434e28f57b97e5b13"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_38.rds": {
+      "checksum": "099a49fbc896e6f8ec3cd2be005c27a5"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_39.rds": {
+      "checksum": "b882e36b2cf1974a92d7def31dc2cd99"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_4.rds": {
+      "checksum": "a8ae8421644ddcd2ffed45ca559204b4"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_40.rds": {
+      "checksum": "9c798ea615fc8204a31cf67e6e08732d"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_41.rds": {
+      "checksum": "56e9b1baf6d39cca9b7c7d119fc54717"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_42.rds": {
+      "checksum": "54a20a4b042277d06f1e63d990f10372"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_43.rds": {
+      "checksum": "cda53d985dcb05ba8165ba574afbb476"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_44.rds": {
+      "checksum": "63de6b2aac46a3f2b358d414a19fdf14"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_45.rds": {
+      "checksum": "4cffae183eb94990c7e59626c59e3e46"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_46.rds": {
+      "checksum": "29b07576220d8fb3a42cca2ab0dedd77"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_47.rds": {
+      "checksum": "464072823f4b07725a64faeccc54fc05"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_48.rds": {
+      "checksum": "21ea207d0ad658ea7030379e0823c990"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_49.rds": {
+      "checksum": "3088f62f62b6cdac7982f8b0a1c91684"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_5.rds": {
+      "checksum": "ae066420bd5a035017a87b0badd15ad2"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_50.rds": {
+      "checksum": "bfd4b02781f4746314633fa111d7d1db"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_51.rds": {
+      "checksum": "9acf8db479600b31e3f66946d23fa073"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_52.rds": {
+      "checksum": "1e9b6f28ed4af1eb7b4e0c157b971a8b"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_53.rds": {
+      "checksum": "3ef36d660ee62559424f73430a546712"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_54.rds": {
+      "checksum": "2574672529046e17a98c26c25ff82386"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_55.rds": {
+      "checksum": "8d8c0320b1e2670e10548de17257d8c2"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_56.rds": {
+      "checksum": "419b8bc33ce86dd41a331480f77d14fa"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_57.rds": {
+      "checksum": "7fae57aa18b35a35966b2e1eb94acf78"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_58.rds": {
+      "checksum": "c10365803d990c30f2415d86ddc1b192"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_59.rds": {
+      "checksum": "e6a961383cf00225338b6ae42c0b8feb"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_6.rds": {
+      "checksum": "49497649a6f58d2d1719d811a2d1b97c"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_60.rds": {
+      "checksum": "cdba3e34e8bbb5bb67e78361ed30f759"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_61.rds": {
+      "checksum": "28da8b8fa4e22ca7d7eace34931b408b"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_62.rds": {
+      "checksum": "8cc0019574970b89f5eaf9c375ce177f"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_63.rds": {
+      "checksum": "a4ecb1d70e34ac7ee82df5f05a0377b6"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_64.rds": {
+      "checksum": "6785f13c50e3c4cb22f15239a1d5ee94"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_65.rds": {
+      "checksum": "5d1f23f16d8bb6fcd3611dc820682410"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_66.rds": {
+      "checksum": "1d3045268cc03fdbf944264c37c8c2d8"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_67.rds": {
+      "checksum": "b8a8a664ccfa48a7e6fefaa9970155ac"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_68.rds": {
+      "checksum": "c99a16175ec932006178a5d80e66aa72"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_69.rds": {
+      "checksum": "cdbcdd22f8aa5ef3597bc31d12f5eac0"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_7.rds": {
+      "checksum": "6695179934e0e732b7a9ef171a849079"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_70.rds": {
+      "checksum": "d7d812bd766209b911d4782ac77278e3"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_71.rds": {
+      "checksum": "ded40076cafbb0baac1bd8915b0b3358"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_72.rds": {
+      "checksum": "28b9d621f301617f2ef9175d42020e6d"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_73.rds": {
+      "checksum": "372c10f19b4aaf9f1a08965e35c58cb9"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_74.rds": {
+      "checksum": "25a382bdaa8bdc71fa328117d5fdff9b"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_75.rds": {
+      "checksum": "423d8de9bd1614a8c97f75bcc14f32a7"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_76.rds": {
+      "checksum": "896d9a2339b758f3437bda41d80dbf87"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_77.rds": {
+      "checksum": "b07880c96b9a0744e27853abb54f71a3"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_78.rds": {
+      "checksum": "4e1e8392e712f0b40d240f4a76198e7e"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_79.rds": {
+      "checksum": "a3305e0bd94a8d868e5a18ea1555a4df"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_8.rds": {
+      "checksum": "e151ccab127d71441dc6124e28aad11f"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_80.rds": {
+      "checksum": "54c1b658a1c36b0b9912991b3ffdb31e"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_81.rds": {
+      "checksum": "15748de338e647c4490d1582bfa53e4d"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_82.rds": {
+      "checksum": "e57bc4834364f9a3a550c962f3ed319b"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_83.rds": {
+      "checksum": "d506e74c2a98f3cd833b6d75e3c7cca8"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_84.rds": {
+      "checksum": "b27d66f891ca928fde1acea4cdb72ad3"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_85.rds": {
+      "checksum": "dca8f15026ab70ed81f79bc25b92bc3c"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_86.rds": {
+      "checksum": "7eaed2ae9d21ec788042f30b1bf4ca02"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_87.rds": {
+      "checksum": "2366f110541a2025de4f4bf8a19962f1"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_88.rds": {
+      "checksum": "61bbab56822e88ea13218586c8d33a48"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_89.rds": {
+      "checksum": "9a471f364bf3779bb1ab4ba0a3bbb9cb"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_9.rds": {
+      "checksum": "701f305d5e832eec8015eda047c4efaa"
+    },
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_90.rds": {
       "checksum": "59337e7467e818848b6e5bed635ce9dd"
     },
-    "for_each/result_91.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_91.rds": {
       "checksum": "6538b649a9e2776fa00e0a4e745edce7"
     },
-    "for_each/result_92.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_92.rds": {
       "checksum": "3888d0867f2693ba02d7484f1045bdeb"
     },
-    "for_each/result_93.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_93.rds": {
       "checksum": "d24c3d90aeef6a4a4a1d8fe4110c6cf4"
     },
-    "for_each/result_94.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_94.rds": {
       "checksum": "b6068e23e384be10730308019f12a358"
     },
-    "for_each/result_95.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_95.rds": {
       "checksum": "a0cd64f20a58d5cb52e11e1da2f7858e"
     },
-    "for_each/result_96.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_96.rds": {
       "checksum": "fa5f4516ea1267812fa1216cf5a1afe0"
     },
-    "for_each/result_97.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_97.rds": {
       "checksum": "d0b307872b53680ef8a2fa26baef6df8"
     },
-    "for_each/result_98.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_98.rds": {
       "checksum": "509d8e90ce535a7795fd9c4710823615"
     },
-    "for_each/result_99.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_99.rds": {
       "checksum": "627a6219c05005615b43adc679e7ef38"
     },
-    "future_apply/final_results.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/final_results.rds": {
       "checksum": "3bc42475b8485dad56b1f5a05c04af9c"
     },
-    "future_apply/partial_result_1.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_1.rds": {
       "checksum": "c77e039f9685d22637faa4d5bacb6589"
     },
-    "future_apply/partial_result_10.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_10.rds": {
       "checksum": "1d99fe229faca1a0b6f5cc21f8b18452"
     },
-    "future_apply/partial_result_100.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_100.rds": {
       "checksum": "ecce603a5d047c8cbb4f29b46220172c"
     },
-    "future_apply/partial_result_11.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_11.rds": {
       "checksum": "79ed516dd8e56e4d998261962795cafb"
     },
-    "future_apply/partial_result_12.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_12.rds": {
       "checksum": "ccc42bb8a1e471ec930e47493f35fc4b"
     },
-    "future_apply/partial_result_13.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_13.rds": {
       "checksum": "ed2b389d558b53ebde0d0f5103050649"
     },
-    "future_apply/partial_result_14.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_14.rds": {
       "checksum": "13a702a9c34a87f6e7e4edb8a6b50a1f"
     },
-    "future_apply/partial_result_15.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_15.rds": {
       "checksum": "432b64c22003b0449fca6489fc1e8dab"
     },
-    "future_apply/partial_result_16.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_16.rds": {
       "checksum": "926e9b4f11a945dd45c75fd34849effe"
     },
-    "future_apply/partial_result_17.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_17.rds": {
       "checksum": "fab5e06f9591ab326298bcf10bd88e00"
     },
-    "future_apply/partial_result_18.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_18.rds": {
       "checksum": "2e1b04bc39d35b7a946f861afda78cdf"
     },
-    "future_apply/partial_result_19.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_19.rds": {
       "checksum": "efd52e0eb7552260569541dc35d958b9"
     },
-    "future_apply/partial_result_2.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_2.rds": {
       "checksum": "7b437d5fdee551e2e3751cad19427a34"
     },
-    "future_apply/partial_result_20.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_20.rds": {
       "checksum": "d32c6a77dee3e787efef0d0a9fd2fc01"
     },
-    "future_apply/partial_result_21.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_21.rds": {
       "checksum": "698e2e00d2b4a7080659c3e1603853bf"
     },
-    "future_apply/partial_result_22.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_22.rds": {
       "checksum": "c615f49184ca61e3055098e3cded8621"
     },
-    "future_apply/partial_result_23.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_23.rds": {
       "checksum": "d4fee8e869ae972f3094d92980d2ef0c"
     },
-    "future_apply/partial_result_24.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_24.rds": {
       "checksum": "274c526331da2d38a26e000b93ab9543"
     },
-    "future_apply/partial_result_25.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_25.rds": {
       "checksum": "51c0ddafd3167d1702906651ec97dee4"
     },
-    "future_apply/partial_result_26.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_26.rds": {
       "checksum": "5e21050dee7cb4884ba0d45f60d65abf"
     },
-    "future_apply/partial_result_27.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_27.rds": {
       "checksum": "412bb39ebb8044df1c45fe9fe4a5b49a"
     },
-    "future_apply/partial_result_28.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_28.rds": {
       "checksum": "9ef3d7d06620f6f1072c01ad3bef2d2b"
     },
-    "future_apply/partial_result_29.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_29.rds": {
       "checksum": "81426b4b86eafd073caf525c7f93be9b"
     },
-    "future_apply/partial_result_3.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_3.rds": {
       "checksum": "3eae806bd9dbdcd5799016f73bf01828"
     },
-    "future_apply/partial_result_30.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_30.rds": {
       "checksum": "288b80ad5138e4b813ef7115e9a95ad4"
     },
-    "future_apply/partial_result_31.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_31.rds": {
       "checksum": "cadeb2fb0c38cab353efeac9c27b5503"
     },
-    "future_apply/partial_result_32.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_32.rds": {
       "checksum": "74b5c851a7c5c2326ae10bba3bfbba60"
     },
-    "future_apply/partial_result_33.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_33.rds": {
       "checksum": "fc97779393d3124446b4156b51c47126"
     },
-    "future_apply/partial_result_34.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_34.rds": {
       "checksum": "a29b4795be0ff7a2ee21b909ced0b182"
     },
-    "future_apply/partial_result_35.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_35.rds": {
       "checksum": "9731073c7435eb080e2b3281eb9f03a6"
     },
-    "future_apply/partial_result_36.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_36.rds": {
       "checksum": "ba0352aada1c85cfe9ba392012aebff3"
     },
-    "future_apply/partial_result_37.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_37.rds": {
       "checksum": "54599e633a41bb8434e28f57b97e5b13"
     },
-    "future_apply/partial_result_38.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_38.rds": {
       "checksum": "099a49fbc896e6f8ec3cd2be005c27a5"
     },
-    "future_apply/partial_result_39.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_39.rds": {
       "checksum": "b882e36b2cf1974a92d7def31dc2cd99"
     },
-    "future_apply/partial_result_4.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_4.rds": {
       "checksum": "a8ae8421644ddcd2ffed45ca559204b4"
     },
-    "future_apply/partial_result_40.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_40.rds": {
       "checksum": "9c798ea615fc8204a31cf67e6e08732d"
     },
-    "future_apply/partial_result_41.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_41.rds": {
       "checksum": "56e9b1baf6d39cca9b7c7d119fc54717"
     },
-    "future_apply/partial_result_42.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_42.rds": {
       "checksum": "54a20a4b042277d06f1e63d990f10372"
     },
-    "future_apply/partial_result_43.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_43.rds": {
       "checksum": "cda53d985dcb05ba8165ba574afbb476"
     },
-    "future_apply/partial_result_44.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_44.rds": {
       "checksum": "63de6b2aac46a3f2b358d414a19fdf14"
     },
-    "future_apply/partial_result_45.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_45.rds": {
       "checksum": "4cffae183eb94990c7e59626c59e3e46"
     },
-    "future_apply/partial_result_46.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_46.rds": {
       "checksum": "29b07576220d8fb3a42cca2ab0dedd77"
     },
-    "future_apply/partial_result_47.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_47.rds": {
       "checksum": "464072823f4b07725a64faeccc54fc05"
     },
-    "future_apply/partial_result_48.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_48.rds": {
       "checksum": "21ea207d0ad658ea7030379e0823c990"
     },
-    "future_apply/partial_result_49.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_49.rds": {
       "checksum": "3088f62f62b6cdac7982f8b0a1c91684"
     },
-    "future_apply/partial_result_5.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_5.rds": {
       "checksum": "ae066420bd5a035017a87b0badd15ad2"
     },
-    "future_apply/partial_result_50.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_50.rds": {
       "checksum": "bfd4b02781f4746314633fa111d7d1db"
     },
-    "future_apply/partial_result_51.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_51.rds": {
       "checksum": "9acf8db479600b31e3f66946d23fa073"
     },
-    "future_apply/partial_result_52.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_52.rds": {
       "checksum": "1e9b6f28ed4af1eb7b4e0c157b971a8b"
     },
-    "future_apply/partial_result_53.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_53.rds": {
       "checksum": "3ef36d660ee62559424f73430a546712"
     },
-    "future_apply/partial_result_54.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_54.rds": {
       "checksum": "2574672529046e17a98c26c25ff82386"
     },
-    "future_apply/partial_result_55.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_55.rds": {
       "checksum": "8d8c0320b1e2670e10548de17257d8c2"
     },
-    "future_apply/partial_result_56.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_56.rds": {
       "checksum": "419b8bc33ce86dd41a331480f77d14fa"
     },
-    "future_apply/partial_result_57.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_57.rds": {
       "checksum": "7fae57aa18b35a35966b2e1eb94acf78"
     },
-    "future_apply/partial_result_58.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_58.rds": {
       "checksum": "c10365803d990c30f2415d86ddc1b192"
     },
-    "future_apply/partial_result_59.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_59.rds": {
       "checksum": "e6a961383cf00225338b6ae42c0b8feb"
     },
-    "future_apply/partial_result_6.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_6.rds": {
       "checksum": "49497649a6f58d2d1719d811a2d1b97c"
     },
-    "future_apply/partial_result_60.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_60.rds": {
       "checksum": "cdba3e34e8bbb5bb67e78361ed30f759"
     },
-    "future_apply/partial_result_61.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_61.rds": {
       "checksum": "28da8b8fa4e22ca7d7eace34931b408b"
     },
-    "future_apply/partial_result_62.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_62.rds": {
       "checksum": "8cc0019574970b89f5eaf9c375ce177f"
     },
-    "future_apply/partial_result_63.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_63.rds": {
       "checksum": "a4ecb1d70e34ac7ee82df5f05a0377b6"
     },
-    "future_apply/partial_result_64.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_64.rds": {
       "checksum": "6785f13c50e3c4cb22f15239a1d5ee94"
     },
-    "future_apply/partial_result_65.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_65.rds": {
       "checksum": "5d1f23f16d8bb6fcd3611dc820682410"
     },
-    "future_apply/partial_result_66.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_66.rds": {
       "checksum": "1d3045268cc03fdbf944264c37c8c2d8"
     },
-    "future_apply/partial_result_67.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_67.rds": {
       "checksum": "b8a8a664ccfa48a7e6fefaa9970155ac"
     },
-    "future_apply/partial_result_68.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_68.rds": {
       "checksum": "c99a16175ec932006178a5d80e66aa72"
     },
-    "future_apply/partial_result_69.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_69.rds": {
       "checksum": "cdbcdd22f8aa5ef3597bc31d12f5eac0"
     },
-    "future_apply/partial_result_7.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_7.rds": {
       "checksum": "6695179934e0e732b7a9ef171a849079"
     },
-    "future_apply/partial_result_70.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_70.rds": {
       "checksum": "d7d812bd766209b911d4782ac77278e3"
     },
-    "future_apply/partial_result_71.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_71.rds": {
       "checksum": "ded40076cafbb0baac1bd8915b0b3358"
     },
-    "future_apply/partial_result_72.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_72.rds": {
       "checksum": "28b9d621f301617f2ef9175d42020e6d"
     },
-    "future_apply/partial_result_73.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_73.rds": {
       "checksum": "372c10f19b4aaf9f1a08965e35c58cb9"
     },
-    "future_apply/partial_result_74.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_74.rds": {
       "checksum": "25a382bdaa8bdc71fa328117d5fdff9b"
     },
-    "future_apply/partial_result_75.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_75.rds": {
       "checksum": "423d8de9bd1614a8c97f75bcc14f32a7"
     },
-    "future_apply/partial_result_76.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_76.rds": {
       "checksum": "896d9a2339b758f3437bda41d80dbf87"
     },
-    "future_apply/partial_result_77.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_77.rds": {
       "checksum": "b07880c96b9a0744e27853abb54f71a3"
     },
-    "future_apply/partial_result_78.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_78.rds": {
       "checksum": "4e1e8392e712f0b40d240f4a76198e7e"
     },
-    "future_apply/partial_result_79.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_79.rds": {
       "checksum": "a3305e0bd94a8d868e5a18ea1555a4df"
     },
-    "future_apply/partial_result_8.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_8.rds": {
       "checksum": "e151ccab127d71441dc6124e28aad11f"
     },
-    "future_apply/partial_result_80.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_80.rds": {
       "checksum": "54c1b658a1c36b0b9912991b3ffdb31e"
     },
-    "future_apply/partial_result_81.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_81.rds": {
       "checksum": "15748de338e647c4490d1582bfa53e4d"
     },
-    "future_apply/partial_result_82.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_82.rds": {
       "checksum": "e57bc4834364f9a3a550c962f3ed319b"
     },
-    "future_apply/partial_result_83.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_83.rds": {
       "checksum": "d506e74c2a98f3cd833b6d75e3c7cca8"
     },
-    "future_apply/partial_result_84.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_84.rds": {
       "checksum": "b27d66f891ca928fde1acea4cdb72ad3"
     },
-    "future_apply/partial_result_85.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_85.rds": {
       "checksum": "dca8f15026ab70ed81f79bc25b92bc3c"
     },
-    "future_apply/partial_result_86.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_86.rds": {
       "checksum": "7eaed2ae9d21ec788042f30b1bf4ca02"
     },
-    "future_apply/partial_result_87.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_87.rds": {
       "checksum": "2366f110541a2025de4f4bf8a19962f1"
     },
-    "future_apply/partial_result_88.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_88.rds": {
       "checksum": "61bbab56822e88ea13218586c8d33a48"
     },
-    "future_apply/partial_result_89.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_89.rds": {
       "checksum": "9a471f364bf3779bb1ab4ba0a3bbb9cb"
     },
-    "future_apply/partial_result_9.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_9.rds": {
       "checksum": "701f305d5e832eec8015eda047c4efaa"
     },
-    "future_apply/partial_result_90.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_90.rds": {
       "checksum": "59337e7467e818848b6e5bed635ce9dd"
     },
-    "future_apply/partial_result_91.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_91.rds": {
       "checksum": "6538b649a9e2776fa00e0a4e745edce7"
     },
-    "future_apply/partial_result_92.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_92.rds": {
       "checksum": "3888d0867f2693ba02d7484f1045bdeb"
     },
-    "future_apply/partial_result_93.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_93.rds": {
       "checksum": "d24c3d90aeef6a4a4a1d8fe4110c6cf4"
     },
-    "future_apply/partial_result_94.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_94.rds": {
       "checksum": "b6068e23e384be10730308019f12a358"
     },
-    "future_apply/partial_result_95.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_95.rds": {
       "checksum": "a0cd64f20a58d5cb52e11e1da2f7858e"
     },
-    "future_apply/partial_result_96.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_96.rds": {
       "checksum": "fa5f4516ea1267812fa1216cf5a1afe0"
     },
-    "future_apply/partial_result_97.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_97.rds": {
       "checksum": "d0b307872b53680ef8a2fa26baef6df8"
     },
-    "future_apply/partial_result_98.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_98.rds": {
       "checksum": "509d8e90ce535a7795fd9c4710823615"
     },
-    "future_apply/partial_result_99.rds": {
+    "data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_99.rds": {
       "checksum": "627a6219c05005615b43adc679e7ef38"
     },
-    "getting_help_with_R.qmd": {
-      "checksum": "613a6a8b9325e75b0e28698accc4bb0c"
+    "images/logos/vetinst-logo-eng-hvit.png": {
+      "checksum": "0856c06ad4bd26d8d9796bd1087b2bd0"
     },
-    "Git_backed_deployment_to_posit_connect.qmd": {
-      "checksum": "b674e22e69ab7209c54ae178ce4de896"
+    "images/logos/vetinst-logo-eng.png": {
+      "checksum": "9b26f213f0e64ea8e49223e5ca460706"
+    },
+    "images/logos/vetinst-logo-hvit.png": {
+      "checksum": "c021fe8bf6b93b57340e03b46b2d3e34"
+    },
+    "images/logos/vetinst-logo-sam-hvit.png": {
+      "checksum": "be79ecf8755d10dc60d078d2f0873da9"
+    },
+    "images/logos/vetinst-logo-sam.png": {
+      "checksum": "c27295fbe739601bc154d168a69a8c89"
+    },
+    "images/logos/vetinst-logo.png": {
+      "checksum": "9a73087d8d84377a82955262fdd2d1af"
+    },
+    "images/part_general/posit infrastructure at VI images/background_job.png": {
+      "checksum": "5622c4e40a713fd0e2eb26e042b14a55"
+    },
+    "images/part_general/posit infrastructure at VI images/concept_map.jpeg": {
+      "checksum": "70582aa5658d25ebe760ef60e70d0ab5"
+    },
+    "images/part_general/posit infrastructure at VI images/pane_1.png": {
+      "checksum": "b9f9bf1904fd4b9ab77eb00b0148efc4"
+    },
+    "images/part_general/posit infrastructure at VI images/pane-2.png": {
+      "checksum": "3ac3f74f97d930285edae73344fd57eb"
+    },
+    "images/part_general/posit infrastructure at VI images/wb jobs 2.png": {
+      "checksum": "be0cd90ac5d5f7764e6e4ccbe20581e4"
+    },
+    "images/part_general/posit infrastructure at VI images/wb jobs.png": {
+      "checksum": "1088412fc760b51a82607672f2b63b19"
+    },
+    "images/part_general/posit infrastructure at VI images/workbench architecture.png": {
+      "checksum": "10294f0fc97114e32052bcae82b71868"
+    },
+    "images/part_r_rstudio_tutorials/parallelization-on-workbench-images/download (1).png": {
+      "checksum": "083bf3b8bf111fe506f2f0c5e7794b66"
+    },
+    "images/part_r_rstudio_tutorials/parallelization-on-workbench-images/download.png": {
+      "checksum": "9880ed97d346c83f27977c3bf410166d"
+    },
+    "images/part_r_rstudio_tutorials/Tips_and_tricks/rstudio_tips_pane_layout.webp": {
+      "checksum": "41ec81061c2ff696608253a2a6b9f7c5"
     },
     "index.qmd": {
-      "checksum": "611a1350d01055fe4b4a3929d830e97b"
-    },
-    "intro.qmd": {
-      "checksum": "e514ad799b2b10ced9d02b36ca26bbd2"
+      "checksum": "04fe51dee31817602c70cb30a45b15a5"
     },
     "LICENSE": {
       "checksum": "d229da563da18fe5d58cd95a6467d584"
     },
-    "logo/vetinst-logo.jpg": {
-      "checksum": "d398c726a7e973d90e3597ae4d6be12c"
+    "quarto_files/contributing.qmd": {
+      "checksum": "c8299f71d0472a100b02dbf2f8d81e12"
     },
-    "parallelization_on_workbench.qmd": {
-      "checksum": "e9435ebabb5b2cea27ffca7232daba9d"
+    "quarto_files/part_configrations/connecting_r_studio_to_github.qmd": {
+      "checksum": "0400da6f2c936cc7bae3fa5ec1d1de53"
     },
-    "parallelization-on-workbench-images/download (1).png": {
-      "checksum": "083bf3b8bf111fe506f2f0c5e7794b66"
+    "quarto_files/part_configrations/setting_home_dir.qmd": {
+      "checksum": "efea0310c2b31f3401f55cc034eb3613"
     },
-    "parallelization-on-workbench-images/download.png": {
-      "checksum": "9880ed97d346c83f27977c3bf410166d"
+    "quarto_files/part_general/posit_infrastructure_at_VI.qmd": {
+      "checksum": "31a5bd33d442f219b66be277c1a7fd32"
     },
-    "posit infrastructure at VI images/background_job.png": {
-      "checksum": "5622c4e40a713fd0e2eb26e042b14a55"
+    "quarto_files/part_posit_connect/creating_pins_on_connect.qmd": {
+      "checksum": "ff45ed4609e50dee4f890fc5f2475260"
     },
-    "posit infrastructure at VI images/concept_map.jpeg": {
-      "checksum": "70582aa5658d25ebe760ef60e70d0ab5"
+    "quarto_files/part_posit_connect/git_backed_deployment_to_posit_connect.qmd": {
+      "checksum": "b674e22e69ab7209c54ae178ce4de896"
     },
-    "posit infrastructure at VI images/pane_1.png": {
-      "checksum": "b9f9bf1904fd4b9ab77eb00b0148efc4"
+    "quarto_files/part_r_rstudio_tutorials/_targets.R": {
+      "checksum": "d4e5c57f3fd64b3577e382eba03032ec"
     },
-    "posit infrastructure at VI images/pane-2.png": {
-      "checksum": "3ac3f74f97d930285edae73344fd57eb"
+    "quarto_files/part_r_rstudio_tutorials/_targets/meta/meta": {
+      "checksum": "95a13819aef503d2cf970d56a394672b"
     },
-    "posit infrastructure at VI images/wb jobs 2.png": {
-      "checksum": "be0cd90ac5d5f7764e6e4ccbe20581e4"
+    "quarto_files/part_r_rstudio_tutorials/_targets/meta/process": {
+      "checksum": "0fb45afa03316e4c4496b0d51977fd4a"
     },
-    "posit infrastructure at VI images/wb jobs.png": {
-      "checksum": "1088412fc760b51a82607672f2b63b19"
+    "quarto_files/part_r_rstudio_tutorials/_targets/meta/progress": {
+      "checksum": "4d412fbc53714e5f684747c6ccf9326c"
     },
-    "posit infrastructure at VI images/workbench architecture.png": {
-      "checksum": "10294f0fc97114e32052bcae82b71868"
+    "quarto_files/part_r_rstudio_tutorials/_targets/objects/data": {
+      "checksum": "a40285644419de7fafabe5c9fadc5812"
     },
-    "posit_infrastructure_at_VI.qmd": {
-      "checksum": "f6d4b72bdb2825da7bb0ee2773fe432e"
+    "quarto_files/part_r_rstudio_tutorials/_targets/objects/final_save": {
+      "checksum": "b90374592bc41a3e0a9359a08b691223"
     },
-    "projects_in_RStudio.qmd": {
+    "quarto_files/part_r_rstudio_tutorials/_targets/objects/results": {
+      "checksum": "b90374592bc41a3e0a9359a08b691223"
+    },
+    "quarto_files/part_r_rstudio_tutorials/anatomy_of_a_r_package.qmd": {
+      "checksum": "2d12e2635f735a309f73a8999951ea6b"
+    },
+    "quarto_files/part_r_rstudio_tutorials/getting_help_with_r.qmd": {
+      "checksum": "613a6a8b9325e75b0e28698accc4bb0c"
+    },
+    "quarto_files/part_r_rstudio_tutorials/parallelization_on_workbench.qmd": {
+      "checksum": "54c67571239476353a25e6155fe734da"
+    },
+    "quarto_files/part_r_rstudio_tutorials/projects_in_r_studio.qmd": {
       "checksum": "031c2c24254c8df58950f4e7772d36a5"
     },
-    "references.bib": {
-      "checksum": "82c1cc91cf544d383b6a5ad1b65a6feb"
-    },
-    "references.qmd": {
-      "checksum": "20d3273ad995f344fa1d144ca5d3ecf1"
-    },
-    "RStudio_tips_and_tricks.qmd": {
-      "checksum": "645602e555bf541380e9bffea453667d"
-    },
-    "summary.qmd": {
-      "checksum": "6b21a250588dde6f79d83bc9a62d55df"
-    },
-    "Tips_and_tricks/rstudio_tips_pane_layout.webp": {
-      "checksum": "41ec81061c2ff696608253a2a6b9f7c5"
+    "quarto_files/part_r_rstudio_tutorials/r_studio_tips_and_tricks.qmd": {
+      "checksum": "49d80a12446b835f353587484979bc6d"
     }
   },
   "users": null

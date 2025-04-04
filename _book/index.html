@@ -10,7 +10,7 @@
 <meta name="author" content="Novica Nakov">
 <meta name="author" content="Håkon Kaspersen">
 
-<title>R and Posit tutorials</title>
+<title>Tutorials</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -130,7 +130,7 @@ window.Quarto = {
       <img src="./images/logos/vetinst-logo-eng.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="./"><strong>R and Posit tutorials</strong></a> 
+      <a href="./"><strong>Tutorials</strong></a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -250,6 +250,12 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quarto_files/contributing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contributing</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -260,7 +266,15 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a></li>
+  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a>
+  <ul class="collapse">
+  <li><a href="#part-general" id="toc-part-general" class="nav-link" data-scroll-target="#part-general">Part: General</a></li>
+  <li><a href="#part-configurations" id="toc-part-configurations" class="nav-link" data-scroll-target="#part-configurations">Part: Configurations</a>
+  <ul class="collapse">
+  <li><a href="#part-rrstudio-tutorials" id="toc-part-rrstudio-tutorials" class="nav-link" data-scroll-target="#part-rrstudio-tutorials">Part: R/RStudio Tutorials</a></li>
+  <li><a href="#part-posit-connect" id="toc-part-posit-connect" class="nav-link" data-scroll-target="#part-posit-connect">Part: Posit Connect</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -269,7 +283,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><strong>R and Posit tutorials</strong></h1>
+<h1 class="title"><strong>Tutorials</strong></h1>
 </div>
 
 
@@ -296,56 +310,44 @@ window.Quarto = {
 
 <section id="preface" class="level1 unnumbered">
 <h1 class="unnumbered">Preface</h1>
-<p>This Quarto book contains all tutorials created by the Section of Epidemiology. It is deployed from the repository <a href="https://github.com/NorwegianVeterinaryInstitute/R-tutorials">R-tutorials</a> through git backed deployment. You can add more tutorials to this book by cloning this repository and following these steps:</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The main branch of the repository has “soft protection” enabled. It is recommended to create a new branch to make any changes and then merging the changes with the main branch after testing to make sure everything renders correctly.</p>
-</div>
-</div>
+<p>This quarto book contains the following:</p>
+<section id="part-general" class="level3">
+<h3 class="anchored" data-anchor-id="part-general">Part: General</h3>
+<p>This part of the book contains chapters with general information. The following chapters are available:</p>
 <ol type="1">
-<li><p>Create your tutorial as a QUARTO document in <em>html</em> format.</p></li>
-<li><p>Add your <code>tutorial_name.qmd</code> file to this project folder.</p></li>
-<li><p>Add your tutorial to the <code>_quarto.yml</code> file.</p></li>
-<li><p>Run <code>rsconnect::writeManifest()</code> to update the manifest file.</p></li>
-<li><p>Commit the changes and push to the repository.</p></li>
-<li><p>Wait for the deployment to trigger automatically or manually trigger deployment by clicking on the <strong>Update Now</strong> button under <strong>Info</strong> on the <a href="https://connect.posit.vetinst.no/R-and-posit-tutorials/">content page</a>.</p></li>
+<li><a href="./quarto_files/part_general/posit_infrastructure_at_VI.html">Posit Infrastructure at VI</a></li>
 </ol>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This QUARTO book only contains tutorials. There is a lot more documentation (such as Official Posit User Guides, Guides ad How-Tos) in <a href="https://github.com/NorwegianVeterinaryInstitute/posit-team/wiki/Documentation">documentation</a> under the posit-team repository.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>When you create a new session in Workbench, you are creating a RStudio Pro Session. Hence, all the tutorials under the section <strong>R/RStudio tutorials</strong> will be applicable both on Workbench as well as RStudio on your personal computers (unless stated otherwise in the individual chapters).</p>
-</div>
-</div>
+</section>
+<section id="part-configurations" class="level2">
+<h2 class="anchored" data-anchor-id="part-configurations">Part: Configurations</h2>
+<p>This part of the book contains chapters to help set up various aspects in R, RStudio desktop or Workbench. The following chapters are available:</p>
+<ol type="1">
+<li><a href="./quarto_files/part_configrations/setting_home_dir.html">Setting up your $HOME Variable on Windows 10</a></li>
+<li><a href="quarto_files/part_configrations/connecting_r_studio_to_github">Connecting RStudio to GitHub</a></li>
+</ol>
+<section id="part-rrstudio-tutorials" class="level3">
+<h3 class="anchored" data-anchor-id="part-rrstudio-tutorials">Part: R/RStudio Tutorials</h3>
+<p>This part of the book contains tutorials for a variety of aspects in R/RStudio. The following chapters are available:</p>
+<ol type="1">
+<li><a href="./quarto_files/part_r_rstudio_tutorials/anatomy_of_a_r_package.html">Anatomy of a R package</a></li>
+<li><a href="./quarto_files/part_r_rstudio_tutorials/projects_in_r_studio.html">Projects in RStudio</a></li>
+<li><a href="./quarto_files/part_r_rstudio_tutorials/parallelization_on_workbench.html">Parallelization on Workbench</a></li>
+<li><a href="./quarto_files/part_r_rstudio_tutorials/getting_help_with_r.html">Getting Help with R</a></li>
+<li><a href="./quarto_files/part_r_rstudio_tutorials/r_studio_tips_and_tricks.html">RStudio Tips and Tricks</a></li>
+</ol>
+</section>
+<section id="part-posit-connect" class="level3">
+<h3 class="anchored" data-anchor-id="part-posit-connect">Part: Posit Connect</h3>
+<p>This part of the book contains tutorials that will help you to work with Posit Connect server. The following chapters are available:</p>
+<ol type="1">
+<li><a href="./quarto_files/part_posit_connect/creating_pins_on_connect.html">Creating Pins on Connect</a></li>
+<li><a href="./quarto_files/part_posit_connect/git_backed_deployment_to_posit_connect.html">Git Backed Deployment to Posit Connect</a></li>
+</ol>
+<p>To contribute to this book, please read <a href="./quarto_files/contributing.html">Contributing</a>.</p>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->

@@ -89,9 +89,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "R and Posit tutorials",
+    "title": "Tutorials",
     "section": "",
-    "text": "Preface\nThis Quarto book contains all tutorials created by the Section of Epidemiology. It is deployed from the repository R-tutorials through git backed deployment. You can add more tutorials to this book by cloning this repository and following these steps:\n\n\n\n\n\n\nNote\n\n\n\nThe main branch of the repository has “soft protection” enabled. It is recommended to create a new branch to make any changes and then merging the changes with the main branch after testing to make sure everything renders correctly.\n\n\n\nCreate your tutorial as a QUARTO document in html format.\nAdd your tutorial_name.qmd file to this project folder.\nAdd your tutorial to the _quarto.yml file.\nRun rsconnect::writeManifest() to update the manifest file.\nCommit the changes and push to the repository.\nWait for the deployment to trigger automatically or manually trigger deployment by clicking on the Update Now button under Info on the content page.\n\n\n\n\n\n\n\nImportant\n\n\n\nThis QUARTO book only contains tutorials. There is a lot more documentation (such as Official Posit User Guides, Guides ad How-Tos) in documentation under the posit-team repository.\n\n\n\n\n\n\n\n\nNote\n\n\n\nWhen you create a new session in Workbench, you are creating a RStudio Pro Session. Hence, all the tutorials under the section R/RStudio tutorials will be applicable both on Workbench as well as RStudio on your personal computers (unless stated otherwise in the individual chapters).",
+    "text": "Preface\nThis quarto book contains the following:",
     "crumbs": [
       "Preface"
     ]
@@ -1180,6 +1180,26 @@
     "crumbs": [
       "R/RStudio tutorials",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Projects in RStudio</span>"
+    ]
+  },
+  {
+    "objectID": "index.html#part-configurations",
+    "href": "index.html#part-configurations",
+    "title": "Tutorials",
+    "section": "Part: Configurations",
+    "text": "Part: Configurations\nThis part of the book contains chapters to help set up various aspects in R, RStudio desktop or Workbench. The following chapters are available:\n\nSetting up your $HOME Variable on Windows 10\nConnecting RStudio to GitHub\n\n\nPart: R/RStudio Tutorials\nThis part of the book contains tutorials for a variety of aspects in R/RStudio. The following chapters are available:\n\nAnatomy of a R package\nProjects in RStudio\nParallelization on Workbench\nGetting Help with R\nRStudio Tips and Tricks\n\n\n\nPart: Posit Connect\nThis part of the book contains tutorials that will help you to work with Posit Connect server. The following chapters are available:\n\nCreating Pins on Connect\nGit Backed Deployment to Posit Connect\n\nTo contribute to this book, please read Contributing.",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "quarto_files/contributing.html",
+    "href": "quarto_files/contributing.html",
+    "title": "Contributing",
+    "section": "",
+    "text": "This Quarto book contains all tutorials created by the Section of Epidemiology. It is deployed from the repository Tutorials through git backed deployment. You can add more tutorials to this book by cloning this repository and following these steps:\n\n\n\n\n\n\nNote\n\n\n\nThe main branch of the repository has “soft protection” enabled. It is recommended to create a new branch to make any changes and then merging the changes with the main branch after testing to make sure everything renders correctly.\n\n\n\nCreate your tutorial as a QUARTO document in html format.\nAdd your tutorial_name.qmd file to this project folder.\n\nCreate a folder with the name of your tutorial under the folders: quarto-files, images, data. Please select the appropriate sub-folder to specify which part your tutorial belongs.\nAdd the content in their respective folders.\n\nAdd your tutorial to the _quarto.yml file under the appropriate part.\nAdd your tutorial to the index.qmd file.\nRun rsconnect::writeManifest() to update the manifest file.\nCommit the changes and push to the repository.\nWait for the deployment to trigger automatically or manually trigger deployment by clicking on the Update Now button under Info on the content page.\n\n\n\n\n\n\n\nImportant\n\n\n\nThis QUARTO book only contains tutorials. There is a lot more documentation (such as Official Posit User Guides, Guides ad How-Tos) in documentation under the posit-team repository.\n\n\n\n\n\n\n\n\nNote\n\n\n\nWhen you create a new session in Workbench, you are creating a RStudio Pro Session. Hence, all the tutorials under the section R/RStudio tutorials will be applicable both on Workbench as well as RStudio on your personal computers (unless stated otherwise in the individual chapters).",
+    "crumbs": [
+      "Contributing"
     ]
   }
 ]

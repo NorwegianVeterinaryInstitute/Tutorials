@@ -1,0 +1,33 @@
+# Contributing {.unnumbered}
+
+This Quarto book contains all tutorials created by the Section of Epidemiology. It is deployed from the repository [Tutorials](https://github.com/NorwegianVeterinaryInstitute/Tutorials) through git backed deployment. You can add more tutorials to this book by cloning this repository and following these steps:
+
+::: callout-note
+The main branch of the repository has "soft protection" enabled. It is recommended to create a new branch to make any changes and then merging the changes with the main branch after testing to make sure everything renders correctly.
+:::
+
+1.  Create your tutorial as a QUARTO document in *html* format.
+
+2.  Add your `tutorial_name.qmd` file to this project folder.
+
+    i.  Create a folder with the name of your tutorial under the folders: quarto-files, images, data. Please select the appropriate sub-folder to specify which part your tutorial belongs.
+
+    ii. Add the content in their respective folders.
+
+3.  Add your tutorial to the `_quarto.yml` file under the appropriate part.
+
+4.  Add your tutorial to the `index.qmd` file.
+
+5.  Run `rsconnect::writeManifest()` to update the manifest file.
+
+6.  Commit the changes and push to the repository.
+
+7.  Wait for the deployment to trigger automatically or manually trigger deployment by clicking on the **Update Now** button under **Info** on the [content page](https://connect.posit.vetinst.no/R-and-posit-tutorials/).
+
+::: callout-important
+This QUARTO book only contains tutorials. There is a lot more documentation (such as Official Posit User Guides, Guides ad How-Tos) in [documentation](https://github.com/NorwegianVeterinaryInstitute/posit-team/wiki/Documentation) under the posit-team repository.
+:::
+
+::: callout-note
+When you create a new session in Workbench, you are creating a RStudio Pro Session. Hence, all the tutorials under the section **R/RStudio tutorials** will be applicable both on Workbench as well as RStudio on your personal computers (unless stated otherwise in the individual chapters).
+:::

@@ -13,7 +13,7 @@ editor: visual
 
 ## Posit Infrastructure
 
-![](/images/part_general/posit infrastructure at VI images/concept_map.jpeg){fig-align="center"}
+![](/images/part_general/posit%20infrastructure%20at%20VI%20images/concept_map.jpeg){fig-align="center"}
 
 ## Posit Workbench
 
@@ -31,23 +31,23 @@ editor: visual
 
 ## Workbench Infrastructure
 
-![](/images/part_general/posit infrastructure at VI images/workbench architecture.png){fig-align="center"}
+![](/images/part_general/posit%20infrastructure%20at%20VI%20images/workbench%20architecture.png){fig-align="center"}
 
 ## Background Jobs
 
 Next to your console window you will see background jobs and workbench jobs.
 
-![](/images/part_general/posit infrastructure at VI images/pane_1.png){fig-align="center"}
+![](/images/part_general/posit%20infrastructure%20at%20VI%20images/pane_1.png){fig-align="center"}
 
 > You can start a background job by clicking on **Start Background Job**
 
 These jobs run in the background of your current session. As soon as you close the session, you abort the job.
 
-![](images/part_r_rstudio_tutorials/posit%20infrastructure%20at%20VI%20images/background_job.png){fig-align="center"}
+![](/images/part_general/posit infrastructure at VI images/background_job.png){fig-align="center"}
 
 ## Workbench Jobs
 
-![](/images/part_general/posit infrastructure at VI images/pane-2.png){fig-align="center"}
+![](/images/part_general/posit%20infrastructure%20at%20VI%20images/pane-2.png){fig-align="center"}
 
 > You can start a background job by clicking on **Start Workbench Job**
 
@@ -57,11 +57,11 @@ The jobs are scheduled through SLURM. When you ask for "large" memory, your job 
 
 ::::: columns
 ::: {.column width="50%"}
-![](/images/part_general/posit infrastructure at VI images/wb jobs.png)
+![](/images/part_general/posit%20infrastructure%20at%20VI%20images/wb%20jobs.png)
 :::
 
 ::: {.column width="50%"}
-![](/images/part_general/posit infrastructure at VI images/wb jobs 2.png)
+![](/images/part_general/posit%20infrastructure%20at%20VI%20images/wb%20jobs%202.png)
 :::
 :::::
 
