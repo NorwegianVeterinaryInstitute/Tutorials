@@ -1,6 +1,0 @@
-name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
-checkpoint_dir|stem|92cde56788a8550b|c6d247358054fdd2|2c530c1562a7fbd1|-786928873|checkpoints_targets|t20067.6010954258s|ddaf338f030f622e|4096|file|local|vector|||0||
-compute_with_checkpoint|function|f59129b9d7b81417|||||||||||||||
-data|stem|0ccce0213b01a76c|2189af870b3f1301|2c530c1562a7fbd1|33550471||t20067.6010395098s|271db55f47f9100d|99|rds|local|vector|||0||
-final_save|stem|6bebb1aa847620e7|2fddcf9c91d29f9e|4babf6584f18cdee|-427855146||t20067.6010955878s|2b07dbd8c37abf3d|86|rds|local|vector|||0||
-results|stem|6bebb1aa847620e7|3a4838714db85db8|c0ea5cee993d9d99|-322906963||t20067.6032039595s|2b07dbd8c37abf3d|86|rds|local|vector|||0.792||

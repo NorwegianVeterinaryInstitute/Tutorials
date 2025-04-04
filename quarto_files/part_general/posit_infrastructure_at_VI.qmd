@@ -1,0 +1,131 @@
+---
+title: "Posit Infrastructure at VI"
+author: "Trishang Udhwani"
+format:
+  html:
+    toc: true
+    toc-location: left
+    toc-depth: 2
+    number-sections: true
+    number-depth: 3
+editor: visual
+---
+
+## Posit Infrastructure
+
+![](/images/part_general/posit infrastructure at VI images/concept_map.jpeg){fig-align="center"}
+
+## Posit Workbench
+
+-   Currently we have 2 nodes on Workbench.
+
+-   A (*compute*) **node** is a computer part of a larger set of nodes (a cluster). Besides compute nodes, a cluster comprises one or more *login* nodes, *file server* nodes, *management* nodes, etc. A compute node offers resources such as processors, volatile memory (RAM), permanent disk space (e.g. SSD), accelerators (e.g. GPU) etc.
+
+-   To run a "long" job on Workbench in parallel, you need three things:
+
+1.  Multiple **cores**
+
+2.  Large memory (RAM)
+
+3.  R scripts that have been parallelized.
+
+## Workbench Infrastructure
+
+![](/images/part_general/posit infrastructure at VI images/workbench architecture.png){fig-align="center"}
+
+## Background Jobs
+
+Next to your console window you will see background jobs and workbench jobs.
+
+![](/images/part_general/posit infrastructure at VI images/pane_1.png){fig-align="center"}
+
+> You can start a background job by clicking on **Start Background Job**
+
+These jobs run in the background of your current session. As soon as you close the session, you abort the job.
+
+![](images/part_r_rstudio_tutorials/posit%20infrastructure%20at%20VI%20images/background_job.png){fig-align="center"}
+
+## Workbench Jobs
+
+![](/images/part_general/posit infrastructure at VI images/pane-2.png){fig-align="center"}
+
+> You can start a background job by clicking on **Start Workbench Job**
+
+These jobs are submitted to the cluster and will not abort when you close the session.
+
+The jobs are scheduled through SLURM. When you ask for "large" memory, your job will automatically be submitted on the cn00.posit.vetinst.no node.
+
+::::: columns
+::: {.column width="50%"}
+![](/images/part_general/posit infrastructure at VI images/wb jobs.png)
+:::
+
+::: {.column width="50%"}
+![](/images/part_general/posit infrastructure at VI images/wb jobs 2.png)
+:::
+:::::
+
+## Workbench from Terminal
+
+You can login to workbench from windows command line (CMD) using the folowing command and then your password
+
+```         
+ssh YOUR_VI_NUMBER@workbench.posit.vetinst.no
+```
+
+Similarly, you can login directly to the compute directly from CMD too
+
+```         
+ssh YOUR_VI_NUMBER@cn00.posit.vetinst.no
+```
+
+When you login, you will end up in your HOME directory. Your `home` directory and everything within this directory will be the same on both nodes.
+
+## SLURM jobs from Terminal
+
+You can schedule SLURM jobs from terminal. Here is a demo SLURM script
+
+```         
+#!/bin/bash  
+#SBATCH --job-name=give_any_jobname 
+#SBATCH --output=output_file.out               # Standard output 
+#SBATCH --error=error_file.err                 # Standard error 
+#SBATCH --ntasks=1                             # Run a single task 
+#SBATCH --cpus-per-task=16                     # Number of cores per task (modify based on your need)  
+
+# Execute the R script /home/vetinst.no/viXXXX/rest_of_the_path_of_your_script/script.R
+```
+
+::: callout-note
+The `output_file.out` and `error_file.err` are two text files that will be generated when a SLURM script is run. These files will be generated in the same directory where you have saved your SLURM script file.
+:::
+
+You also have to give read, write, and execute permissions to your R script. This can be done by adding
+
+```         
+#!/usr/local/bin/Rscript
+```
+
+As the very first line of your R script. Then, in CMD navigate to the location of your R script and type (option 700 means you can do anything with the file or directory and other users have no access to it at all)
+
+```         
+chmod 700 your_script.R
+```
+
+Then you can run your SLURM script by navigating to the location where you have saved your SLURM script and typing:
+
+```         
+sbatch -w node_you_want_to_run_your_script name_of_slurm_script.slurm
+```
+
+As all jobs on workbench now start through SLURM, you will get the `output_file.out` and `error_file.err` for every session in the `slurm_job_output` folder in your `home` folder.
+
+::: callout-important
+You may want to enter another option `--mem-per-cpu` along with your sbatch command. Here, you provide the amount of RAM you need per CPU to run the task. The default is in MB but you can specify the amount in GB or TB as well (use letters M/G/T for MB, GB and TB respectively).
+
+For example the above command can be modified to allocate 100GB to each CPU as follows:
+
+```         
+sbatch -w node_you_want_to_run_your_script --mem-per-cpu 100G name_of_slurm_script.slurm
+```
+:::

@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Trishang Udhwani">
+<meta name="author" content="Novica Nakov">
 
-<title>1&nbsp; Posit Infrastructure at VI – **R and Posit tutorials**</title>
+<title>8&nbsp; RStudio Tips and Tricks – **R and Posit tutorials**</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,24 +24,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./connecting_RStudio_to_GitHub.html" rel="next">
-<link href="./index.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../quarto_files/part_posit_connect/creating_pins_on_connect.html" rel="next">
+<link href="../../quarto_files/part_r_rstudio_tutorials/getting_help_with_r.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -111,7 +111,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./posit_infrastructure_at_VI.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Posit Infrastructure at VI</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../quarto_files/part_r_rstudio_tutorials/anatomy_of_a_r_package.html">R/RStudio tutorials</a></li><li class="breadcrumb-item"><a href="../../quarto_files/part_r_rstudio_tutorials/r_studio_tips_and_tricks.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">RStudio Tips and Tricks</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -125,11 +125,11 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/logos/vetinst-logo-eng.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="../../images/logos/vetinst-logo-eng.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="./"><strong>R and Posit tutorials</strong></a> 
+      <a href="../../"><strong>R and Posit tutorials</strong></a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -141,20 +141,14 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./posit_infrastructure_at_VI.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Posit Infrastructure at VI</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">R/RStudio tutorials</span></a>
+ <span class="menu-text">General</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -162,44 +156,8 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./connecting_RStudio_to_GitHub.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Connecting RStudio to GitHub</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./anatomy_of_a_R_package.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Anatomy of a R package</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./projects_in_RStudio.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Projects in RStudio</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./parallelization_on_workbench.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Parallelization on Workbench</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./getting_help_with_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Getting Help with R</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./RStudio_tips_and_tricks.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">RStudio Tips and Tricks</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./setting_home_dir.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Setting up your $HOME Variable on Windows 10</span></span></a>
+  <a href="../../quarto_files/part_general/posit_infrastructure_at_VI.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Posit Infrastructure at VI</span></span></a>
   </div>
 </li>
       </ul>
@@ -207,7 +165,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Posit Connect</span></a>
+ <span class="menu-text">Configrations</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -215,13 +173,77 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quarto_files/part_posit_connect/creating_pins_on_connect.html" class="sidebar-item-text sidebar-link">
+  <a href="../../quarto_files/part_configrations/setting_home_dir.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Setting up your $HOME Variable on Windows 10</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quarto_files/part_configrations/connecting_r_studio_to_github.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Connecting RStudio to GitHub</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">R/RStudio tutorials</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quarto_files/part_r_rstudio_tutorials/anatomy_of_a_r_package.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Anatomy of a R package</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quarto_files/part_r_rstudio_tutorials/projects_in_r_studio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Projects in RStudio</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quarto_files/part_r_rstudio_tutorials/parallelization_on_workbench.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Parallelization on Workbench</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quarto_files/part_r_rstudio_tutorials/getting_help_with_r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Getting Help with R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quarto_files/part_r_rstudio_tutorials/r_studio_tips_and_tricks.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">RStudio Tips and Tricks</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Posit Connect</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quarto_files/part_posit_connect/creating_pins_on_connect.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Creating Pins on Connect</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quarto_files/part_posit_connect/git_backed_deployment_to_posit_connect.html" class="sidebar-item-text sidebar-link">
+  <a href="../../quarto_files/part_posit_connect/git_backed_deployment_to_posit_connect.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Git Backed Deployment to Posit Connect</span></span></a>
   </div>
 </li>
@@ -233,13 +255,7 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#posit-infrastructure" id="toc-posit-infrastructure" class="nav-link active" data-scroll-target="#posit-infrastructure"><span class="header-section-number">1.1</span> Posit Infrastructure</a></li>
-  <li><a href="#posit-workbench" id="toc-posit-workbench" class="nav-link" data-scroll-target="#posit-workbench"><span class="header-section-number">1.2</span> Posit Workbench</a></li>
-  <li><a href="#workbench-infrastructure" id="toc-workbench-infrastructure" class="nav-link" data-scroll-target="#workbench-infrastructure"><span class="header-section-number">1.3</span> Workbench Infrastructure</a></li>
-  <li><a href="#background-jobs" id="toc-background-jobs" class="nav-link" data-scroll-target="#background-jobs"><span class="header-section-number">1.4</span> Background Jobs</a></li>
-  <li><a href="#workbench-jobs" id="toc-workbench-jobs" class="nav-link" data-scroll-target="#workbench-jobs"><span class="header-section-number">1.5</span> Workbench Jobs</a></li>
-  <li><a href="#workbench-from-terminal" id="toc-workbench-from-terminal" class="nav-link" data-scroll-target="#workbench-from-terminal"><span class="header-section-number">1.6</span> Workbench from Terminal</a></li>
-  <li><a href="#slurm-jobs-from-terminal" id="toc-slurm-jobs-from-terminal" class="nav-link" data-scroll-target="#slurm-jobs-from-terminal"><span class="header-section-number">1.7</span> SLURM jobs from Terminal</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">8.1</span> Overview</a></li>
   </ul>
 </nav>
 </nav>
@@ -250,9 +266,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../quarto_files/part_r_rstudio_tutorials/anatomy_of_a_r_package.html">R/RStudio tutorials</a></li><li class="breadcrumb-item"><a href="../../quarto_files/part_r_rstudio_tutorials/r_studio_tips_and_tricks.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">RStudio Tips and Tricks</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Posit Infrastructure at VI</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">RStudio Tips and Tricks</span></h1>
 </div>
 
 
@@ -262,7 +278,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Trishang Udhwani </p>
+             <p>Novica Nakov </p>
           </div>
   </div>
     
@@ -275,129 +291,68 @@ window.Quarto = {
 </header>
 
 
-<section id="posit-infrastructure" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="posit-infrastructure"><span class="header-section-number">1.1</span> Posit Infrastructure</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/part_r_rstudio_tutorials/posit infrastructure at VI images/concept_map.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-</section>
-<section id="posit-workbench" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="posit-workbench"><span class="header-section-number">1.2</span> Posit Workbench</h2>
-<ul>
-<li><p>Currently we have 2 nodes on Workbench.</p></li>
-<li><p>A (<em>compute</em>) <strong>node</strong> is a computer part of a larger set of nodes (a cluster). Besides compute nodes, a cluster comprises one or more <em>login</em> nodes, <em>file server</em> nodes, <em>management</em> nodes, etc. A compute node offers resources such as processors, volatile memory (RAM), permanent disk space (e.g.&nbsp;SSD), accelerators (e.g.&nbsp;GPU) etc.</p></li>
-<li><p>To run a “long” job on Workbench in parallel, you need three things:</p></li>
-</ul>
-<ol type="1">
-<li><p>Multiple <strong>cores</strong></p></li>
-<li><p>Large memory (RAM)</p></li>
-<li><p>R scripts that have been parallelized.</p></li>
-</ol>
-</section>
-<section id="workbench-infrastructure" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="workbench-infrastructure"><span class="header-section-number">1.3</span> Workbench Infrastructure</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/part_r_rstudio_tutorials/posit infrastructure at VI images/workbench architecture.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-</section>
-<section id="background-jobs" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="background-jobs"><span class="header-section-number">1.4</span> Background Jobs</h2>
-<p>Next to your console window you will see background jobs and workbench jobs.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/part_r_rstudio_tutorials/posit infrastructure at VI images/pane_1.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-<blockquote class="blockquote">
-<p>You can start a background job by clicking on <strong>Start Background Job</strong></p>
-</blockquote>
-<p>These jobs run in the background of your current session. As soon as you close the session, you abort the job.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/part_r_rstudio_tutorials/posit infrastructure at VI images/background_job.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-</section>
-<section id="workbench-jobs" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="workbench-jobs"><span class="header-section-number">1.5</span> Workbench Jobs</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/part_r_rstudio_tutorials/posit infrastructure at VI images/pane-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-<blockquote class="blockquote">
-<p>You can start a background job by clicking on <strong>Start Workbench Job</strong></p>
-</blockquote>
-<p>These jobs are submitted to the cluster and will not abort when you close the session.</p>
-<p>The jobs are scheduled through SLURM. When you ask for “large” memory, your job will automatically be submitted on the cn00.posit.vetinst.no node.</p>
-<div class="columns">
-<div class="column" style="width:50%;">
-<p><img src="images/part_r_rstudio_tutorials/posit infrastructure at VI images/wb jobs.png" class="img-fluid"></p>
-</div><div class="column" style="width:50%;">
-<p><img src="images/part_r_rstudio_tutorials/posit infrastructure at VI images/wb jobs 2.png" class="img-fluid"></p>
-</div>
-</div>
-</section>
-<section id="workbench-from-terminal" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="workbench-from-terminal"><span class="header-section-number">1.6</span> Workbench from Terminal</h2>
-<p>You can login to workbench from windows command line (CMD) using the folowing command and then your password</p>
-<pre><code>ssh YOUR_VI_NUMBER@workbench.posit.vetinst.no</code></pre>
-<p>Similarly, you can login directly to the compute directly from CMD too</p>
-<pre><code>ssh YOUR_VI_NUMBER@cn00.posit.vetinst.no</code></pre>
-<p>When you login, you will end up in your HOME directory. Your <code>home</code> directory and everything within this directory will be the same on both nodes.</p>
-</section>
-<section id="slurm-jobs-from-terminal" class="level2" data-number="1.7">
-<h2 data-number="1.7" class="anchored" data-anchor-id="slurm-jobs-from-terminal"><span class="header-section-number">1.7</span> SLURM jobs from Terminal</h2>
-<p>You can schedule SLURM jobs from terminal. Here is a demo SLURM script</p>
-<pre><code>#!/bin/bash  
-#SBATCH --job-name=give_any_jobname 
-#SBATCH --output=output_file.out               # Standard output 
-#SBATCH --error=error_file.err                 # Standard error 
-#SBATCH --ntasks=1                             # Run a single task 
-#SBATCH --cpus-per-task=16                     # Number of cores per task (modify based on your need)  
+<section id="overview" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">8.1</span> Overview</h2>
+<p>This is a guide on how to do different things in RStudio to make your work easier and simpler. Some of it is good practices, some of it is just my preferences, but it may be useful for other people too.</p>
+<section id="rstudio-settings" class="level3" data-number="8.1.1">
+<h3 data-number="8.1.1" class="anchored" data-anchor-id="rstudio-settings"><span class="header-section-number">8.1.1</span> RStudio settings</h3>
+<p>Under the menu “Tools” &gt; “Global Options” &gt; “General” &gt; “Basic”:</p>
+<p>The <code>R session</code> section should be set to restore only opened source documents. This is because sometimes you can be drafting a code and forget to save it. It may be useful, or it may be not useful. But it is a good way to see what was going on.</p>
+<p>The <code>Workspace</code> section, set it up to not restore or save <code>.Rdata</code>. This is because it is good to have an empty environment when you start RStudio.</p>
+<p>Under the “Tools menu” &gt; “Global Options” &gt; “Code” &gt; “Editing”:</p>
+<p>Check to use the native pipe operator <code>|&gt;</code>. This is because most of the time you don’t need the <code>magrittr</code> pipe <code>%&gt;%</code>, and/or maybe you don’t want to load a package just to have the pipe available. There is some difference how the two pipes behave, just to be aware of it:</p>
+<pre><code>❯ iris %&gt;% head()
+  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+2          4.9         3.0          1.4         0.2  setosa
+3          4.7         3.2          1.3         0.2  setosa
+4          4.6         3.1          1.5         0.2  setosa
+5          5.0         3.6          1.4         0.2  setosa
+6          5.4         3.9          1.7         0.4  setosa
 
-# Execute the R script /home/vetinst.no/viXXXX/rest_of_the_path_of_your_script/script.R</code></pre>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The <code>output_file.out</code> and <code>error_file.err</code> are two text files that will be generated when a SLURM script is run. These files will be generated in the same directory where you have saved your SLURM script file.</p>
-</div>
-</div>
-<p>You also have to give read, write, and execute permissions to your R script. This can be done by adding</p>
-<pre><code>#!/usr/local/bin/Rscript</code></pre>
-<p>As the very first line of your R script. Then, in CMD navigate to the location of your R script and type (option 700 means you can do anything with the file or directory and other users have no access to it at all)</p>
-<pre><code>chmod 700 your_script.R</code></pre>
-<p>Then you can run your SLURM script by navigating to the location where you have saved your SLURM script and typing:</p>
-<pre><code>sbatch -w node_you_want_to_run_your_script name_of_slurm_script.slurm</code></pre>
-<p>As all jobs on workbench now start through SLURM, you will get the <code>output_file.out</code> and <code>error_file.err</code> for every session in the <code>slurm_job_output</code> folder in your <code>home</code> folder.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You may want to enter another option <code>--mem-per-cpu</code> along with your sbatch command. Here, you provide the amount of RAM you need per CPU to run the task. The default is in MB but you can specify the amount in GB or TB as well (use letters M/G/T for MB, GB and TB respectively).</p>
-<p>For example the above command can be modified to allocate 100GB to each CPU as follows:</p>
-<pre><code>sbatch -w node_you_want_to_run_your_script --mem-per-cpu 100G name_of_slurm_script.slurm</code></pre>
-</div>
-</div>
+❯ iris %&gt;% head
+  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+2          4.9         3.0          1.4         0.2  setosa
+3          4.7         3.2          1.3         0.2  setosa
+4          4.6         3.1          1.5         0.2  setosa
+5          5.0         3.6          1.4         0.2  setosa
+6          5.4         3.9          1.7         0.4  setosa
 
 
+❯ iris |&gt; head()
+  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+2          4.9         3.0          1.4         0.2  setosa
+3          4.7         3.2          1.3         0.2  setosa
+4          4.6         3.1          1.5         0.2  setosa
+5          5.0         3.6          1.4         0.2  setosa
+6          5.4         3.9          1.7         0.4  setosa
+
+❯ iris |&gt; head
+Error in head : 
+  The pipe operator requires a function call as RHS (&lt;input&gt;:1:9)</code></pre>
+<p>The shortcut to type the pipe is always useful regardless of which pipe you are using: <code>Ctrl+Shift+M</code>.</p>
+<p>Under the menu “Tools” &gt; “Global Options” &gt; “Code” &gt; “Display”:</p>
+<p>Check <code>Highlight R function calls</code>. Great to be able to see which part of your code is actually a function name.</p>
+<p>Check <code>Use rainbow parentheses</code>. Great to be abel to see the matching parentheses especially in long chunks of code and in Shiny.</p>
+<p>Check <code>Show margin and set at 80 characters</code>. This will show a vertical line in the code to help you keep readability in mind when writing long lines of code or comments.</p>
+</section>
+<section id="rstudio-workspace-panes" class="level3" data-number="8.1.2">
+<h3 data-number="8.1.2" class="anchored" data-anchor-id="rstudio-workspace-panes"><span class="header-section-number">8.1.2</span> RStudio Workspace Panes</h3>
+<p>The default settings for the Workspace Panes in Rstudio has the code editor on the left side.</p>
+<p>A good improvement on that is to have the editor on the right side of the workspace and the console/terminal on the left. The bottom pane on the right side should keep just the history tab, whereas all the other tabs go in the bottom left pane. That way, you can expand the code editing pane to the whole right side of the screen without sacrificing too much functionality. You don’t need to check the code history tab too much when working, if at all.</p>
+<p>To set this up go to “Tools” &gt; “Pane Layout”. It should look like this:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/part_r_rstudio_tutorials/Tips_and_tricks/rstudio_tips_pane_layout.webp" class="img-fluid figure-img"></p>
+<figcaption>Pane Layout</figcaption>
+</figure>
+</div>
+<p>This is also focus your vision to the center of the screen as most typing in the code editing panel will happen in the centre of the screen within the 80 character margin.</p>
+
+
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -823,13 +778,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Preface">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      <a href="../../quarto_files/part_r_rstudio_tutorials/getting_help_with_r.html" class="pagination-link" aria-label="Getting Help with R">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Getting Help with R</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./connecting_RStudio_to_GitHub.html" class="pagination-link" aria-label="Connecting RStudio to GitHub">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Connecting RStudio to GitHub</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../quarto_files/part_posit_connect/creating_pins_on_connect.html" class="pagination-link" aria-label="Creating Pins on Connect">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Creating Pins on Connect</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

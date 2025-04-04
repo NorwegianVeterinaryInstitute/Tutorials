@@ -8,7 +8,7 @@
 
 <meta name="author" content="Trishang Udhwani">
 
-<title>5&nbsp; Parallelization on Workbench – **R and Posit tutorials**</title>
+<title>6&nbsp; Parallelization on Workbench – **R and Posit tutorials**</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -58,24 +58,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./getting_help_with_R.html" rel="next">
-<link href="./projects_in_RStudio.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../quarto_files/part_r_rstudio_tutorials/getting_help_with_r.html" rel="next">
+<link href="../../quarto_files/part_r_rstudio_tutorials/projects_in_r_studio.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -103,11 +103,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
-<link href="site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
-<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
-<link href="site_libs/vis-9.1.0/vis-network.min.css" rel="stylesheet">
-<script src="site_libs/vis-9.1.0/vis-network.min.js"></script>
-<script src="site_libs/visNetwork-binding-2.1.2/visNetwork.js"></script>
+<link href="../../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+<script src="../../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<link href="../../site_libs/vis-9.1.0/vis-network.min.css" rel="stylesheet">
+<script src="../../site_libs/vis-9.1.0/vis-network.min.js"></script>
+<script src="../../site_libs/visNetwork-binding-2.1.2/visNetwork.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -150,7 +150,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./connecting_RStudio_to_GitHub.html">R/RStudio tutorials</a></li><li class="breadcrumb-item"><a href="./parallelization_on_workbench.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Parallelization on Workbench</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../quarto_files/part_r_rstudio_tutorials/anatomy_of_a_r_package.html">R/RStudio tutorials</a></li><li class="breadcrumb-item"><a href="../../quarto_files/part_r_rstudio_tutorials/parallelization_on_workbench.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Parallelization on Workbench</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -164,11 +164,11 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/logos/vetinst-logo-eng.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="../../images/logos/vetinst-logo-eng.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="./"><strong>R and Posit tutorials</strong></a> 
+      <a href="../../"><strong>R and Posit tutorials</strong></a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -180,20 +180,14 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./posit_infrastructure_at_VI.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Posit Infrastructure at VI</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">R/RStudio tutorials</span></a>
+ <span class="menu-text">General</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -201,44 +195,8 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./connecting_RStudio_to_GitHub.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Connecting RStudio to GitHub</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./anatomy_of_a_R_package.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Anatomy of a R package</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./projects_in_RStudio.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Projects in RStudio</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./parallelization_on_workbench.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Parallelization on Workbench</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./getting_help_with_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Getting Help with R</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./RStudio_tips_and_tricks.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">RStudio Tips and Tricks</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./setting_home_dir.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Setting up your $HOME Variable on Windows 10</span></span></a>
+  <a href="../../quarto_files/part_general/posit_infrastructure_at_VI.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Posit Infrastructure at VI</span></span></a>
   </div>
 </li>
       </ul>
@@ -246,7 +204,7 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Posit Connect</span></a>
+ <span class="menu-text">Configrations</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -254,13 +212,77 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quarto_files/part_posit_connect/creating_pins_on_connect.html" class="sidebar-item-text sidebar-link">
+  <a href="../../quarto_files/part_configrations/setting_home_dir.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Setting up your $HOME Variable on Windows 10</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quarto_files/part_configrations/connecting_r_studio_to_github.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Connecting RStudio to GitHub</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">R/RStudio tutorials</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quarto_files/part_r_rstudio_tutorials/anatomy_of_a_r_package.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Anatomy of a R package</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quarto_files/part_r_rstudio_tutorials/projects_in_r_studio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Projects in RStudio</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quarto_files/part_r_rstudio_tutorials/parallelization_on_workbench.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Parallelization on Workbench</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quarto_files/part_r_rstudio_tutorials/getting_help_with_r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Getting Help with R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quarto_files/part_r_rstudio_tutorials/r_studio_tips_and_tricks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">RStudio Tips and Tricks</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Posit Connect</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quarto_files/part_posit_connect/creating_pins_on_connect.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Creating Pins on Connect</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quarto_files/part_posit_connect/git_backed_deployment_to_posit_connect.html" class="sidebar-item-text sidebar-link">
+  <a href="../../quarto_files/part_posit_connect/git_backed_deployment_to_posit_connect.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Git Backed Deployment to Posit Connect</span></span></a>
   </div>
 </li>
@@ -272,13 +294,13 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#what-is-parallelization" id="toc-what-is-parallelization" class="nav-link active" data-scroll-target="#what-is-parallelization"><span class="header-section-number">5.1</span> What is Parallelization?</a></li>
-  <li><a href="#the-lapply-function" id="toc-the-lapply-function" class="nav-link" data-scroll-target="#the-lapply-function"><span class="header-section-number">5.2</span> The lapply() function</a></li>
-  <li><a href="#the-parallel-package" id="toc-the-parallel-package" class="nav-link" data-scroll-target="#the-parallel-package"><span class="header-section-number">5.3</span> The Parallel Package</a></li>
-  <li><a href="#foreach-and-doparallel-package" id="toc-foreach-and-doparallel-package" class="nav-link" data-scroll-target="#foreach-and-doparallel-package"><span class="header-section-number">5.4</span> <code>foreach</code> and <code>doParallel</code> Package</a></li>
-  <li><a href="#the-future-package" id="toc-the-future-package" class="nav-link" data-scroll-target="#the-future-package"><span class="header-section-number">5.5</span> The future Package</a></li>
-  <li><a href="#other-ways-to-parallelize-r-code" id="toc-other-ways-to-parallelize-r-code" class="nav-link" data-scroll-target="#other-ways-to-parallelize-r-code"><span class="header-section-number">5.6</span> Other ways to parallelize R code</a></li>
-  <li><a href="#saving-results-while-parallelizing" id="toc-saving-results-while-parallelizing" class="nav-link" data-scroll-target="#saving-results-while-parallelizing"><span class="header-section-number">5.7</span> Saving results while parallelizing</a></li>
+  <li><a href="#what-is-parallelization" id="toc-what-is-parallelization" class="nav-link active" data-scroll-target="#what-is-parallelization"><span class="header-section-number">6.1</span> What is Parallelization?</a></li>
+  <li><a href="#the-lapply-function" id="toc-the-lapply-function" class="nav-link" data-scroll-target="#the-lapply-function"><span class="header-section-number">6.2</span> The lapply() function</a></li>
+  <li><a href="#the-parallel-package" id="toc-the-parallel-package" class="nav-link" data-scroll-target="#the-parallel-package"><span class="header-section-number">6.3</span> The Parallel Package</a></li>
+  <li><a href="#foreach-and-doparallel-package" id="toc-foreach-and-doparallel-package" class="nav-link" data-scroll-target="#foreach-and-doparallel-package"><span class="header-section-number">6.4</span> <code>foreach</code> and <code>doParallel</code> Package</a></li>
+  <li><a href="#the-future-package" id="toc-the-future-package" class="nav-link" data-scroll-target="#the-future-package"><span class="header-section-number">6.5</span> The future Package</a></li>
+  <li><a href="#other-ways-to-parallelize-r-code" id="toc-other-ways-to-parallelize-r-code" class="nav-link" data-scroll-target="#other-ways-to-parallelize-r-code"><span class="header-section-number">6.6</span> Other ways to parallelize R code</a></li>
+  <li><a href="#saving-results-while-parallelizing" id="toc-saving-results-while-parallelizing" class="nav-link" data-scroll-target="#saving-results-while-parallelizing"><span class="header-section-number">6.7</span> Saving results while parallelizing</a></li>
   </ul>
 </nav>
 </nav>
@@ -289,9 +311,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./connecting_RStudio_to_GitHub.html">R/RStudio tutorials</a></li><li class="breadcrumb-item"><a href="./parallelization_on_workbench.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Parallelization on Workbench</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../quarto_files/part_r_rstudio_tutorials/anatomy_of_a_r_package.html">R/RStudio tutorials</a></li><li class="breadcrumb-item"><a href="../../quarto_files/part_r_rstudio_tutorials/parallelization_on_workbench.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Parallelization on Workbench</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Parallelization on Workbench</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Parallelization on Workbench</span></h1>
 </div>
 
 
@@ -314,19 +336,19 @@ window.Quarto = {
 </header>
 
 
-<section id="what-is-parallelization" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="what-is-parallelization"><span class="header-section-number">5.1</span> What is Parallelization?</h2>
+<section id="what-is-parallelization" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="what-is-parallelization"><span class="header-section-number">6.1</span> What is Parallelization?</h2>
 <p>A modern CPU (Central Processing Unit) is at the heart of every computer. While traditional computers had a single CPU, modern computers can have multiple processors, which in turn can each contain multiple cores. These processors and cores are available to perform computations.</p>
 <p>A computer with one processor may still have 4 cores (quad-core), allowing 4 computations to be executed at the same time.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/part_r_rstudio_tutorials/parallelization-on-workbench-images/download.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="../../images/part_r_rstudio_tutorials/parallelization-on-workbench-images/download.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 <p>A typical modern computer has multiple cores, ranging from one or two in laptops to thousands in high performance compute clusters. Here is an example of four quad-core processors for a total of 16 cores in this machine.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/part_r_rstudio_tutorials/parallelization-on-workbench-images/download (1).png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="../../images/part_r_rstudio_tutorials/parallelization-on-workbench-images/download (1).png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
 <p>You can think of this as allowing 16 computations to happen at the same time. Theoretically, your computation would take 1/16 of the time. Historically, R has only utilized one processor, which makes it single-threaded.</p>
@@ -344,8 +366,8 @@ Important
 </div>
 </div>
 </section>
-<section id="the-lapply-function" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="the-lapply-function"><span class="header-section-number">5.2</span> The lapply() function</h2>
+<section id="the-lapply-function" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="the-lapply-function"><span class="header-section-number">6.2</span> The lapply() function</h2>
 <p>The&nbsp;<code>lapply()</code>&nbsp;function has two arguments:</p>
 <ol type="1">
 <li><p>A list, or an object that can be coerced to a list.</p></li>
@@ -361,8 +383,8 @@ Important
 </ol>
 <p>The differences between the many packages/functions in R essentially come down to how each of these steps are implemented.</p>
 </section>
-<section id="the-parallel-package" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="the-parallel-package"><span class="header-section-number">5.3</span> The Parallel Package</h2>
+<section id="the-parallel-package" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="the-parallel-package"><span class="header-section-number">6.3</span> The Parallel Package</h2>
 <p>The&nbsp;<code>parallel</code>&nbsp;package which comes with your R installation.</p>
 <p>The&nbsp;<code>mclapply()</code>&nbsp;function essentially parallelizes calls to&nbsp;<code>lapply()</code>. The first two arguments to&nbsp;<code>mclapply()</code>&nbsp;are exactly the same as they are for&nbsp;<code>lapply()</code>. However,&nbsp;<code>mclapply()</code>&nbsp;has further arguments (that must be named), the most important of which is the&nbsp;<code>mc.cores</code>&nbsp;argument which you can use to specify the number of processors/cores you want to split the computation across. For example, if your machine has 4 cores on it, you might specify&nbsp;<code>mc.cores = 4</code>&nbsp;to break your parallelize your operation across 4 cores (although this may not be the best idea if you are running other operations in the background besides R).</p>
 <p>Briefly, your R session is the main process and when you call a function like&nbsp;<code>mclapply()</code>, you fork a series of sub-processes that operate independently from the main process (although they share a few low-level features). These sub-processes then execute your function on their subsets of the data, presumably on separate cores of your CPU. Once the computation is complete, each sub-process returns its results and then the sub-process is killed. The&nbsp;<code>parallel</code>&nbsp;package manages the logistics of forking the sub-processes and handling them once they’ve finished.</p>
@@ -400,8 +422,8 @@ Warning
 <p>In general, the information from&nbsp;<code>detectCores()</code>&nbsp;should be used cautiously as obtaining this kind of information from Unix-like operating systems is not always reliable. If you are going down this road, it’s best if you get to know your hardware better in order to have an understanding of how many CPUs/cores are available to you.</p>
 </div>
 </div>
-<section id="mclapply" class="level3" data-number="5.3.1">
-<h3 data-number="5.3.1" class="anchored" data-anchor-id="mclapply"><span class="header-section-number">5.3.1</span> <code>mclapply()</code></h3>
+<section id="mclapply" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="mclapply"><span class="header-section-number">6.3.1</span> <code>mclapply()</code></h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a dataframe</span></span>
@@ -414,7 +436,7 @@ Warning
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(s)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   user  system elapsed 
- 73.931   0.197  74.570 </code></pre>
+ 70.886   0.187  71.440 </code></pre>
 </div>
 </div>
 <p>Note that in the&nbsp;<code>system.time()</code>&nbsp;output in first case, the&nbsp;<code>user</code>&nbsp;time and the&nbsp;<code>elapsed</code>&nbsp;time are roughly the same, which is what we would expect because there was no parallelization.</p>
@@ -429,7 +451,7 @@ Warning
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(s)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   user  system elapsed 
- 63.462   0.558  24.345 </code></pre>
+ 65.259   0.633  26.767 </code></pre>
 </div>
 </div>
 <p>You’ll notice that the the&nbsp;<code>elapsed</code>&nbsp;time is now less than the&nbsp;<code>user</code>&nbsp;time. However, in general, the&nbsp;<code>elapsed</code>&nbsp;time will not be 1/4th of the&nbsp;<code>user</code>&nbsp;time, which is what we might expect with 4 cores if there were a perfect performance gain from parallelization.</p>
@@ -438,12 +460,12 @@ Warning
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>s[<span class="st">"user.self"</span>]  <span class="co"># Main process</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>user.self 
-    0.004 </code></pre>
+    0.006 </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>s[<span class="st">"user.child"</span>] <span class="co"># Child processes</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>user.child 
-    63.458 </code></pre>
+    65.253 </code></pre>
 </div>
 </div>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -461,8 +483,8 @@ Important
 </div>
 <p>The&nbsp;<code>mclapply()</code>&nbsp;function is useful for iterating over a single list or list-like object. If you have to iterate over multiple objects together, you can use&nbsp;<code>mcmapply()</code>, which is the the multi-core equivalent of the&nbsp;<code>mapply()</code>&nbsp;function.</p>
 </section>
-<section id="error-handling" class="level3" data-number="5.3.2">
-<h3 data-number="5.3.2" class="anchored" data-anchor-id="error-handling"><span class="header-section-number">5.3.2</span> Error Handling</h3>
+<section id="error-handling" class="level3" data-number="6.3.2">
+<h3 data-number="6.3.2" class="anchored" data-anchor-id="error-handling"><span class="header-section-number">6.3.2</span> Error Handling</h3>
 <p>This error handling behavior is a significant difference from the usual call to <code>lapply()</code>. With <code>lapply()</code>, if the supplied function fails on one component of the list, the entire function call to <code>lapply()</code> fails and you only get an error as a result.</p>
 <p>With <code>mclapply()</code>, when a sub-process fails, the return value for that sub-process will be an R object that inherits from the class <code>"try-error"</code>, which is something you can test with the <code>inherits()</code> function. Conceptually, each child process is executed with the <code>try()</code> function wrapped around it. The code below deliberately causes an error in the 3 element of the list.</p>
 <div class="cell">
@@ -513,8 +535,8 @@ error in user code, all values of the job will be affected</code></pre>
 </div>
 </div>
 </section>
-<section id="generating-random-numbers" class="level3" data-number="5.3.3">
-<h3 data-number="5.3.3" class="anchored" data-anchor-id="generating-random-numbers"><span class="header-section-number">5.3.3</span> Generating Random Numbers</h3>
+<section id="generating-random-numbers" class="level3" data-number="6.3.3">
+<h3 data-number="6.3.3" class="anchored" data-anchor-id="generating-random-numbers"><span class="header-section-number">6.3.3</span> Generating Random Numbers</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>r <span class="ot">&lt;-</span> parallel<span class="sc">::</span><span class="fu">mclapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="cf">function</span>(i) {</span>
@@ -524,11 +546,11 @@ error in user code, all values of the job will be affected</code></pre>
 <span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(r)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>List of 5
- $ : num [1:3] 2.644 0.518 -0.358
- $ : num [1:3] 0.436 1.768 0.863
- $ : num [1:3] 0.558 0.319 0.99
- $ : num [1:3] 0.439 -0.787 -1.713
- $ : num [1:3] -0.614 1.632 0.545</code></pre>
+ $ : num [1:3] -0.739 -0.307 1.378
+ $ : num [1:3] -0.7 0.776 -2.099
+ $ : num [1:3] -0.854 0.791 -0.374
+ $ : num [1:3] 0.348 1.553 -0.237
+ $ : num [1:3] -0.0089 -0.3207 1.0494</code></pre>
 </div>
 </div>
 <p>However, the above expression is not&nbsp;<strong>reproducible</strong>&nbsp;because the next time you run it, you will get a different set of random numbers. You cannot simply call&nbsp;<code>set.seed()</code>&nbsp;before running the expression as you might in a non-parallel version of the code.</p>
@@ -552,8 +574,8 @@ error in user code, all values of the job will be affected</code></pre>
 </div>
 <p><code>mclapply()</code> documentation can be found here: <a href="https://www.rdocumentation.org/packages/parallel/versions/3.4.0/topics/mclapply">mcapply()</a></p>
 </section>
-<section id="the-parlapply-function" class="level3" data-number="5.3.4">
-<h3 data-number="5.3.4" class="anchored" data-anchor-id="the-parlapply-function"><span class="header-section-number">5.3.4</span> The ParLapply() function</h3>
+<section id="the-parlapply-function" class="level3" data-number="6.3.4">
+<h3 data-number="6.3.4" class="anchored" data-anchor-id="the-parlapply-function"><span class="header-section-number">6.3.4</span> The ParLapply() function</h3>
 <p>Using the forking mechanism on your computer is one way to execute parallel computation but it’s not the only way that the&nbsp;<code>parallel</code>&nbsp;package offers. Another way to build a “cluster” using the multiple cores on your computer is via&nbsp;<em>sockets</em>. A is simply a mechanism with which multiple processes or applications running on your computer (or different computers, for that matter) can communicate with each other. With parallel computation, data and results need to be passed back and forth between the parent and child processes and sockets can be used for that purpose.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>clu <span class="ot">&lt;-</span> parallel<span class="sc">::</span><span class="fu">makeCluster</span>(<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -599,8 +621,8 @@ Note
 <p><code>ParLapply()</code> is a part of <code>clusterApply()</code> family of functions. The documentation can be found here: <a href="https://www.rdocumentation.org/packages/parallel/versions/3.6.2/topics/clusterApply">clusterApply()</a></p>
 </section>
 </section>
-<section id="foreach-and-doparallel-package" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="foreach-and-doparallel-package"><span class="header-section-number">5.4</span> <code>foreach</code> and <code>doParallel</code> Package</h2>
+<section id="foreach-and-doparallel-package" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="foreach-and-doparallel-package"><span class="header-section-number">6.4</span> <code>foreach</code> and <code>doParallel</code> Package</h2>
 <p>The normal&nbsp;<code>for</code>&nbsp;loop in R looks like:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>) {</span>
@@ -629,8 +651,8 @@ Note
 [1] 1.732051</code></pre>
 </div>
 </div>
-<section id="dopar-operator" class="level3" data-number="5.4.1">
-<h3 data-number="5.4.1" class="anchored" data-anchor-id="dopar-operator"><span class="header-section-number">5.4.1</span> <code>%dopar%</code> operator</h3>
+<section id="dopar-operator" class="level3" data-number="6.4.1">
+<h3 data-number="6.4.1" class="anchored" data-anchor-id="dopar-operator"><span class="header-section-number">6.4.1</span> <code>%dopar%</code> operator</h3>
 <p>In addition,&nbsp;<code>foreach</code>&nbsp;supports a parallelizable operator&nbsp;<code>%dopar%</code>&nbsp;from the&nbsp;<code>doParallel</code>&nbsp;package. This allows each iteration through the loop to use different cores or different machines in a cluster.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(foreach)</span>
@@ -693,7 +715,7 @@ result.3 1.732051</code></pre>
 <span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   user  system elapsed 
- 19.116   0.630   5.957 </code></pre>
+ 18.126   0.719   6.195 </code></pre>
 </div>
 </div>
 <p>And compare that to what it takes to do the same analysis in serial:</p>
@@ -707,7 +729,7 @@ result.3 1.732051</code></pre>
 <span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   user  system elapsed 
- 18.667   0.003  18.777 </code></pre>
+ 17.442   0.037  17.578 </code></pre>
 </div>
 </div>
 <p>When we’re done, we will clean up the cluster:</p>
@@ -715,8 +737,8 @@ result.3 1.732051</code></pre>
 <div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>doParallel<span class="sc">::</span><span class="fu">stopImplicitCluster</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="dorng-operator" class="level3" data-number="5.4.2">
-<h3 data-number="5.4.2" class="anchored" data-anchor-id="dorng-operator"><span class="header-section-number">5.4.2</span> <code>%dorng%</code> operator</h3>
+<section id="dorng-operator" class="level3" data-number="6.4.2">
+<h3 data-number="6.4.2" class="anchored" data-anchor-id="dorng-operator"><span class="header-section-number">6.4.2</span> <code>%dorng%</code> operator</h3>
 <p>standard <code>%dopar%</code> loops are not reproducible:</p>
 <p>First, let’s set the RNGkind back to default</p>
 <div class="cell">
@@ -758,8 +780,8 @@ result.3 1.732051</code></pre>
 <p>The <code>doParallel</code> documentation can be found here: <a href="https://cran.r-project.org/web/packages/doParallel/vignettes/gettingstartedParallel.pdf">doParallel</a></p>
 </section>
 </section>
-<section id="the-future-package" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="the-future-package"><span class="header-section-number">5.5</span> The future Package</h2>
+<section id="the-future-package" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="the-future-package"><span class="header-section-number">6.5</span> The future Package</h2>
 <p>The <code>future</code> package defines <em>plans</em> to specify how computations are executed. A plan can use multiple cores, separate R sessions, or even remote systems.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(future)</span>
@@ -820,8 +842,8 @@ Note
 <span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a><span class="fu">stopCluster</span>(clu)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Documentation for <code>future.apply</code> family of functions can be found here: <a href="https://cran.r-project.org/web/packages/future.apply/vignettes/future.apply-1-overview.html">future.apply documentation</a></p>
-<section id="integration-with-slurm" class="level3" data-number="5.5.1">
-<h3 data-number="5.5.1" class="anchored" data-anchor-id="integration-with-slurm"><span class="header-section-number">5.5.1</span> Integration with SLURM</h3>
+<section id="integration-with-slurm" class="level3" data-number="6.5.1">
+<h3 data-number="6.5.1" class="anchored" data-anchor-id="integration-with-slurm"><span class="header-section-number">6.5.1</span> Integration with SLURM</h3>
 <p>Future works very well with SLURM integration. The <code>future.batchtools</code> package extends the <code>future</code> ecosystem for SLURM. Here is an example code:</p>
 <div class="sourceCode" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(future.batchtools)</span>
 <span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plan</span>(batchtools_slurm, <span class="at">template =</span> <span class="st">"sumbit_job.slurm"</span>)</span>
@@ -831,8 +853,8 @@ Note
 <p>You need a SLURM template file (<code>submit_job.slurm</code>) that specifies job parameters (e.g., cores, memory).</p>
 </section>
 </section>
-<section id="other-ways-to-parallelize-r-code" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="other-ways-to-parallelize-r-code"><span class="header-section-number">5.6</span> Other ways to parallelize R code</h2>
+<section id="other-ways-to-parallelize-r-code" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="other-ways-to-parallelize-r-code"><span class="header-section-number">6.6</span> Other ways to parallelize R code</h2>
 <p>There are several other ways to parallelize your code. If you are looking for more packages, some of those are mentioned here along with their documentation. Some of these are extensions of packages already mentioned while others introduce different ways to parallelize.</p>
 <ul>
 <li><p><a href="https://furrr.futureverse.org/"><code>furrr</code> package</a></p></li>
@@ -842,8 +864,8 @@ Note
 <li><p><a href="https://github.com/mllg/batchtools"><code>batchtools</code> package</a></p></li>
 </ul>
 </section>
-<section id="saving-results-while-parallelizing" class="level2" data-number="5.7">
-<h2 data-number="5.7" class="anchored" data-anchor-id="saving-results-while-parallelizing"><span class="header-section-number">5.7</span> Saving results while parallelizing</h2>
+<section id="saving-results-while-parallelizing" class="level2" data-number="6.7">
+<h2 data-number="6.7" class="anchored" data-anchor-id="saving-results-while-parallelizing"><span class="header-section-number">6.7</span> Saving results while parallelizing</h2>
 <p>When running large computations, it may be helpful to save results iteratively or as checkpoints to avoid data loss in case of interruptions. Here is an example of saving results iteratively using the <code>foreach</code> and <code>doParallel</code> libraries</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(foreach)</span>
@@ -857,9 +879,9 @@ Note
 <span id="cb64-9"><a href="#cb64-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Your computation</span></span>
 <span id="cb64-10"><a href="#cb64-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">Sys.sleep</span>(<span class="fl">0.1</span>) <span class="co"># Simulates time-consuming computation</span></span>
 <span id="cb64-11"><a href="#cb64-11" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> i<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb64-12"><a href="#cb64-12" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb64-12"><a href="#cb64-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb64-13"><a href="#cb64-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Save intermediate results</span></span>
-<span id="cb64-14"><a href="#cb64-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">saveRDS</span>(result, <span class="at">file =</span> <span class="fu">paste0</span>(<span class="st">"for_each/result_"</span>, i, <span class="st">".rds"</span>))</span>
+<span id="cb64-14"><a href="#cb64-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">saveRDS</span>(result, <span class="at">file =</span> <span class="fu">paste0</span>(<span class="st">"/home/vetinst.no/vi2313/R-tutorials/data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_"</span>, i, <span class="st">".rds"</span>))</span>
 <span id="cb64-15"><a href="#cb64-15" aria-hidden="true" tabindex="-1"></a>  result</span>
 <span id="cb64-16"><a href="#cb64-16" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb64-17"><a href="#cb64-17" aria-hidden="true" tabindex="-1"></a></span>
@@ -874,7 +896,7 @@ Note
 <span id="cb65-5"><a href="#cb65-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Function with intermediate saving</span></span>
 <span id="cb65-6"><a href="#cb65-6" aria-hidden="true" tabindex="-1"></a>safe_compute <span class="ot">&lt;-</span> <span class="cf">function</span>(i) {</span>
 <span id="cb65-7"><a href="#cb65-7" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> i<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb65-8"><a href="#cb65-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">saveRDS</span>(result, <span class="at">file =</span> <span class="fu">paste0</span>(<span class="st">"future_apply/partial_result_"</span>, i, <span class="st">".rds"</span>))</span>
+<span id="cb65-8"><a href="#cb65-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">saveRDS</span>(result, <span class="at">file =</span> <span class="fu">paste0</span>(<span class="st">"/home/vetinst.no/vi2313/R-tutorials/data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_"</span>, i, <span class="st">".rds"</span>))</span>
 <span id="cb65-9"><a href="#cb65-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(result)</span>
 <span id="cb65-10"><a href="#cb65-10" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb65-11"><a href="#cb65-11" aria-hidden="true" tabindex="-1"></a></span>
@@ -883,16 +905,16 @@ Note
 <span id="cb65-14"><a href="#cb65-14" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb65-15"><a href="#cb65-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Aggregate saved results</span></span>
 <span id="cb65-16"><a href="#cb65-16" aria-hidden="true" tabindex="-1"></a>final_results <span class="ot">&lt;-</span> <span class="fu">unlist</span>(results)</span>
-<span id="cb65-17"><a href="#cb65-17" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(final_results, <span class="at">file =</span> <span class="st">"future_apply/final_results.rds"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb65-17"><a href="#cb65-17" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(final_results, <span class="at">file =</span> <span class="st">"/home/vetinst.no/vi2313/R-tutorials/data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/final_results.rds"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="designing-a-function-to-restore-progress" class="level3" data-number="5.7.1">
-<h3 data-number="5.7.1" class="anchored" data-anchor-id="designing-a-function-to-restore-progress"><span class="header-section-number">5.7.1</span> Designing a function to restore progress:</h3>
+<section id="designing-a-function-to-restore-progress" class="level3" data-number="6.7.1">
+<h3 data-number="6.7.1" class="anchored" data-anchor-id="designing-a-function-to-restore-progress"><span class="header-section-number">6.7.1</span> Designing a function to restore progress:</h3>
 <p>Here is the “structure” of a function that can be used to restore your progress.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(future.apply)</span>
 <span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Define checkpoint directory</span></span>
-<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a>checkpoint_dir <span class="ot">&lt;-</span> <span class="st">"checkpoints_parallel"</span></span>
+<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a>checkpoint_dir <span class="ot">&lt;-</span> <span class="st">"/home/vetinst.no/vi2313/R-tutorials/data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_parallel/"</span></span>
 <span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(checkpoint_dir, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb66-6"><a href="#cb66-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb66-7"><a href="#cb66-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up parallel plan</span></span>
@@ -927,8 +949,8 @@ Note
 </div>
 </div>
 </section>
-<section id="targets-package-for-efficient-checkpoint-management" class="level3" data-number="5.7.2">
-<h3 data-number="5.7.2" class="anchored" data-anchor-id="targets-package-for-efficient-checkpoint-management"><span class="header-section-number">5.7.2</span> Targets package for efficient checkpoint management</h3>
+<section id="targets-package-for-efficient-checkpoint-management" class="level3" data-number="6.7.2">
+<h3 data-number="6.7.2" class="anchored" data-anchor-id="targets-package-for-efficient-checkpoint-management"><span class="header-section-number">6.7.2</span> Targets package for efficient checkpoint management</h3>
 <p>This&nbsp;package is a pipeline tool for statistics and data science in R. The package skips costly runtime for tasks that are already up to date, orchestrates the necessary computation with implicit parallel computing, and abstracts files as R objects. If all the current output matches the current upstream code and data, then the whole pipeline is up to date, and the results are more trustworthy than otherwise.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(targets)</span>
@@ -961,7 +983,7 @@ Note
 <span id="cb68-28"><a href="#cb68-28" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tar_target</span>(</span>
 <span id="cb68-29"><a href="#cb68-29" aria-hidden="true" tabindex="-1"></a>      checkpoint_dir,</span>
 <span id="cb68-30"><a href="#cb68-30" aria-hidden="true" tabindex="-1"></a>      {</span>
-<span id="cb68-31"><a href="#cb68-31" aria-hidden="true" tabindex="-1"></a>        dir <span class="ot">&lt;-</span> <span class="st">"checkpoints_targets"</span></span>
+<span id="cb68-31"><a href="#cb68-31" aria-hidden="true" tabindex="-1"></a>        dir <span class="ot">&lt;-</span> <span class="st">"/home/vetinst.no/vi2313/R-tutorials/data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_targets/"</span></span>
 <span id="cb68-32"><a href="#cb68-32" aria-hidden="true" tabindex="-1"></a>        <span class="fu">dir.create</span>(dir, <span class="at">showWarnings =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb68-33"><a href="#cb68-33" aria-hidden="true" tabindex="-1"></a>        dir</span>
 <span id="cb68-34"><a href="#cb68-34" aria-hidden="true" tabindex="-1"></a>      },</span>
@@ -980,7 +1002,7 @@ Note
 <span id="cb68-47"><a href="#cb68-47" aria-hidden="true" tabindex="-1"></a>    <span class="fu">tar_target</span>(</span>
 <span id="cb68-48"><a href="#cb68-48" aria-hidden="true" tabindex="-1"></a>      final_save,</span>
 <span id="cb68-49"><a href="#cb68-49" aria-hidden="true" tabindex="-1"></a>      {</span>
-<span id="cb68-50"><a href="#cb68-50" aria-hidden="true" tabindex="-1"></a>        <span class="fu">saveRDS</span>(results, <span class="st">"final_results.rds"</span>)</span>
+<span id="cb68-50"><a href="#cb68-50" aria-hidden="true" tabindex="-1"></a>        <span class="fu">saveRDS</span>(results, <span class="st">"/home/vetinst.no/vi2313/R-tutorials/data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_targets/final_results.rds"</span>)</span>
 <span id="cb68-51"><a href="#cb68-51" aria-hidden="true" tabindex="-1"></a>        results</span>
 <span id="cb68-52"><a href="#cb68-52" aria-hidden="true" tabindex="-1"></a>      },</span>
 <span id="cb68-53"><a href="#cb68-53" aria-hidden="true" tabindex="-1"></a>      <span class="at">format =</span> <span class="st">"rds"</span></span>
@@ -994,11 +1016,13 @@ Note
 <span id="cb69-3"><a href="#cb69-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_make</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Loading required package: future
-✔ skipped target checkpoint_dir
+▶ dispatched target checkpoint_dir
+● completed target checkpoint_dir [0.002 seconds, 600 bytes]
 ✔ skipped target data
-✔ skipped target results
+▶ dispatched target results
+● completed target results [3.503 seconds, 86 bytes]
 ✔ skipped target final_save
-✔ skipped pipeline [0.158 seconds]</code></pre>
+▶ ended pipeline [4.039 seconds]</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb71"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tar_visnetwork</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -1006,7 +1030,7 @@ Note
 </div>
 <div class="cell-output-display">
 <div class="visNetwork html-widget html-fill-item" id="htmlwidget-502a66744b8e1fe96c06" style="width:100%;height:464px;"></div>
-<script type="application/json" data-for="htmlwidget-502a66744b8e1fe96c06">{"x":{"nodes":{"name":["checkpoint_dir","data","final_save","results","compute_with_checkpoint"],"type":["stem","stem","stem","stem","function"],"description":[null,null,null,null,null],"status":["uptodate","uptodate","uptodate","uptodate","uptodate"],"seconds":[0,0,0,0.792,null],"bytes":[4096,99,86,86,null],"branches":[null,null,null,null,null],"label":["checkpoint_dir","data","final_save","results","compute_with_checkpoint"],"color":["#354823","#354823","#354823","#354823","#354823"],"id":["checkpoint_dir","data","final_save","results","compute_with_checkpoint"],"level":[1,1,3,2,1],"shape":["dot","dot","dot","dot","triangle"]},"edges":{"from":["results","checkpoint_dir","compute_with_checkpoint","data"],"to":["final_save","results","results","results"],"arrows":["to","to","to","to"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot","physics":false},"manipulation":{"enabled":false},"edges":{"smooth":{"type":"cubicBezier","forceDirection":"horizontal"}},"physics":{"stabilization":false},"interaction":{"zoomSpeed":1},"layout":{"hierarchical":{"enabled":true,"direction":"LR"}}},"groups":null,"width":null,"height":null,"idselection":{"enabled":false,"style":"width: 150px; height: 26px","useLabels":true,"main":"Select by id"},"byselection":{"enabled":false,"style":"width: 150px; height: 26px","multiple":false,"hideColor":"rgba(200,200,200,0.5)","highlight":false},"main":{"text":"","style":"font-family:Georgia, Times New Roman, Times, serif;font-weight:bold;font-size:20px;text-align:center;"},"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)","highlight":{"enabled":true,"hoverNearest":false,"degree":{"from":1,"to":1},"algorithm":"hierarchical","hideColor":"rgba(200,200,200,0.5)","labelOnly":true},"collapse":{"enabled":true,"fit":false,"resetHighlight":true,"clusterOptions":null,"keepCoord":true,"labelSuffix":"(cluster)"},"legend":{"width":0.2,"useGroups":false,"position":"right","ncol":1,"stepX":100,"stepY":100,"zoom":true,"nodes":{"label":["Up to date","Stem","Function"],"color":["#354823","#899DA4","#899DA4"],"shape":["dot","dot","triangle"]},"nodesToDataframe":true},"tooltipStay":300,"tooltipStyle":"position: fixed;visibility:hidden;padding: 5px;white-space: nowrap;font-family: verdana;font-size:14px;font-color:#000000;background-color: #f5f4ed;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;border: 1px solid #808074;box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);"},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-502a66744b8e1fe96c06">{"x":{"nodes":{"name":["checkpoint_dir","data","final_save","results","compute_with_checkpoint"],"type":["stem","stem","stem","stem","function"],"description":[null,null,null,null,null],"status":["uptodate","uptodate","uptodate","uptodate","uptodate"],"seconds":[0.002,0,0.006,3.503,null],"bytes":[600,99,86,86,null],"branches":[null,null,null,null,null],"label":["checkpoint_dir","data","final_save","results","compute_with_checkpoint"],"color":["#354823","#354823","#354823","#354823","#354823"],"id":["checkpoint_dir","data","final_save","results","compute_with_checkpoint"],"level":[1,1,3,2,1],"shape":["dot","dot","dot","dot","triangle"]},"edges":{"from":["results","checkpoint_dir","compute_with_checkpoint","data"],"to":["final_save","results","results","results"],"arrows":["to","to","to","to"]},"nodesToDataframe":true,"edgesToDataframe":true,"options":{"width":"100%","height":"100%","nodes":{"shape":"dot","physics":false},"manipulation":{"enabled":false},"edges":{"smooth":{"type":"cubicBezier","forceDirection":"horizontal"}},"physics":{"stabilization":false},"interaction":{"zoomSpeed":1},"layout":{"hierarchical":{"enabled":true,"direction":"LR"}}},"groups":null,"width":null,"height":null,"idselection":{"enabled":false,"style":"width: 150px; height: 26px","useLabels":true,"main":"Select by id"},"byselection":{"enabled":false,"style":"width: 150px; height: 26px","multiple":false,"hideColor":"rgba(200,200,200,0.5)","highlight":false},"main":{"text":"","style":"font-family:Georgia, Times New Roman, Times, serif;font-weight:bold;font-size:20px;text-align:center;"},"submain":null,"footer":null,"background":"rgba(0, 0, 0, 0)","highlight":{"enabled":true,"hoverNearest":false,"degree":{"from":1,"to":1},"algorithm":"hierarchical","hideColor":"rgba(200,200,200,0.5)","labelOnly":true},"collapse":{"enabled":true,"fit":false,"resetHighlight":true,"clusterOptions":null,"keepCoord":true,"labelSuffix":"(cluster)"},"legend":{"width":0.2,"useGroups":false,"position":"right","ncol":1,"stepX":100,"stepY":100,"zoom":true,"nodes":{"label":["Up to date","Stem","Function"],"color":["#354823","#899DA4","#899DA4"],"shape":["dot","dot","triangle"]},"nodesToDataframe":true},"tooltipStay":300,"tooltipStyle":"position: fixed;visibility:hidden;padding: 5px;white-space: nowrap;font-family: verdana;font-size:14px;font-color:#000000;background-color: #f5f4ed;-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;border: 1px solid #808074;box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);"},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 <p>The documentation for <code>targets</code> package can be found here: <a href="https://books.ropensci.org/targets/">targets package documentation</a></p>
@@ -1438,13 +1462,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./projects_in_RStudio.html" class="pagination-link" aria-label="Projects in RStudio">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Projects in RStudio</span></span>
+      <a href="../../quarto_files/part_r_rstudio_tutorials/projects_in_r_studio.html" class="pagination-link" aria-label="Projects in RStudio">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Projects in RStudio</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./getting_help_with_R.html" class="pagination-link" aria-label="Getting Help with R">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Getting Help with R</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../quarto_files/part_r_rstudio_tutorials/getting_help_with_r.html" class="pagination-link" aria-label="Getting Help with R">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Getting Help with R</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -1,0 +1,6 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|repository|iteration|parent|children|seconds|warnings|error
+checkpoint_dir|stem|7a43aeadbc9df2a7|79a9d1b791709157|2c530c1562a7fbd1|-786928873|/home/vetinst.no/vi2313/R-tutorials/data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_targets/|t20182.3750985936s|c2681303b68ae099|600|file|local|vector|||0.002||
+compute_with_checkpoint|function|f59129b9d7b81417|||||||||||||||
+data|stem|0ccce0213b01a76c|2189af870b3f1301|2c530c1562a7fbd1|33550471||t20182.375012515s|271db55f47f9100d|99|rds|local|vector|||0||
+final_save|stem|6bebb1aa847620e7|a13ad686554b1d47|4babf6584f18cdee|-427855146||t20182.3750986398s|2b07dbd8c37abf3d|86|rds|local|vector|||0.006||
+results|stem|6bebb1aa847620e7|3a4838714db85db8|d576e7f39431433e|-322906963||t20182.3884087967s|2b07dbd8c37abf3d|86|rds|local|vector|||3.503||

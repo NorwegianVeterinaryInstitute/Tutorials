@@ -1,0 +1,584 @@
+---
+title: "Parallelization on Workbench"
+author: "Trishang Udhwani"
+format:
+  html:
+    toc: true
+    toc-location: left
+    toc-depth: 2
+    number-sections: true
+    number-depth: 3
+editor: visual
+---
+
+## What is Parallelization?
+
+A modern CPU (Central Processing Unit) is at the heart of every computer. While traditional computers had a single CPU, modern computers can have multiple processors, which in turn can each contain multiple cores. These processors and cores are available to perform computations.
+
+A computer with one processor may still have 4 cores (quad-core), allowing 4 computations to be executed at the same time.
+
+![](/images/part_r_rstudio_tutorials/parallelization-on-workbench-images/download.png){fig-align="center"}
+
+A typical modern computer has multiple cores, ranging from one or two in laptops to thousands in high performance compute clusters. Here is an example of four quad-core processors for a total of 16 cores in this machine.
+
+![](/images/part_r_rstudio_tutorials/parallelization-on-workbench-images/download%20(1).png){fig-align="center"}
+
+You can think of this as allowing 16 computations to happen at the same time. Theoretically, your computation would take 1/16 of the time. Historically, R has only utilized one processor, which makes it single-threaded.
+
+::: callout-important
+The tutorial shown here is running on the Connect server (and not Workbench) because publication happens on Connect through git backed deployment. Because of this, you will not see the results of parallelization in the outputs of this tutorial as parallelization is not a feature of the connect server. However, if you run the same code on Workbench, you will see the affects of parallelization.
+:::
+
+## The lapply() function
+
+The `lapply()` function has two arguments:
+
+1.  A list, or an object that can be coerced to a list.
+
+2.  A function to be applied to each element of the list
+
+The `lapply()` function works much like a loop. It cycles through each element of the list and applies the supplied function to that element. While `lapply()` is applying your function to a list element, the other elements of the list are just…sitting around in memory. In the description of `lapply()`, there’s no mention of the different elements of the list communicating with each other, and the function being applied to a given list element does not need to know about other list elements.
+
+Just about any operation that is handled by the `lapply()` function can be parallelized. The idea is that a list object can be split across multiple cores of a processor and then the function can be applied to each subset of the list object on each of the cores. Conceptually, the steps in the parallel procedure are
+
+1.  Split list `X` across multiple cores
+
+2.  Copy the supplied function (and associated environment) to each of the cores
+
+3.  Apply the supplied function to each subset of the list `X` on each of the cores in parallel
+
+4.  Assemble the results of all the function evaluations into a single list and return
+
+The differences between the many packages/functions in R essentially come down to how each of these steps are implemented.
+
+## The Parallel Package
+
+The `parallel` package which comes with your R installation.
+
+The `mclapply()` function essentially parallelizes calls to `lapply()`. The first two arguments to `mclapply()` are exactly the same as they are for `lapply()`. However, `mclapply()` has further arguments (that must be named), the most important of which is the `mc.cores` argument which you can use to specify the number of processors/cores you want to split the computation across. For example, if your machine has 4 cores on it, you might specify `mc.cores = 4` to break your parallelize your operation across 4 cores (although this may not be the best idea if you are running other operations in the background besides R).
+
+Briefly, your R session is the main process and when you call a function like `mclapply()`, you fork a series of sub-processes that operate independently from the main process (although they share a few low-level features). These sub-processes then execute your function on their subsets of the data, presumably on separate cores of your CPU. Once the computation is complete, each sub-process returns its results and then the sub-process is killed. The `parallel` package manages the logistics of forking the sub-processes and handling them once they’ve finished.
+
+::: callout-caution
+Because of the use of the fork mechanism, the `mc*` functions are generally not available to users of the Windows operating system.
+:::
+
+The first thing you might want to check with the `parallel` package is if your computer in fact has multiple cores that you can take advantage of.
+
+```{r}
+library(parallel)
+parallel::detectCores()
+```
+
+::: callout-warning
+In general, the information from `detectCores()` should be used cautiously as obtaining this kind of information from Unix-like operating systems is not always reliable. If you are going down this road, it’s best if you get to know your hardware better in order to have an understanding of how many CPUs/cores are available to you.
+:::
+
+### `mclapply()`
+
+```{r}
+set.seed(1)
+# Create a dataframe
+df <- data.frame(replicate(1000, rnorm(10000)))
+
+# Using lapply() to find mean of each row
+s <- system.time({
+  list_means_1 <- lapply(1:nrow(df), function(i) mean(as.numeric(df[i, ])))
+})
+print(s)
+```
+
+Note that in the `system.time()` output in first case, the `user` time and the `elapsed` time are roughly the same, which is what we would expect because there was no parallelization.
+
+```{r}
+library(parallel)
+
+# Using mclapply() to find mean of each row
+numberOfCores <- 4
+s <- system.time({
+  list_means_2 <- parallel::mclapply(1:nrow(df), function(i) mean(as.numeric(df[i, ])), mc.cores = numberOfCores)
+})
+print(s)
+```
+
+You’ll notice that the the `elapsed` time is now less than the `user` time. However, in general, the `elapsed` time will not be 1/4th of the `user` time, which is what we might expect with 4 cores if there were a perfect performance gain from parallelization.
+
+R keeps track of how much time is spent in the main process and how much is spent in any child processes.
+
+```{r}
+s["user.self"]  # Main process
+s["user.child"] # Child processes
+```
+
+::: callout-important
+One advantage of serial computations is that it allows you to better keep a handle on how much **memory** your R job is using. When executing parallel jobs via `mclapply()` it’s important to pre-calculate how much memory *all* of the processes will require and make sure this is less than the total amount of memory on your computer.
+:::
+
+The `mclapply()` function is useful for iterating over a single list or list-like object. If you have to iterate over multiple objects together, you can use `mcmapply()`, which is the the multi-core equivalent of the `mapply()` function.
+
+### Error Handling
+
+This error handling behavior is a significant difference from the usual call to `lapply()`. With `lapply()`, if the supplied function fails on one component of the list, the entire function call to `lapply()` fails and you only get an error as a result.
+
+With `mclapply()`, when a sub-process fails, the return value for that sub-process will be an R object that inherits from the class `"try-error"`, which is something you can test with the `inherits()` function. Conceptually, each child process is executed with the `try()` function wrapped around it. The code below deliberately causes an error in the 3 element of the list.
+
+```{r}
+r <- parallel::mclapply(1:5, function(i) {
+        if(i == 3L)
+                stop("error in this process!")
+        else
+                return("success!")
+}, mc.cores = 5)
+```
+
+Here we see there was a warning but no error in the running of the above code. We can check the return value.
+
+```{r}
+str(r)
+```
+
+Note that the 3rd list element in `r` is different.
+
+```{r}
+class(r[[3]])
+inherits(r[[3]], "try-error")
+```
+
+When running code where there may be errors in some of the sub-processes, it’s useful to check afterwards to see if there are any errors in the output received.
+
+```{r}
+bad <- sapply(r, inherits, what = "try-error")
+bad
+```
+
+### Generating Random Numbers
+
+```{r}
+set.seed(1)
+r <- parallel::mclapply(1:5, function(i) {
+        rnorm(3)
+}, mc.cores = 4)
+
+str(r)
+```
+
+However, the above expression is not **reproducible** because the next time you run it, you will get a different set of random numbers. You cannot simply call `set.seed()` before running the expression as you might in a non-parallel version of the code.
+
+The `parallel` package provides a way to reproducibly generate random numbers in a parallel environment via the “L’Ecuyer-CMRG” random number generator. Note that this is not the default random number generator so you will have to set it explicitly.
+
+```{r}
+RNGkind("L'Ecuyer-CMRG")
+set.seed(1)
+r <- parallel::mclapply(1:5, function(i) {
+        rnorm(3)
+}, mc.cores = 4)
+
+str(r)
+```
+
+`mclapply()` documentation can be found here: [mcapply()](https://www.rdocumentation.org/packages/parallel/versions/3.4.0/topics/mclapply)
+
+### The ParLapply() function
+
+Using the forking mechanism on your computer is one way to execute parallel computation but it’s not the only way that the `parallel` package offers. Another way to build a “cluster” using the multiple cores on your computer is via *sockets*. A is simply a mechanism with which multiple processes or applications running on your computer (or different computers, for that matter) can communicate with each other. With parallel computation, data and results need to be passed back and forth between the parent and child processes and sockets can be used for that purpose.
+
+```{r}
+clu <- parallel::makeCluster(4)
+```
+
+The `clu` object is an abstraction of the entire cluster and is what we’ll use to indicate to the various cluster functions that we want to do parallel computation.
+
+To do an `lapply()` operation over a socket cluster we can use the `parLapply()` function.
+
+```{r error=TRUE}
+list_means_3 <- parallel::parLapply(clu, 1:nrow(df), function(i) mean(as.numeric(df[i, ]))) 
+```
+
+Unfortunately, that there’s an error in running this code. The reason is that while we have loaded the df data into our R session, the data is not available to the independent child processes that have been spawned by the `makeCluster()` function. The *socket* approach launches a new version of R on each core whereas the *forking* approach copies the entire current version of R and moves it to a new core.
+
+The data, and any other information that the child process will need to execute your code, needs to be **exported** to the child process from the parent process via the `clusterExport()` function. The need to export data is a key difference in behavior between the “multicore” approach and the “socket” approach.
+
+```{r}
+parallel::clusterExport(clu, "df")
+```
+
+The second argument to `clusterExport()` is a character vector, and so you can export an arbitrary number of R objects to the child processes. You should be judicious in choosing what you export simply because each R object will be replicated in each of the child processes, and hence take up memory on your computer.
+
+```{r}
+list_means_3 <- parallel::parLapply(clu, 1:nrow(df), function(i) mean(as.numeric(df[i, ]))) 
+```
+
+Once you’ve finished working with your cluster, it’s good to clean up and stop the cluster child processes (quitting R will also stop all of the child processes).
+
+```{r}
+parallel::stopCluster(clu)
+```
+
+::: callout-note
+Sometimes we will also need to load the packages in individual child processes. This can be done by using `clusterEvalQ` . For example:
+
+``` r
+parallel::clusterEvalQ(clu, {
+  library(ggplot2)
+  library(stringr)
+})
+```
+:::
+
+`ParLapply()` is a part of `clusterApply()` family of functions. The documentation can be found here: [clusterApply()](https://www.rdocumentation.org/packages/parallel/versions/3.6.2/topics/clusterApply)
+
+## `foreach` and `doParallel` Package
+
+The normal `for` loop in R looks like:
+
+```{r}
+for (i in 1:3) {
+  print(sqrt(i))
+}
+```
+
+The `foreach` method is similar, but uses the sequential `%do%` operator to indicate an expression to run. Note the difference in the returned data structure.
+
+```{r}
+library(foreach)
+foreach (i=1:3) %do% {
+  sqrt(i)
+}
+```
+
+### `%dopar%` operator
+
+In addition, `foreach` supports a parallelizable operator `%dopar%` from the `doParallel` package. This allows each iteration through the loop to use different cores or different machines in a cluster.
+
+```{r}
+library(foreach)
+library(doParallel)
+
+doParallel::registerDoParallel(4) 
+foreach (i=1:5) %dopar% {
+  sqrt(i)
+}
+```
+
+To simplify output, `foreach` has the `.combine` parameter that can simplify return values
+
+```{r}
+foreach (i=1:3, .combine=c) %dopar% {
+  sqrt(i)
+}
+```
+
+`foreach` also has the `.rbind` parameter that can return a dataframe
+
+```{r}
+foreach (i=1:3, .combine=rbind) %dopar% {
+  sqrt(i)
+}
+```
+
+The [doParallel vignette](https://cran.r-project.org/web/packages/doParallel/vignettes/gettingstartedParallel.pdf) on CRAN shows a much more realistic example, where one can use `%dopar%` to parallelize a bootstrap analysis where a data set is resampled 10,000 times and the analysis is rerun on each sample, and then the results combined. Here use the iris data set to do a parallel bootstrap:
+
+```{r}
+
+x <- iris[which(iris[,5] != "setosa"), c(1,5)]
+trials <- 10000
+system.time({
+  r <- foreach(icount(trials), .combine=rbind) %dopar% {
+    ind <- sample(100, 100, replace=TRUE)
+    result1 <- glm(x[ind,2]~x[ind,1], family=binomial(logit))
+    coefficients(result1)
+  }
+})
+```
+
+And compare that to what it takes to do the same analysis in serial:
+
+```{r}
+system.time({
+  r <- foreach(icount(trials), .combine=rbind) %do% {
+    ind <- sample(100, 100, replace=TRUE)
+    result1 <- glm(x[ind,2]~x[ind,1], family=binomial(logit))
+    coefficients(result1)
+  }
+})
+```
+
+When we're done, we will clean up the cluster:
+
+```{r}
+doParallel::stopImplicitCluster()
+```
+
+### `%dorng%` operator
+
+standard `%dopar%` loops are not reproducible:
+
+First, let's set the RNGkind back to default
+
+```{r}
+RNGkind("default")
+```
+
+Now register a new cluster
+
+```{r}
+doParallel::registerDoParallel(4)
+```
+
+```{r}
+set.seed(123)
+res <- foreach(i=1:5) %dopar% { runif(3) }
+set.seed(123)
+res2 <- foreach(i=1:5) %dopar% { runif(3) }
+identical(res, res2)
+```
+
+The doRNG package provides convenient ways to implement reproducible parallel `foreach` loops, independently of the parallel backend used to perform the computation.
+
+```{r}
+library(doRNG)
+set.seed(123)
+res <- foreach(i=1:5) %dorng% { runif(3) }
+set.seed(123)
+res2 <- foreach(i=1:5) %dorng% { runif(3) }
+identical(res, res2)
+```
+
+When we're done, we will clean up the cluster:
+
+```{r}
+doParallel::stopImplicitCluster()
+```
+
+The `doParallel` documentation can be found here: [doParallel](https://cran.r-project.org/web/packages/doParallel/vignettes/gettingstartedParallel.pdf)
+
+## The future Package
+
+The `future` package defines *plans* to specify how computations are executed. A plan can use multiple cores, separate R sessions, or even remote systems.
+
+```{r}
+library(future)
+plan(multisession, workers = 4)
+
+# Define a future
+f <- future::future({ sum(1:1e6) })
+# Retrieve the result
+result <- future::value(f)
+print(result)
+```
+
+::: callout-note
+We could have used `plan(multicore)` instead of `plan(multisession)` if we were working directly in R and not RStudio. However, `plan(multicore)` will only work in a Linux/macOS environment
+:::
+
+The `future` package is a lot more comprehensive but beyond the scope of discussion for this basic tutorial. If you are interested, the documentation can be found here: [future package](https://cran.r-project.org/web/packages/future/vignettes/future-1-overview.html)
+
+This is how we can use it instead of `lapply`
+
+```{r}
+library(future.apply)
+plan(multisession, workers = 4)
+result <- future.apply::future_lapply(1:5, function(x) x^2)
+result
+```
+
+`Multisession` runs background R sessions on the current machine. For large parallelizations, we should run `future_lapply` by defining a cluster manually. That way we can run it on external R sessions on current, local, and/or remote machines.
+
+```{r}
+library(parallel)
+clu <- parallel::makeCluster(4)
+plan(cluster, workers = clu)
+result <- future_lapply(1:10, function(x) x^2)
+stopCluster(clu)
+```
+
+Documentation for `future.apply` family of functions can be found here: [future.apply documentation](https://cran.r-project.org/web/packages/future.apply/vignettes/future.apply-1-overview.html)
+
+### Integration with SLURM
+
+Future works very well with SLURM integration. The `future.batchtools` package extends the `future` ecosystem for SLURM. Here is an example code:
+
+``` r
+library(future.batchtools)
+plan(batchtools_slurm, template = "sumbit_job.slurm")
+
+f <- future::future({ Sys.sleep(10); sum(1:1e6) })
+result <- future::value(f)
+```
+
+You need a SLURM template file (`submit_job.slurm`) that specifies job parameters (e.g., cores, memory).
+
+## Other ways to parallelize R code
+
+There are several other ways to parallelize your code. If you are looking for more packages, some of those are mentioned here along with their documentation. Some of these are extensions of packages already mentioned while others introduce different ways to parallelize.
+
+-   [`furrr` package](https://furrr.futureverse.org/)
+
+-   [`doFuture` package](https://cran.r-project.org/web/packages/doFuture/doFuture.pdf)
+
+-   [`RcppParallel` package](https://rcppcore.github.io/RcppParallel/)
+
+-   [`parallelMap` package](https://cran.r-project.org/web/packages/parallelMap/parallelMap.pdf)
+
+-   [`batchtools` package](https://github.com/mllg/batchtools)
+
+## Saving results while parallelizing
+
+When running large computations, it may be helpful to save results iteratively or as checkpoints to avoid data loss in case of interruptions. Here is an example of saving results iteratively using the `foreach` and `doParallel` libraries
+
+```{r}
+library(foreach)
+library(doParallel)
+
+# Register parallel backend
+doParallel::registerDoParallel(4)
+
+# Parallel computation and saving results
+results <- foreach(i = 1:100, .combine = c) %dopar% {
+  # Your computation
+  Sys.sleep(0.1) # Simulates time-consuming computation
+  result <- i^2
+
+  # Save intermediate results
+  saveRDS(result, file = paste0("/home/vetinst.no/vi2313/R-tutorials/data/part_r_rstudio_tutorials/parallelization_on_workbench/for_each/result_", i, ".rds"))
+  result
+}
+
+doParallel::stopImplicitCluster()
+```
+
+Here is another example using `future.apply` library
+
+```{r}
+library(future.apply)
+
+plan(multisession, workers = 4)
+
+# Function with intermediate saving
+safe_compute <- function(i) {
+  result <- i^2
+  saveRDS(result, file = paste0("/home/vetinst.no/vi2313/R-tutorials/data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/partial_result_", i, ".rds"))
+  return(result)
+}
+
+# Run computation
+results <- future.apply::future_lapply(1:100, safe_compute)
+
+# Aggregate saved results
+final_results <- unlist(results)
+saveRDS(final_results, file = "/home/vetinst.no/vi2313/R-tutorials/data/part_r_rstudio_tutorials/parallelization_on_workbench/future_apply/final_results.rds")
+
+```
+
+### Designing a function to restore progress:
+
+Here is the "structure" of a function that can be used to restore your progress.
+
+```{r}
+library(future.apply)
+
+# Define checkpoint directory
+checkpoint_dir <- "/home/vetinst.no/vi2313/R-tutorials/data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_parallel/"
+dir.create(checkpoint_dir, showWarnings = FALSE)
+
+# Set up parallel plan
+plan(multisession, workers = 4)
+
+# Function to perform computations with checkpoints
+compute_task <- function(i) {
+  checkpoint_file <- file.path(checkpoint_dir, paste0("result_", i, ".rds"))
+  
+  if (file.exists(checkpoint_file)) {
+    # Restore from checkpoint
+    result <- readRDS(checkpoint_file)
+  } else {
+    # Perform the computation
+    Sys.sleep(1)  # Simulates a time-consuming task
+    result <- i*2
+    
+    # Save checkpoint
+    saveRDS(result, checkpoint_file)
+  }
+  return(result)
+}
+
+# Parallel computation with checkpoints
+results <- future.apply::future_lapply(1:10, compute_task)
+
+# Aggregate results
+final_results <- unlist(results)
+print(final_results)
+```
+
+### Targets package for efficient checkpoint management
+
+This package is a pipeline tool for statistics and data science in R. The package skips costly runtime for tasks that are already up to date, orchestrates the necessary computation with implicit parallel computing, and abstracts files as R objects. If all the current output matches the current upstream code and data, then the whole pipeline is up to date, and the results are more trustworthy than otherwise.
+
+```{r}
+library(targets)
+tar_script({
+  library(future.apply)
+
+  # Parallelization plan
+  plan(multisession)
+
+  # Define the computation function with checkpointing
+  compute_with_checkpoint <- function(x, checkpoint_dir) {
+    checkpoint_file <- file.path(checkpoint_dir, paste0("result_", x, ".rds"))
+    if (file.exists(checkpoint_file)) {
+      result <- readRDS(checkpoint_file)
+    } else {
+      Sys.sleep(2)  # Simulate a long computation
+      result <- x^2
+      saveRDS(result, checkpoint_file)
+    }
+    return(result)
+  }
+
+  # Define the pipeline
+  tar_option_set(
+    packages = c("future.apply"),
+    format = "rds"
+  )
+
+  list(
+    tar_target(
+      checkpoint_dir,
+      {
+        dir <- "/home/vetinst.no/vi2313/R-tutorials/data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_targets/"
+        dir.create(dir, showWarnings = FALSE)
+        dir
+      },
+      format = "file"
+    ),
+    tar_target(
+      data,
+      seq(1, 10),
+      format = "rds"
+    ),
+    tar_target(
+      results,
+      future_lapply(data, compute_with_checkpoint, checkpoint_dir = checkpoint_dir),
+      format = "rds"
+    ),
+    tar_target(
+      final_save,
+      {
+        saveRDS(results, "/home/vetinst.no/vi2313/R-tutorials/data/part_r_rstudio_tutorials/parallelization_on_workbench/checkpoints_targets/final_results.rds")
+        results
+      },
+      format = "rds"
+    )
+  )
+})
+```
+
+```{r}
+library(visNetwork)
+library(targets)
+tar_make()
+
+tar_visnetwork()
+```
+
+The documentation for `targets` package can be found here: [targets package documentation](https://books.ropensci.org/targets/)

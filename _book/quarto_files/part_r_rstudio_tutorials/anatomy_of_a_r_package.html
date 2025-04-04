@@ -6,11 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Trishang Udhwani">
-<meta name="author" content="Novica Nakov">
 <meta name="author" content="Håkon Kaspersen">
 
-<title>R and Posit tutorials</title>
+<title>4&nbsp; Anatomy of a R package – **R and Posit tutorials**</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +21,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./quarto_files/part_general/posit_infrastructure_at_VI.html" rel="next">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../quarto_files/part_r_rstudio_tutorials/projects_in_r_studio.html" rel="next">
+<link href="../../quarto_files/part_configrations/connecting_r_studio_to_github.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -112,7 +145,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../quarto_files/part_r_rstudio_tutorials/anatomy_of_a_r_package.html">R/RStudio tutorials</a></li><li class="breadcrumb-item"><a href="../../quarto_files/part_r_rstudio_tutorials/anatomy_of_a_r_package.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Anatomy of a R package</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -126,11 +159,11 @@ window.Quarto = {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/logos/vetinst-logo-eng.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="../../images/logos/vetinst-logo-eng.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="./"><strong>R and Posit tutorials</strong></a> 
+      <a href="../../"><strong>R and Posit tutorials</strong></a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -142,7 +175,7 @@ window.Quarto = {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
@@ -157,7 +190,7 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quarto_files/part_general/posit_infrastructure_at_VI.html" class="sidebar-item-text sidebar-link">
+  <a href="../../quarto_files/part_general/posit_infrastructure_at_VI.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Posit Infrastructure at VI</span></span></a>
   </div>
 </li>
@@ -174,13 +207,13 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quarto_files/part_configrations/setting_home_dir.html" class="sidebar-item-text sidebar-link">
+  <a href="../../quarto_files/part_configrations/setting_home_dir.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Setting up your $HOME Variable on Windows 10</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quarto_files/part_configrations/connecting_r_studio_to_github.html" class="sidebar-item-text sidebar-link">
+  <a href="../../quarto_files/part_configrations/connecting_r_studio_to_github.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Connecting RStudio to GitHub</span></span></a>
   </div>
 </li>
@@ -197,31 +230,31 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quarto_files/part_r_rstudio_tutorials/anatomy_of_a_r_package.html" class="sidebar-item-text sidebar-link">
+  <a href="../../quarto_files/part_r_rstudio_tutorials/anatomy_of_a_r_package.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Anatomy of a R package</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quarto_files/part_r_rstudio_tutorials/projects_in_r_studio.html" class="sidebar-item-text sidebar-link">
+  <a href="../../quarto_files/part_r_rstudio_tutorials/projects_in_r_studio.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Projects in RStudio</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quarto_files/part_r_rstudio_tutorials/parallelization_on_workbench.html" class="sidebar-item-text sidebar-link">
+  <a href="../../quarto_files/part_r_rstudio_tutorials/parallelization_on_workbench.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Parallelization on Workbench</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quarto_files/part_r_rstudio_tutorials/getting_help_with_r.html" class="sidebar-item-text sidebar-link">
+  <a href="../../quarto_files/part_r_rstudio_tutorials/getting_help_with_r.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Getting Help with R</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quarto_files/part_r_rstudio_tutorials/r_studio_tips_and_tricks.html" class="sidebar-item-text sidebar-link">
+  <a href="../../quarto_files/part_r_rstudio_tutorials/r_studio_tips_and_tricks.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">RStudio Tips and Tricks</span></span></a>
   </div>
 </li>
@@ -238,13 +271,13 @@ window.Quarto = {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quarto_files/part_posit_connect/creating_pins_on_connect.html" class="sidebar-item-text sidebar-link">
+  <a href="../../quarto_files/part_posit_connect/creating_pins_on_connect.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Creating Pins on Connect</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quarto_files/part_posit_connect/git_backed_deployment_to_posit_connect.html" class="sidebar-item-text sidebar-link">
+  <a href="../../quarto_files/part_posit_connect/git_backed_deployment_to_posit_connect.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Git Backed Deployment to Posit Connect</span></span></a>
   </div>
 </li>
@@ -252,24 +285,27 @@ window.Quarto = {
   </li>
     </ul>
     </div>
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul class="collapse">
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">4.1</span> Overview</a></li>
+  <li><a href="#tutorial" id="toc-tutorial" class="nav-link" data-scroll-target="#tutorial"><span class="header-section-number">4.2</span> Tutorial</a></li>
+  <li><a href="#take-home-messages" id="toc-take-home-messages" class="nav-link" data-scroll-target="#take-home-messages"><span class="header-section-number">4.3</span> Take-Home messages</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources"><span class="header-section-number">4.4</span> Resources</a></li>
+  </ul>
+</nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../quarto_files/part_r_rstudio_tutorials/anatomy_of_a_r_package.html">R/RStudio tutorials</a></li><li class="breadcrumb-item"><a href="../../quarto_files/part_r_rstudio_tutorials/anatomy_of_a_r_package.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Anatomy of a R package</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><strong>R and Posit tutorials</strong></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Anatomy of a R package</span></h1>
 </div>
 
 
@@ -277,10 +313,8 @@ window.Quarto = {
 <div class="quarto-title-meta">
 
     <div>
-    <div class="quarto-title-meta-heading">Authors</div>
+    <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Trishang Udhwani </p>
-             <p>Novica Nakov </p>
              <p>Håkon Kaspersen </p>
           </div>
   </div>
@@ -294,9 +328,16 @@ window.Quarto = {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
-<p>This Quarto book contains all tutorials created by the Section of Epidemiology. It is deployed from the repository <a href="https://github.com/NorwegianVeterinaryInstitute/R-tutorials">R-tutorials</a> through git backed deployment. You can add more tutorials to this book by cloning this repository and following these steps:</p>
+<section id="overview" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">4.1</span> Overview</h2>
+<p>This tutorial will describe the basics on R packages. How they work, what they are used for, and how to share them.</p>
+</section>
+<section id="tutorial" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="tutorial"><span class="header-section-number">4.2</span> Tutorial</h2>
+<section id="what-is-an-r-package" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="what-is-an-r-package"><span class="header-section-number">4.2.1</span> What is an R Package?</h3>
+<p>An R package is a convenient way to organize your code, making it easy to share with others. In the R universe, a package is the fundamental unit of shareable code. It bundles together code, data, documentation, and tests. Most packages are available on the Comprehensive R Archive Network (CRAN), and as of date, they host 18308 packages. This is partly why R has become so successful - among these 18000+ packages, chances are someone already solved a problem you are working on, and it is easy to download their package and use it.</p>
+<p>On your computer, most packages live in the <code>library</code> directory inside the directory where R is installed (typically <code>C:/Program Files/R-&lt;version&gt;</code>). Here, a package is simply a directory that follows a specific structure convention, where functions are stored in the <code>R</code> directory, and their respective help pages are stored in the <code>man</code> or <code>help</code> directory. Other files, such as <code>DESCRIPTION</code> and <code>NAMESPACE</code> are located in the package directory. The <code>DESCRIPTION</code> file lists information about what the package does, who the author is, contact information, versions, license information, package dependencies, and more. The <code>NAMESPACE</code> file makes it possible for packages to communicate to each other. Here, the functions that are defined in the package are exported, which is practice means that they will be available when you load the package. The <code>NAMESPACE</code> file also imports functions from other packages, managing dependencies.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -307,43 +348,99 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The main branch of the repository has “soft protection” enabled. It is recommended to create a new branch to make any changes and then merging the changes with the main branch after testing to make sure everything renders correctly.</p>
+<p>Packages are usually only handled in R directly, and not in your own file system! Do not make changes to packages directly in your library!</p>
 </div>
 </div>
-<ol type="1">
-<li><p>Create your tutorial as a QUARTO document in <em>html</em> format.</p></li>
-<li><p>Add your <code>tutorial_name.qmd</code> file to this project folder.</p></li>
-<li><p>Add your tutorial to the <code>_quarto.yml</code> file.</p></li>
-<li><p>Run <code>rsconnect::writeManifest()</code> to update the manifest file.</p></li>
-<li><p>Commit the changes and push to the repository.</p></li>
-<li><p>Wait for the deployment to trigger automatically or manually trigger deployment by clicking on the <strong>Update Now</strong> button under <strong>Info</strong> on the <a href="https://connect.posit.vetinst.no/R-and-posit-tutorials/">content page</a>.</p></li>
-</ol>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>This QUARTO book only contains tutorials. There is a lot more documentation (such as Official Posit User Guides, Guides ad How-Tos) in <a href="https://github.com/NorwegianVeterinaryInstitute/posit-team/wiki/Documentation">documentation</a> under the posit-team repository.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>When you create a new session in Workbench, you are creating a RStudio Pro Session. Hence, all the tutorials under the section <strong>R/RStudio tutorials</strong> will be applicable both on Workbench as well as RStudio on your personal computers (unless stated otherwise in the individual chapters).</p>
-</div>
-</div>
+<p>Other files may or may not exist inside the directory of a package. Sometimes a <code>data</code> folder hold some test data, a <code>html</code> directory with a html-file that lists information about the functions inside the package, and others. CRAN packages are usually in a binary format, and the CRAN packages in your default library is uncompressed binary packages. The difference in the directory structure of the package is: - No <code>.R</code> files in the R directory - A <code>Meta</code> directory holding the package metadata (similar to <code>DESCRIPTION</code> above) - Help content appears in <code>help</code> and <code>html</code> - A <code>libs</code> directory that holds the results of compiling the code</p>
+<p>Package states and structures are complex, and this will not be covered in detail here. You can read more about it <a href="https://r-pkgs.org/package-structure-state.html">here</a>.</p>
+</section>
+<section id="where-can-you-find-r-packages" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="where-can-you-find-r-packages"><span class="header-section-number">4.2.2</span> Where can you find R packages?</h3>
+<p>Most packages are available through repositories, where the biggest is <a href="https://cran.r-project.org/">CRAN</a>. CRAN is a network of FTP and web servers located around the world, and is coordinated by the R foundation. Packages hosted by CRAN are trustworthy due to extensive documentation criteria and testing to make sure it follows CRAN <a href="https://cran.r-project.org/web/packages/policies.html">policies</a>.</p>
+<p>Another repository for R packages is <a href="https://www.bioconductor.org/">Bioconductor</a>. This is a topic-specific repository, intended for open source software for bioinformatics. It has its own <a href="https://www.bioconductor.org/developers/package-submission/">submission and review process</a>, much like CRAN. The community contributing to Bioconductor is very active hand have several conferences and meetings each year.</p>
+<p>Lastly, probably the most popular repository for open source packages is <a href="https://github.com/">GitHub</a>. This is popular because it makes collaborations easier and it integrates with git. However, no review process is done for packages hosted on GitHub, so use with care!</p>
+</section>
+<section id="how-to-install-update-and-remove-r-packages" class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" data-anchor-id="how-to-install-update-and-remove-r-packages"><span class="header-section-number">4.2.3</span> How to install, update, and remove R packages</h3>
+<section id="install" class="level4">
+<h4 class="anchored" data-anchor-id="install">Install</h4>
+<section id="cran" class="level5">
+<h5 class="anchored" data-anchor-id="cran">CRAN</h5>
+<p>Packages hosted by CRAN can be installed by the function <code>install.packages("package")</code>. With default arguments, this will install the package in question at the default library location. To change the library location (if you have a separate library), define the path in the <code>lib</code> argument: <code>install.packages("package", lib = "path/to/library")</code>. Specify which mirror you want to use with <code>repo</code>: <code>install.packages("package", repo = "https://lib.ugent.be/CRAN/")</code>. You can list available mirrors with <code>getCRANmirrors()</code>. Several packages can be installed with one <code>install.packages</code> call, simply supply a character vector with the package names as the first argument in the function.</p>
+</section>
+<section id="bioconductor" class="level5">
+<h5 class="anchored" data-anchor-id="bioconductor">Bioconductor</h5>
+<p>Packages hosted by Bioconductor cannot be installed the regular way, unless hosted on both platforms. Bioconductor have their own manager package called <code>BiocManager</code> which you need to install first, as described above (hosted by CRAN). Then, to install specific packages hosted by Bioconductor, use <code>Biocmanager::install("package")</code>.</p>
+</section>
+<section id="github" class="level5">
+<h5 class="anchored" data-anchor-id="github">GitHub</h5>
+<p>Packages hosted on GitHub cannot be installed the regular way, unless they are hosted on CRAN as well (this is the case for several packages). The function <code>devtools::install_github("github_user/package_name")</code> is often used to install packages from GitHub, which originate from the <code>devtools</code> package. The <code>devtools</code> package also has other useful functions, such as <code>install_bioc()</code> and <code>install_cran()</code>, which will install packages from Bioconductor and CRAN, respectively (I am however unsure about the difference between <code>install.packages</code> and <code>Biocmanager::install</code> and these two).</p>
+<p>The <code>remotes</code> package also has a similar function to install packages from GitHub: <code>remotes::install_github(github_user_name/package_name)</code></p>
+</section>
+</section>
+<section id="update-and-remove" class="level4">
+<h4 class="anchored" data-anchor-id="update-and-remove">Update and remove</h4>
+<p>To check which packages have updates available, use <code>old.packages()</code>. To update all packages, use <code>update.packages()</code>. If you want to update just one package, simply run the installation function you used to install it again. To remove packages, use <code>remove.packages("package")</code>. This will uninstall the package from the default library, or in the location where R detects the package has been installed.</p>
+</section>
+</section>
+<section id="how-to-use-packages" class="level3" data-number="4.2.4">
+<h3 data-number="4.2.4" class="anchored" data-anchor-id="how-to-use-packages"><span class="header-section-number">4.2.4</span> How to use packages</h3>
+<section id="general-usage" class="level4">
+<h4 class="anchored" data-anchor-id="general-usage">General usage</h4>
+<p>After installing a package, a package can be activated from your library with the <code>library(package)</code> function. This will load the package into memory, making all the functions defined inside it directly available for use. Sometimes, however, you may only need a single function from a package. The function in question may be accessed without loading the package to memory: <code>package_name::function_name()</code>. By using the <code>package::function</code> notation, you avoid potential problems with overlapping function names between packages, and it is easier to identify where the specific function originated.</p>
+<p>On a side note, the <code>library()</code> function can be used with or without quotation marks, like this: <code>library("package")</code> or <code>library(package)</code>. This is, according to Yihui Xie, the original author’s wish to be lazy. The editors of Journal of Statistical Software apparently tries to promote the use of quotations. Or as Yihui put it:</p>
+<blockquote class="blockquote">
+<p><em>“Apparently, the editors of JSS (Journal of Statistical Software) have been trying to promote the form <code>library("foo")</code> and discourage <code>library(foo)</code>, but I do not think it makes much sense now or it will change anything. If it were in the 90’s, I’d wholeheartedly support it. It is simply way too late now. Yes, two extra quotation marks will kill many kittens on this planet.”</em> – <em>Yihui Xie</em></p>
+</blockquote>
+<p>To unload a package, the function <code>detach(package)</code> can be used. What is the difference between a library and a package? Think of it this way: A package is a book inside a library. The <code>library</code> function checks a package out of the library, and loads it into memory.</p>
+<p>Some people like to use <code>require()</code> instead of <code>library()</code> to load a package. The difference here is that <code>require()</code> <em>tries</em> to load a package using <code>library()</code>, then returns a logical indicating success or failure, while <code>library()</code> actually load a package. One consequence of using <code>require()</code> is that it does not throw an error if a package you are trying to load is not installed. Therefore, when you try to use a function from the package, it will throw an error, since the package is not installed. In this case, <code>library()</code> would already have thrown an error since the package was not installed. However, sometimes you need to use <code>require()</code> to use a package conditionally, i.e.&nbsp;if the package is not crucial to the script, but optional. If that is the case, the following is useful for detecting that the package is not installed:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="fu">require</span>(<span class="st">'foo'</span>)) {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">awesome_foo_function</span>() </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> { </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">warning</span>(<span class="st">'You missed an awesome function'</span>) </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">require</span>(<span class="st">'foo'</span>)) {</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stop</span>(<span class="st">'The package foo was not installed'</span>) </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Basically, it sums up to this:</p>
+<blockquote class="blockquote">
+<p><em>“Try not! Do, or do not. There is no try.” – Jacob Westfall</em></p>
+</blockquote>
+<p><code>require()</code> breaks one of the fundamental rules of robust software systems: <a href="https://stackoverflow.com/a/2807375/1968"><strong>fail early</strong></a>. This is why <code>library()</code> is generally recommended.</p>
+</section>
+<section id="help-pages-and-vignettes" class="level4">
+<h4 class="anchored" data-anchor-id="help-pages-and-vignettes">Help pages and vignettes</h4>
+<p>Help pages for functions in packages may be accessed like this: <code>?function_name</code>, <code>?package::function</code>, <code>?package</code>, or by the <code>help</code> function: <code>help(function, package = "package")</code>. The help pages will describe the general use of a function, give detailed information on what each function argument does, and some simple examples. For a more detailed documentation, many packages have vignettes available. Vignettes are documents that presents package functionality in a more detailed way, often with many examples and plots. The vignettes can be accessed by <code>browseVignettes(package = "package")</code> or <code>vignette(package = "package")</code>.</p>
+</section>
+</section>
+<section id="how-to-find-the-correct-r-package" class="level3" data-number="4.2.5">
+<h3 data-number="4.2.5" class="anchored" data-anchor-id="how-to-find-the-correct-r-package"><span class="header-section-number">4.2.5</span> How to find the correct R package</h3>
+<p>So how do you find an R package addressing a specific problem, when there are likely over 20.000 packages to choose from? The answer is not simple. Many packages pop up in tutorials that are made for a specific topic, or from talks and workshops around the world. There is also the <a href="https://cran.r-project.org/web/views/">CRAN Task Views</a> that lists all CRAN packages by topic, making it a little bit easier to sift through. However, by using R and doing tutorials, you will get familiar with many useful packages related to many different problems. Also, asking other R users is one of the quickest ways of finding packages.</p>
+</section>
+</section>
+<section id="take-home-messages" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="take-home-messages"><span class="header-section-number">4.3</span> Take-Home messages</h2>
+<ul>
+<li>An R package is a convenient way of packing and sharing code</li>
+<li>Install packages with <code>install.packages()</code>, <code>Biocmanager::install()</code>, or <code>devtools::install_github()</code></li>
+<li>Load packages or call functions directly from a package with <code>library()</code> and <code>package::function</code>, avoid using <code>require()</code> unless it is absolutely necessary</li>
+<li>Unload a package with <code>detach()</code></li>
+<li>Access help pages with <code>?package::function</code> or <code>?function</code> (if package is loaded) or <code>help()</code></li>
+<li>Ask about packages, or find them in the CRAN Task Views list</li>
+<li>Use tutorials online!</li>
+</ul>
+</section>
+<section id="resources" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="resources"><span class="header-section-number">4.4</span> Resources</h2>
+<ul>
+<li><a href="https://www.datacamp.com/community/tutorials/r-packages-guide">DataCamp - R Packages: A Beginner’s Guide</a></li>
+<li><a href="https://en.wikipedia.org/wiki/R_package">Wikipedia - R Package</a></li>
+<li><a href="https://cran.r-project.org/">Comprehensive R Archive Network</a></li>
+<li><a href="https://cran.r-project.org/web/packages/available_packages_by_date.html">List of all R packages hosted by CRAN</a></li>
+<li><a href="https://yihui.org/en/2014/07/library-vs-require/">Yihui Xie - library() vs.&nbsp;require() in R</a></li>
+<li><a href="https://r-pkgs.org/index.html">Hadley Wickham &amp; Jenny Bryan - R Packages</a></li>
+</ul>
 
 
 </section>
@@ -771,10 +868,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="../../quarto_files/part_configrations/connecting_r_studio_to_github.html" class="pagination-link" aria-label="Connecting RStudio to GitHub">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Connecting RStudio to GitHub</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./quarto_files/part_general/posit_infrastructure_at_VI.html" class="pagination-link" aria-label="Posit Infrastructure at VI">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Posit Infrastructure at VI</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../quarto_files/part_r_rstudio_tutorials/projects_in_r_studio.html" class="pagination-link" aria-label="Projects in RStudio">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Projects in RStudio</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
