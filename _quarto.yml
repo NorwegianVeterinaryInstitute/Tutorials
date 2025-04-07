@@ -30,6 +30,7 @@ book:
     chapters: 
       - quarto_files/part_posit_connect/creating_pins_on_connect.qmd
       - quarto_files/part_posit_connect/git_backed_deployment_to_posit_connect.qmd
+      - quarto_files/part_posit_connect/content_deployment_to_posit_connect.qmd
   - quarto_files/contributing.qmd
 format:
   html:
