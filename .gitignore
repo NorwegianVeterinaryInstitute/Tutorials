@@ -4,3 +4,11 @@
 .Ruserdata
 
 /.quarto/
+
+R-tutorials.Rproj
+!Rprofile
+/renv/
+!renv.lock
+!renv/.gitignore
+!renv/activate.R
+!renv/settings.json
