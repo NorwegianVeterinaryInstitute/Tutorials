@@ -1,0 +1,47 @@
+---
+title: "Adding Local Packages to Package Manager"
+author: "Novica Nakov"
+format:
+  html:
+    toc: true
+    toc-location: left
+    toc-depth: 2
+    number-sections: true
+    number-depth: 3
+editor: source
+---
+
+## Overview
+
+The Posit Package Manager can host custom packages. We have set up a `local` 
+repository for this purpose. See more details at 
+[Distributing Local R Packages](https://docs.posit.co/rspm/admin/getting-started/configuration/#quickstart-local) 
+on Posit's documentations site.
+
+## Building packages
+
+We still need to build the packages manually. If you are a package maintainer 
+you should be able to build the package on Posit Workbench. See more 
+at [R CMD check](https://r-pkgs.org/R-CMD-check.html) from the R Packages  book.
+
+Assuming you have a package ready run the following.
+
+To create a package bundle:
+
+```
+R CMD build your_package
+```
+
+To create a package binary:
+
+```
+R CMD INSTALL --build your_package.tar.gz 
+```
+
+If this is a VI package copy those files to `/opt/R/site-library/vetinst.no/src/` 
+or `/opt/R/site-library/vetinst.no/bin/` respectively. When done 
+notify the admin team. 
+
+## Requesting packages 
+
+If you need a binary version of some package that is not hosted on CRAN, notify the admin team.
