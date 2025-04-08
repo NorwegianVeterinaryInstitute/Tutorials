@@ -8,7 +8,7 @@ editor: visual
 
 For some workstations at VI the home directory is configured on a so-called 
 `H:\` drive. This causes a failure when trying to generate a new `SSH` key 
-which is something you will need if you [work with GitHub](https://nvi-documentation.readthedocs.io/en/latest/posit/04-rstudio_github.html).
+which is something you will need if you [work with GitHub](/quarto_files/part_configurations/connecting_r_studio_to_github.qmd).
 
 For this reason you will need to change the $HOME directory variable to point 
 to the `C:\Users\` directory.
