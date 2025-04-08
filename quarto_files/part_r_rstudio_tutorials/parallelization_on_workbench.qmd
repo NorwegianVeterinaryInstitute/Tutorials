@@ -8,6 +8,8 @@ format:
     toc-depth: 2
     number-sections: true
     number-depth: 3
+execute:
+  eval: false
 editor: visual
 ---
 
