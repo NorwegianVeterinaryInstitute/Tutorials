@@ -33,7 +33,7 @@ book:
       - quarto_files/part_posit_connect/content_deployment_on_posit_connect.qmd
   - part: "Posit Package Manager"
     chapters: 
-      - quarto_files/part_posit_package_manager/adding_local_packages_to_package_manager.qmd
+      - quarto_files/part_posit_pm/adding_local_packages_to_package_manager.qmd
   - quarto_files/contributing.qmd
 format:
   html:
