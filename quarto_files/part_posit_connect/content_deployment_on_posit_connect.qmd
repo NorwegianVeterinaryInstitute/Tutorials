@@ -1,0 +1,81 @@
+---
+title: "Content Deployment on Posit Connect"
+author: "Novica Nakov"
+format:
+  html:
+    toc: true
+    toc-location: left
+    toc-depth: 2
+    number-sections: true
+    number-depth: 3
+editor: source
+---
+
+### On this page
+- [Summary](#summary)
+- [Github Actions](#github-actions)
+- [Prerequisites for using the GitHub action workflows](#prerequisites-for-using-the-github-action-workflows)
+  - [R](#r)
+  - [Python](#python)
+- [How do the workflows run?](#how-are-the-workflows-run)
+
+## Summary
+
+Publishing content on Posit Connect can be done [manually](https://docs.posit.co/connect/user/publishing-rstudio/), using the button in RStudio Desktop or RStudio Pro on Posit Workbench.
+
+For many use cases, this may be sufficient. Posit Connect also offers automatic publishing from [git services](https://docs.posit.co/connect/user/publishing-rstudio/) (such as GitHub).
+
+However, there are some drawbacks in these approaches. 
+One, manual updating is simply manual, so that it is kind of a chore. 
+
+Two, git backed deployment is nice insofar you remember to update the needed `manifest.json` file each time you push changes to the code. It is something that one can easily forget to do. Additionally, the git-backed publishing still requires setting up a vanity URL or environment variables for the content, which again are steps that can be overlooked. Finally, the update happens on a defined interval, which may not reflect the pace of the changes that happen on GitHub's side.
+
+For these reasons, we have Ci/CD integration with GitHub actions workflows that push changes to Posit Connect as they happen in the code. 
+
+## Github Actions
+
+GIthub Actions is a service provide for free by GitHub on public repositories (and with limited minutes per month on private repositories) to facilitate continuous integration and continuous delivery/continuous deployment in a modern software development practice in which incremental code changes are made frequently and reliably.
+
+So far we have set up a workflow for R Shiny Apps, R Shiny apps written with {golem}, and Python Shiny apps.
+
+The initial deployments have happened from the following repositories:
+
+- For R Shiny: https://github.com/NorwegianVeterinaryInstitute/cake-planning
+- For R Shiny {golem}: https://github.com/NorwegianVeterinaryInstitute/listeriacalculator/
+- For Python Shiny (note this is a demo app that has nothing to do with NVI):  https://github.com/novica/pyshinywikidata 
+
+The code that runs for the CI/CD workflow is in the `.github` folder of each of the repositories.
+
+## Prerequisites for using the GitHub action workflows
+
+### R
+
+In order for the workflow to run successfully it needs to find a `renv.lock` file in the repository which it uses to generate a `manifest.json` file. This means that you have to start using `renv` for your project, which is a good idea anyway, and to make sure that you maintain the `lock` file properly.
+
+Even if the project is not a package, it would be a good idea to create a `DESCRIPTION` file for the project (See more about `DESCRIPTION` files [here](https://r-pkgs.org/description.html)). This is because
+`renv` is much better at creating the `lock` file if it reads a `DESCRIPTION` as opposed to going through all the code to collect the dependencies.
+
+In the case of a R Shiny {golem} app, what complicates the matters further, is that the `renv.lock` file should be aware of the app itself as a dependency. This is because, the app, being an R package, needs to be loaded in the environment to be run on the server. 
+
+To achieve this, you need to add several packages to `renv` manually: 
+
+1. The app, which you should have installed with `remotes::install_github` or similar;
+2. The packages `pkgload`, `pkgbuild`, `desc`, and `procesx` which are needed for the app to be loaded as a package on the server.
+
+At the end, inspecting the `renv.lock` file to see if it has everything as expected is a good idea.
+
+### Python
+
+Python has a much smoother package and environment management experience, most recently also because of the new `uv` package. If you are developing for Python, consider using that. 
+
+Regardless, the steps are similar. A `requirements.txt` file should be generated, and then a `manifest.json` file should be generated based on the `requirements.txt` file.
+
+However, due to the limitations in the rsconnect-python package from Posit, python deployments don't have a way to keep track of previous deployments. This means that, for the time being at least, the CI/CD workflow uses a `deploy` branch which Posit Workbench monitors in a more "classic" git-backed deployment.
+
+## How do the workflows run? 
+
+The workflows are run on a commit to the `main` branch. Therefore, you should be careful what and how you push to `main`, though that is true for overall code development. 
+
+The NVI GitHub organization is set up with `organizational secrets`: CONNECT_SERVER and CONNECT_API_KEY which make the deployment possible. Please note that the key belongs to Novica, so if you want to have better control of the deployment, you will need to set up your own key under the repository settings. 
+
+A failed workflow will result with an email being sent to the email account associated with your GitHub account. 
