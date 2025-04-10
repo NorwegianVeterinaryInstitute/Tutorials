@@ -2,13 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.43">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Novica Nakov">
 
-<title>2&nbsp; Connecting RStudio to GitHub – **R and Posit tutorials**</title>
+<title>12&nbsp; Adding Local Packages to Package Manager – **Tutorials**</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,24 +24,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./anatomy_of_a_R_package.html" rel="next">
-<link href="./posit_infrastructure_at_VI.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../quarto_files/contributing.html" rel="next">
+<link href="../../quarto_files/part_posit_connect/content_deployment_on_posit_connect.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-51f256d70a4081612c1e760f7b8c3dd9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-5976018df59a00f832200179341f3429.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./connecting_RStudio_to_GitHub.html">R/RStudio tutorials</a></li><li class="breadcrumb-item"><a href="./connecting_RStudio_to_GitHub.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Connecting RStudio to GitHub</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../quarto_files/part_posit_pm/adding_local_packages_to_package_manager.html">Posit Package Manager</a></li><li class="breadcrumb-item"><a href="../../quarto_files/part_posit_pm/adding_local_packages_to_package_manager.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Adding Local Packages to Package Manager</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -96,11 +96,11 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./logo/vetinst-logo.jpg" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../../index.html" class="sidebar-logo-link">
+      <img src="../../images/logos/vetinst-logo-eng.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="./"><strong>R and Posit tutorials</strong></a> 
+      <a href="../../"><strong>Tutorials</strong></a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -112,20 +112,14 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./posit_infrastructure_at_VI.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Posit Infrastructure at VI</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">R/RStudio tutorials</span></a>
+ <span class="menu-text">General</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -133,38 +127,8 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./connecting_RStudio_to_GitHub.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Connecting RStudio to GitHub</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./anatomy_of_a_R_package.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Anatomy of a R package</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./projects_in_RStudio.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Projects in RStudio</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./parallelization_on_workbench.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Parallelization on Workbench</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./getting_help_with_R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Getting Help with R</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./RStudio_tips_and_tricks.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">RStudio Tips and Tricks</span></span></a>
+  <a href="../../quarto_files/part_general/posit_infrastructure_at_VI.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Posit Infrastructure at VI</span></span></a>
   </div>
 </li>
       </ul>
@@ -172,7 +136,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Posit Connect</span></a>
+ <span class="menu-text">Configrations</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -180,26 +144,120 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Creating_pins_on_Connect.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Creating Pins on Connect</span></span></a>
+  <a href="../../quarto_files/part_configrations/setting_home_dir.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Setting up your $HOME Variable on Windows 10</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Git_backed_deployment_to_posit_connect.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Git Backed Deployment to Posit Connect</span></span></a>
+  <a href="../../quarto_files/part_configrations/connecting_r_studio_to_github.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Connecting RStudio to GitHub</span></span></a>
   </div>
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">R/RStudio tutorials</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quarto_files/part_r_rstudio_tutorials/anatomy_of_a_r_package.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Anatomy of a R package</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quarto_files/part_r_rstudio_tutorials/projects_in_r_studio.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Projects in RStudio</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quarto_files/part_r_rstudio_tutorials/parallelization_on_workbench.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Parallelization on Workbench</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quarto_files/part_r_rstudio_tutorials/getting_help_with_r.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Getting Help with R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quarto_files/part_r_rstudio_tutorials/r_studio_tips_and_tricks.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">RStudio Tips and Tricks</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Posit Connect</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quarto_files/part_posit_connect/creating_pins_on_connect.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Creating Pins on Connect</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quarto_files/part_posit_connect/git_backed_deployment_to_posit_connect.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Git Backed Deployment to Posit Connect</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quarto_files/part_posit_connect/content_deployment_on_posit_connect.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Content Deployment on Posit Connect</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Posit Package Manager</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quarto_files/part_posit_pm/adding_local_packages_to_package_manager.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Adding Local Packages to Package Manager</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../quarto_files/contributing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contributing</span></a>
+  </div>
+</li>
     </ul>
     </div>
     <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul class="collapse">
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">2.1</span> Overview</a></li>
-  <li><a href="#step-4---set-up-github-personal-access-token" id="toc-step-4---set-up-github-personal-access-token" class="nav-link" data-scroll-target="#step-4---set-up-github-personal-access-token"><span class="header-section-number">2.2</span> Step 4 - Set up GitHub Personal Access Token</a></li>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview"><span class="header-section-number">12.1</span> Overview</a></li>
+  <li><a href="#building-packages" id="toc-building-packages" class="nav-link" data-scroll-target="#building-packages"><span class="header-section-number">12.2</span> Building packages</a></li>
+  <li><a href="#requesting-packages" id="toc-requesting-packages" class="nav-link" data-scroll-target="#requesting-packages"><span class="header-section-number">12.3</span> Requesting packages</a></li>
   </ul>
 </nav>
 </nav>
@@ -210,9 +268,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./connecting_RStudio_to_GitHub.html">R/RStudio tutorials</a></li><li class="breadcrumb-item"><a href="./connecting_RStudio_to_GitHub.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Connecting RStudio to GitHub</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../quarto_files/part_posit_pm/adding_local_packages_to_package_manager.html">Posit Package Manager</a></li><li class="breadcrumb-item"><a href="../../quarto_files/part_posit_pm/adding_local_packages_to_package_manager.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Adding Local Packages to Package Manager</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Connecting RStudio to GitHub</span></h1>
+<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Adding Local Packages to Package Manager</span></h1>
 </div>
 
 
@@ -235,36 +293,23 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="overview" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">2.1</span> Overview</h2>
-<p>If you are an R user working with some of the code that has been uploaded to the NVI GitHub organization, you will need to set up a way to interact with the service. Below is a recommended way to do so.</p>
-<p>The assumptions are that you already have installed R and RStudio from the internal NVI software repository. You will additionally need <a href="https://cran.r-project.org/bin/windows/Rtools/rtools43/rtools.html">Rtools</a> that you can install on your own. Additionally, this tutorial presumes you already have a GitHub account and you are a member of the NVI organization on GitHub.</p>
-<section id="step-1---download-and-install-git" class="level3" data-number="2.1.1">
-<h3 data-number="2.1.1" class="anchored" data-anchor-id="step-1---download-and-install-git"><span class="header-section-number">2.1.1</span> Step 1 - Download and install git</h3>
-<p>Download git from the <a href="https://git-scm.com/download/win">official website</a>. Install it the usual way. There may be things you would want to configure in the installation, like for example the editor used by git. This is up to your preference.</p>
+<section id="overview" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="overview"><span class="header-section-number">12.1</span> Overview</h2>
+<p>The Posit Package Manager can host custom packages. We have set up a <code>local</code> repository for this purpose. See more details at <a href="https://docs.posit.co/rspm/admin/getting-started/configuration/#quickstart-local">Distributing Local R Packages</a> on Posit’s documentations site.</p>
 </section>
-<section id="step-2---generate-ssh-key-and-add-it-to-github" class="level3" data-number="2.1.2">
-<h3 data-number="2.1.2" class="anchored" data-anchor-id="step-2---generate-ssh-key-and-add-it-to-github"><span class="header-section-number">2.1.2</span> Step 2 - Generate SSH key and add it to GitHub</h3>
-<p>Run <code>Git Bash</code> from the Windows start menu. On workbench you can switch to <strong>Terminal</strong>. Once the terminal opens type <code>ssh-keygen.exe</code> and <code>enter</code>. This will run the program that is used for generating <code>ssh</code> keys. Follow the instructions on the screen and select a good passphrase for your key.</p>
-<p>When this is completed, type <code>cat .ssh/id_rsa.pub</code> in the terminal. This is assuming you didn’t give the key a different name during the key generation. This command will print out the public key on the terminal. Copy it and move to the browser.</p>
-<p>Open <a href="https://github.com/settings/keys" class="uri">https://github.com/settings/keys</a> and then click on <code>New SSH key</code>. Add a title for your key you want to use to recognize the key, and paste the copied public key in the <code>Key</code> field. Click <code>Add SSH key</code> to complete this step.</p>
+<section id="building-packages" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="building-packages"><span class="header-section-number">12.2</span> Building packages</h2>
+<p>We still need to build the packages manually. If you are a package maintainer you should be able to build the package on Posit Workbench. See more at <a href="https://r-pkgs.org/R-CMD-check.html">R CMD check</a> from the R Packages book.</p>
+<p>Assuming you have a package ready run the following.</p>
+<p>To create a package bundle:</p>
+<pre><code>R CMD build your_package</code></pre>
+<p>To create a package binary:</p>
+<pre><code>R CMD INSTALL --build your_package.tar.gz </code></pre>
+<p>If this is a VI package copy those files to <code>/opt/R/site-library/vetinst.no/src/</code> or <code>/opt/R/site-library/vetinst.no/bin/</code> respectively. When done notify the admin team.</p>
 </section>
-<section id="step-3---setup-ssh-and-git-in-rstudio" class="level3" data-number="2.1.3">
-<h3 data-number="2.1.3" class="anchored" data-anchor-id="step-3---setup-ssh-and-git-in-rstudio"><span class="header-section-number">2.1.3</span> Step 3 - Setup SSH and git in RStudio</h3>
-<p>Open a fresh session of RStudio. See <a href="rstudio_tips">here</a> for some tips on configuring RStudio.</p>
-<p>For windows machines, in the menu under “Tools” &gt; “Global Options” &gt; “Terminal” set the <code>Shell</code> to <code>Git Bash</code>.</p>
-<p>In the menu under “Tools” &gt; “Global Options” &gt; “Git/SVN” verify that the path to the private key is showing up.</p>
-</section>
-</section>
-<section id="step-4---set-up-github-personal-access-token" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="step-4---set-up-github-personal-access-token"><span class="header-section-number">2.2</span> Step 4 - Set up GitHub Personal Access Token</h2>
-<p>A Personal Access Token is not something you necessarily need. It is required for installing private R packages such as the <code>NVIConfig</code> package. You may or may not need this.</p>
-<p>First go to <a href="https://github.com/settings/tokens" class="uri">https://github.com/settings/tokens</a> and generate a new classic token by clicking on the “Generate new token” dropdown and selecting the classic token. The next page will ask for a lot of options for the token permissions, you will need probably just the <code>repo</code> options on the top of the page, but feel free to select whatever you think is needed for your work. In the <code>Note</code> field add something that will describe the token and click Generate token.</p>
-<p>The token will be shown in the browser. Keep that open for the time being.</p>
-<p>In RStudio install <code>devtools</code> and <code>usethis</code> packages: <code>install.packages(“devtools”)</code>; <code>usethis: install.packages(“usethis”)</code>.</p>
-<p>In the R terminal in RStudio type and run <code>usethis::edit_r_environ()</code> – this will open a blank <code>.Renviron</code> file (see <a href="https://support.posit.co/hc/en-us/articles/360047157094-Managing-R-with-Rprofile-Renviron-Rprofile-site-Renviron-site-rsession-conf-and-repos-conf">here</a> if you want to learn more about it).</p>
-<p>In the empty file write GITHUB_PAT=“” and paste the token from the browser between the quotation marks. Save the <code>.Renviron</code> file. Close RStudio or restart the R session. Close the browser tab that has the token.</p>
-<p>All done!</p>
+<section id="requesting-packages" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="requesting-packages"><span class="header-section-number">12.3</span> Requesting packages</h2>
+<p>If you need a binary version of some package that is not hosted on CRAN, notify the admin team.</p>
 
 
 </section>
@@ -352,8 +397,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -464,7 +507,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -692,13 +734,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./posit_infrastructure_at_VI.html" class="pagination-link" aria-label="Posit Infrastructure at VI">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Posit Infrastructure at VI</span></span>
+      <a href="../../quarto_files/part_posit_connect/content_deployment_on_posit_connect.html" class="pagination-link" aria-label="Content Deployment on Posit Connect">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Content Deployment on Posit Connect</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./anatomy_of_a_R_package.html" class="pagination-link" aria-label="Anatomy of a R package">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Anatomy of a R package</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../quarto_files/contributing.html" class="pagination-link" aria-label="Contributing">
+        <span class="nav-page-text">Contributing</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

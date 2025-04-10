@@ -13,9 +13,9 @@ This part of the book contains chapters with general information. The following 
 This part of the book contains chapters to help set up various aspects in R, RStudio desktop or Workbench. The following chapters are available:
 
 1.  [Setting up your \$HOME Variable on Windows 10](quarto_files/part_configrations/setting_home_dir.qmd)
-2.  [Connecting RStudio to GitHub](quarto_files/part_configrations/connecting_r_studio_to_github)
+2.  [Connecting RStudio to GitHub](quarto_files/part_configrations/connecting_r_studio_to_github.qmd)
 
-### Part: R/RStudio Tutorials
+## Part: R/RStudio Tutorials
 
 This part of the book contains tutorials for a variety of aspects in R/RStudio. The following chapters are available:
 
@@ -25,11 +25,16 @@ This part of the book contains tutorials for a variety of aspects in R/RStudio. 
 4.  [Getting Help with R](quarto_files/part_r_rstudio_tutorials/getting_help_with_r.qmd)
 5.  [RStudio Tips and Tricks](quarto_files/part_r_rstudio_tutorials/r_studio_tips_and_tricks.qmd)
 
-### Part: Posit Connect
+## Part: Posit Connect
 
 This part of the book contains tutorials that will help you to work with Posit Connect server. The following chapters are available:
 
 1.  [Creating Pins on Connect](quarto_files/part_posit_connect/creating_pins_on_connect.qmd)
 2.  [Git Backed Deployment to Posit Connect](quarto_files/part_posit_connect/git_backed_deployment_to_posit_connect.qmd)
+3.  [Content Deployment on Posit Connect](quarto_files/part_posit_connect/content_deployment_on_posit_connect.qmd)
+
+## Part: Posit Package Manager
+
+1.  [Adding Local Packages to Package Manager](quarto_files/part_posit_pm/adding_local_packages_to_package_manager.qmd)
 
 To contribute to this book, please read [Contributing](quarto_files/contributing.qmd).
