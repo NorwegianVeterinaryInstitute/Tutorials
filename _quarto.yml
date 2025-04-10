@@ -7,9 +7,6 @@ book:
   - "Trishang Udhwani" 
   - "Novica Nakov"
   - "Håkon Kaspersen"
-  sidebar: 
-    logo: "images/logos/vetinst-logo-eng.png"
-    background: "#EEF8F8"
   chapters:
   - index.qmd
   - part: "General"

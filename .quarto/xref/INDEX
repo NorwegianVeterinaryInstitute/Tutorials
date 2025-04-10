@@ -79,5 +79,11 @@
   },
   "quarto_files/contributing.qmd": {
     "contributing.html": "0bc4b018"
+  },
+  "quarto_files/part_posit_connect/content_deployment_on_posit_connect.qmd": {
+    "content_deployment_on_posit_connect.html": "389b41eb"
+  },
+  "quarto_files/part_posit_pm/adding_local_packages_to_package_manager.qmd": {
+    "adding_local_packages_to_package_manager.html": "1a7c2059"
   }
 }

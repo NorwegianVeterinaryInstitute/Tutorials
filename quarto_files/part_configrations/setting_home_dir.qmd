@@ -6,24 +6,19 @@ editor: visual
 
 ## Overview
 
-For some workstations at VI the home directory is configured on a so-called 
-`H:\` drive. This causes a failure when trying to generate a new `SSH` key 
-which is something you will need if you [work with GitHub](/quarto_files/part_configurations/connecting_r_studio_to_github.qmd).
+For some workstations at VI the home directory is configured on a so-called `H:\` drive. This causes a failure when trying to generate a new `SSH` key which is something you will need if you [work with GitHub](connecting_r_studio_to_github.qmd).
 
-For this reason you will need to change the $HOME directory variable to point 
-to the `C:\Users\` directory.
+For this reason you will need to change the \$HOME directory variable to point to the `C:\Users\` directory.
 
 ## Steps
 
-1. From the Start menu, enter env to display the Environment Variables window.
-If your system is in the Norwegian language, use the search term "miljø" instead.
+1.  From the Start menu, enter env to display the Environment Variables window. If your system is in the Norwegian language, use the search term "miljø" instead.
 
-2. Enter a new $HOME variable for your account:
+2.  Enter a new \$HOME variable for your account:
 
-    - Click New under User variables.
-    - Enter HOME for the variable name.
-    - Enter C:\Users\username for the variable value, where username is your VI Number.
-    - Click OK.
-    
-After completing this, you should be able to create a new SSH in Git Bash 
-as described above without any issues.
+    -   Click New under User variables.
+    -   Enter HOME for the variable name.
+    -   Enter C:\Users\username for the variable value, where username is your VI Number.
+    -   Click OK.
+
+After completing this, you should be able to create a new SSH in Git Bash as described above without any issues.
