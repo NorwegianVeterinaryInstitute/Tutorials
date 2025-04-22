@@ -36,8 +36,8 @@ color:
   foreground: black
   background: white
   primary: water
-  secondary: earth
-  tertiary: air
+  secondary: black
+  tertiary: earth
   light: air
   dark: dark_food
 
@@ -62,6 +62,16 @@ typography:
     family: Consolas
     weight: 400
     size: 0.9em
+  monospace-block: 
+    family: Consolas
+    weight: 400
+    size: 0.9em
+    background-color: air
+  monospace-inline: 
+    family: Consolas
+    weight: 400
+    size: 1.0em
+    color: primary
   link:
     weight: 600
     color: primary
